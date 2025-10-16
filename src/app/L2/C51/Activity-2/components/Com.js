@@ -121,8 +121,8 @@ export default function Com() {
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="text-lg text-gray-700 space-y-4 text-left max-w-3xl mx-auto">
               <p>Meet Leo, a curious 9-year-old who dreams of becoming a chef.</p>
-              <p>One sunny afternoon, Chef Marco from the local food cart calls and says: 'Leo, I'm short on time! Can you grab my groceries from the supermarket?</p>
-              <p>Today's menu has to be ready for the customers. The list is all mixed up! Some items are essential for today's menu, while others are just extras. You only have $60 to spend.</p>
+              <p>One sunny afternoon, Chef Marco from the local food cart calls and says: &apos;Leo, I&apos;m short on time! Can you grab my groceries from the supermarket?</p>
+              <p>Today&apos;s menu has to be ready for the customers. The list is all mixed up! Some items are essential for today&apos;s menu, while others are just extras. You only have $60 to spend.</p>
             </div>
             <br />
             <Image 
@@ -157,7 +157,7 @@ export default function Com() {
             <div className={`inline-block px-6 py-3 rounded-lg text-2xl font-bold ${
               hasAllEssentials ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
             }`}>
-              {hasAllEssentials ? 'Great job! You got all the essentials!' : 'You missed some essential items for today\'s menu!'}
+              {hasAllEssentials ? "Great job! You got all the essentials!" : "You missed some essential items for today's menu!"}
             </div>
           </div>
           
@@ -185,7 +185,7 @@ export default function Com() {
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Today's Menu Requirements</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Today&apos;s Menu Requirements</h2>
               <div className="space-y-2">
                 <p className="text-lg font-semibold text-orange-600 mb-4">Veggie Rice Bowl + Lemonade</p>
                 <p className="text-lg font-semibold text-green-600 mb-2">Required Essentials:</p>
@@ -221,7 +221,7 @@ export default function Com() {
             </div>
             
             <div className="mt-4">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">Today's Menu</h3>
+              <h3 className="text-lg font-bold text-gray-800 mb-3">Today&apos;s Menu</h3>
               <div className="bg-gray-50 rounded-lg p-3 mb-3">
                 <p className="font-semibold text-orange-600 mb-2">Veggie Rice Bowl + Lemonade</p>
                 <p className="text-sm text-gray-600 mb-3">Required Essentials:</p>

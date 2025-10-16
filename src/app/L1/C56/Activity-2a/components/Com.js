@@ -159,7 +159,7 @@ export default function Com() {
       <div className="mx-auto max-w-6xl">
         <div className="rounded-2xl bg-white p-8 shadow-xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Henry's Shopping Choices
+            Henry&apos;s Shopping Choices
           </h1>
 
           <div className="overflow-x-auto">

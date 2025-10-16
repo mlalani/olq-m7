@@ -72,7 +72,7 @@ export default function Com() {
       <div className="mx-auto max-w-8xl">
         <div className="rounded-2xl bg-white p-8 shadow-xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Henry's Shopping Choices
+            Henry&apos;s Shopping Choices
           </h1>
           
 
@@ -125,7 +125,7 @@ export default function Com() {
           {selectedItems.length === 4 && (
             <div className="mt-8 text-center">
               <div className="bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg">
-                <p className="text-lg font-semibold">Great! You've selected 4 items for Henry's shopping list! 🎉</p>
+                <p className="text-lg font-semibold">Great! You&apos;ve selected 4 items for Henry&apos;s shopping list! 🎉</p>
                 <p className="text-sm mt-2">Selected items: {selectedItems.map(item => item.choice).join(', ')}</p>
               </div>
             </div>

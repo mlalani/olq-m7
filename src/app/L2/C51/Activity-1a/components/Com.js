@@ -15,13 +15,13 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                Aria, an 8-year-old who loves puzzles, overheard her parents worrying, the shopping list was all mixed up! Some things were important, but others weren't.
+                Aria, an 8-year-old who loves puzzles, overheard her parents worrying, the shopping list was all mixed up! Some things were important, but others weren&apos;t.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                She ran to her brother and whispered: "Let's be the elves, like in the shoemaker story, and fix the list"
+                She ran to her brother and whispered: &quot;Let&apos;s be the elves, like in the shoemaker story, and fix the list&quot;
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                But when they started sorting Aria got confused on how to figure out which are essential & non-essential items. Let's help Aria!
+                But when they started sorting Aria got confused on how to figure out which are essential & non-essential items. Let&apos;s help Aria!
               </p>
               <Image 
                 src={S1}
@@ -46,7 +46,7 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-gray-800 mb-6">
-                What do you think the word essential means when we're talking about shopping?
+                What do you think the word essential means when we&apos;re talking about shopping?
               </p>
               {!showAnswer ? (
                 <button 
@@ -175,7 +175,7 @@ export default function Com() {
                     We can live without biscuits because they are just snacks.
                   </p>
                   <p className="text-xl text-green-800 font-semibold">
-                    We can't live without rice because it's food that fills us up.
+                    We can&apos;t live without rice because it&apos;s food that fills us up.
                   </p>
                 </div>
               )}

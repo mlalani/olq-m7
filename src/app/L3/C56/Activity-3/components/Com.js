@@ -2,24 +2,25 @@
 
 import { useState, useEffect } from "react";
 
-export default function Com() {
-  const descriptions = [
-    { id: "desc1", text: "Helps educate children." },
-    { id: "desc2", text: "Helps protect people in emergencies." },
-    { id: "desc3", text: "Provides places to play." },
-    { id: "desc4", text: "Helps us travel safely." },
-    { id: "desc5", text: "Helps people when they are sick." },
-    { id: "desc6", text: "Keeps us safe." }
-  ];
+const descriptions = [
+  { id: "desc1", text: "Helps educate children." },
+  { id: "desc2", text: "Helps protect people in emergencies." },
+  { id: "desc3", text: "Provides places to play." },
+  { id: "desc4", text: "Helps us travel safely." },
+  { id: "desc5", text: "Helps people when they are sick." },
+  { id: "desc6", text: "Keeps us safe." }
+];
 
-  const pictures = [
-    { id: "pic1", name: "School", emoji: "🏫", correctDesc: "desc1" },
-    { id: "pic2", name: "Fire truck", emoji: "🚒", correctDesc: "desc2" },
-    { id: "pic3", name: "Public park", emoji: "🏞️", correctDesc: "desc3" },
-    { id: "pic4", name: "Road & Bridge", emoji: "🌉", correctDesc: "desc4" },
-    { id: "pic5", name: "Doctor/hospital", emoji: "🏥", correctDesc: "desc5" },
-    { id: "pic6", name: "Police car", emoji: "🚔", correctDesc: "desc6" }
-  ];
+const pictures = [
+  { id: "pic1", name: "School", emoji: "🏫", correctDesc: "desc1" },
+  { id: "pic2", name: "Fire truck", emoji: "🚒", correctDesc: "desc2" },
+  { id: "pic3", name: "Public park", emoji: "🏞️", correctDesc: "desc3" },
+  { id: "pic4", name: "Road & Bridge", emoji: "🌉", correctDesc: "desc4" },
+  { id: "pic5", name: "Doctor/hospital", emoji: "🏥", correctDesc: "desc5" },
+  { id: "pic6", name: "Police car", emoji: "🚔", correctDesc: "desc6" }
+];
+
+export default function Com() {
 
   const [leftItems, setLeftItems] = useState(descriptions);
   const [rightItems, setRightItems] = useState(pictures.map(pic => ({ ...pic, droppedDescs: [] })));

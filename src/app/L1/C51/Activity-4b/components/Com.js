@@ -42,14 +42,14 @@ export default function Com() {
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Definition:</h2>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Every food item has a "Best Before" or "Expiry Date" printed on it.
+                Every food item has a &quot;Best Before&quot; or &quot;Expiry Date&quot; printed on it.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
                 This date tells us when the food will stay safe. Eating after expiry can make us sick.
               </p>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Example:</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
-                A bread loaf may say "Best Before 5 days" or a juice box may say "Best Before 1 week." That means after that time, it's not safe to eat or drink.
+                A bread loaf may say &quot;Best Before 5 days&quot; or a juice box may say &quot;Best Before 1 week.&quot; That means after that time, it&apos;s not safe to eat or drink.
               </p>
             </div>
             <button 
@@ -77,7 +77,7 @@ export default function Com() {
               </p>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Example:</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
-                You can't keep 50 ice cream tubs in one fridge.
+                You can&apos;t keep 50 ice cream tubs in one fridge.
               </p>
             </div>
             <button 
@@ -98,11 +98,11 @@ export default function Com() {
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Definition:</h2>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Don't buy more than your family can use before it goes bad.
+                Don&apos;t buy more than your family can use before it goes bad.
               </p>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Elaboration:</h3>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Wasting food is wasting money, time, and even the farmer's hard work.
+                Wasting food is wasting money, time, and even the farmer&apos;s hard work.
               </p>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Example:</h3>
               <p className="text-xl text-gray-700 leading-relaxed">

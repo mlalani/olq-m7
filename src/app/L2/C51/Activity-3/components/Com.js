@@ -223,10 +223,10 @@ export default function Com() {
           <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-8">
             <div className="max-w-7xl mx-auto text-center">
               <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends' Picnic Adventure!</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends&apos; Picnic Adventure!</h1>
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
-                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They've decided to go for a picnic in the park!</p>
-                  <p>They're already packing their bags.</p>
+                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
+                  <p>They&apos;re already packing their bags.</p>
                   <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
                 </div>
                 <div className="flex justify-center space-x-8">
@@ -268,10 +268,10 @@ export default function Com() {
           <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-8">
             <div className="max-w-7xl mx-auto text-center">
               <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends' Picnic Adventure!</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends&apos; Picnic Adventure!</h1>
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
-                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They've decided to go for a picnic in the park!</p>
-                  <p>They're already packing their bags.</p>
+                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
+                  <p>They&apos;re already packing their bags.</p>
                   <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
                 </div>
                 <div className="flex justify-center space-x-8">
@@ -281,7 +281,7 @@ export default function Com() {
                     height={150}
                     src={S1} alt="Mia" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Mia</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'We need to make sure we don't spend more than our budget.'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;We need to make sure we don&apos;t spend more than our budget.&apos;</p>
                   </div>
                   <div className="text-center">
                     <Image 
@@ -314,10 +314,10 @@ export default function Com() {
           <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-8">
             <div className="max-w-7xl mx-auto text-center">
               <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends' Picnic Adventure!</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends&apos; Picnic Adventure!</h1>
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
-                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They've decided to go for a picnic in the park!</p>
-                  <p>They're already packing their bags.</p>
+                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
+                  <p>They&apos;re already packing their bags.</p>
                   <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
                 </div>
                 <div className="flex justify-center space-x-8">
@@ -327,7 +327,7 @@ export default function Com() {
                     height={150}
                     src={S1} alt="Mia" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Mia</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'We need to make sure we don't spend more than our budget.'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;We need to make sure we don&apos;t spend more than our budget.&apos;</p>
                   </div>
                   <div className="text-center">
                     <Image 
@@ -335,7 +335,7 @@ export default function Com() {
                     height={150}
                     src={S2} alt="Arjun" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Arjun</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'And let's pick food that doesn't take forever to eat, otherwise we'll lose time for games!'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;And let&apos;s pick food that doesn&apos;t take forever to eat, otherwise we&apos;ll lose time for games!&apos;</p>
                   </div>
                   <div className="text-center">
                     <Image 
@@ -361,10 +361,10 @@ export default function Com() {
           <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 p-8">
             <div className="max-w-7xl mx-auto text-center">
               <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends' Picnic Adventure!</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">Three Best Friends&apos; Picnic Adventure!</h1>
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
-                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They've decided to go for a picnic in the park!</p>
-                  <p>They're already packing their bags.</p>
+                  <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
+                  <p>They&apos;re already packing their bags.</p>
                   <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
                 </div>
                 <div className="flex justify-center space-x-8">
@@ -374,7 +374,7 @@ export default function Com() {
                     height={150}
                     src={S1} alt="Mia" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Mia</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'We need to make sure we don't spend more than our budget.'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;We need to make sure we don&apos;t spend more than our budget.&apos;</p>
                   </div>
                   <div className="text-center">
                     <Image 
@@ -382,7 +382,7 @@ export default function Com() {
                     height={150}
                     src={S2} alt="Arjun" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Arjun</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'And let's pick food that doesn't take forever to eat, otherwise we'll lose time for games!'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;And let&apos;s pick food that doesn&apos;t take forever to eat, otherwise we&apos;ll lose time for games!&apos;</p>
                   </div>
                   <div className="text-center">
                     <Image 
@@ -390,7 +390,7 @@ export default function Com() {
                     height={150}
                     src={S3} alt="Leo" className="rounded-full mx-auto mb-2" />
                     <p className="font-semibold">Leo</p>
-                    <p className="text-base text-lg text-gray-600 mt-2">'And don't forget the bus tickets! Travel time counts too!'</p>
+                    <p className="text-base text-lg text-gray-600 mt-2">&apos;And don&apos;t forget the bus tickets! Travel time counts too!&apos;</p>
                   </div>
                 </div>
               </div>

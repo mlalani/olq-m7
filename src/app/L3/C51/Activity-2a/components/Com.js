@@ -122,7 +122,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Captain Lock – Term Deposit (FD)</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Term Deposit is when you keep money in the bank for a fixed time, like 1 year or 5 years. You earn more interest from the savings account, but you can't use it before the time ends.</p>
+          <p><strong>Definition:</strong> A Term Deposit is when you keep money in the bank for a fixed time, like 1 year or 5 years. You earn more interest from the savings account, but you can&apos;t use it before the time ends.</p>
           <div className="flex justify-start">
             <Image
               src={S2}
@@ -169,7 +169,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Recurring Deposit Example</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p className="mt-4 p-4 bg-blue-50 rounded-lg">You want a new bicycle that costs $150. You decide to save $15 every month in a Recurring Deposit. After about 10-11 months, you'll have enough to buy it, with a little bonus interest too!</p>
+          <p className="mt-4 p-4 bg-blue-50 rounded-lg">You want a new bicycle that costs $150. You decide to save $15 every month in a Recurring Deposit. After about 10-11 months, you&apos;ll have enough to buy it, with a little bonus interest too!</p>
         </div>
       </div>
     )

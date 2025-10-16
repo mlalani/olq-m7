@@ -29,10 +29,10 @@ export default function Com() {
           <div className="text-center max-w-6xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Ria's mom brought a few more grocery bills, one from last week and one from this month, and asked her to compare them. While looking through, Ria noticed something interesting: some items cost less when bought in larger quantities. But with so many items, she's feeling a bit confused.
+                Ria&apos;s mom brought a few more grocery bills, one from last week and one from this month, and asked her to compare them. While looking through, Ria noticed something interesting: some items cost less when bought in larger quantities. But with so many items, she&apos;s feeling a bit confused.
               </p>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Let's help Ria go through these bills!
+                Let&apos;s help Ria go through these bills!
               </p>
               <Image 
                 src={S1}
@@ -41,9 +41,7 @@ export default function Com() {
               />
             </div>
             <button 
-              onClick={() => setCurrentScreen(1)}
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
-            >
+              onClick={() => setCurrentScreen(1)} className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg">
               Start
             </button>
           </div>
@@ -122,7 +120,7 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed">
-                Now let's think, is shopping only about saving money? Or are there other things we should notice too?
+                Now let&apos;s think, is shopping only about saving money? Or are there other things we should notice too?
               </p>
             </div>
             <button 
@@ -141,10 +139,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Now let's think, is shopping only about saving money? Or are there other things we should notice too?
+                Now let&apos;s think, is shopping only about saving money? Or are there other things we should notice too?
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                We saw that some items save money in bulk, and some don't. But when families shop, they don't just look at prices. They also think about various factors.
+                We saw that some items save money in bulk, and some don&apos;t. But when families shop, they don&apos;t just look at prices. They also think about various factors.
               </p>
             </div>
             <button 
@@ -190,10 +188,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-red-600 mb-4">
-                No, it wouldn't be a good idea!
+                No, it wouldn&apos;t be a good idea!
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Ice creams melt and spoil quickly if we don't eat them in time. Buying too many at once means they might go to waste.
+                Ice creams melt and spoil quickly if we don&apos;t eat them in time. Buying too many at once means they might go to waste.
               </p>
             </div>
           </div>

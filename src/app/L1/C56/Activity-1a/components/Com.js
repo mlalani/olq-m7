@@ -113,7 +113,7 @@ export default function Com() {
 
               {/* Content */}
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                He is going on a 2-day train ride to visit his grandma in Sunnyville. The conductor tells Henry that his suitcase can only fit 10 things. Since it's a long trip, Henry will need all the essentials and healthy items with him for the long journey. He has made a big list of items but he is confused which items to take and which not to as he is allowed to carry only 10 items.
+                He is going on a 2-day train ride to visit his grandma&apos;s in Sunnyville. The conductor tells Henry that his suitcase can only fit 10 things. Since it&apos;s a long trip, Henry will need all the essentials and healthy items with him for the long journey. He has made a big list of items but he is confused which items to take and which not to as he is allowed to carry only 10 items.
               </p>
 
               {/* Next button */}
