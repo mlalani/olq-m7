@@ -1,0 +1,340 @@
+{
+    "L1": {
+        "C51": {
+            "Activity 3": {
+                "link": "/L1/C51/Activity-3",
+                "name": "Oops! Fix the Bill!"
+            },
+            "Activity 4a": {
+                "link": "/L1/C51/Activity-4a",
+                "name": "Weekly Bill vs. Monthly Bill I"
+            },
+            "Activity 4b": {
+                "link": "/L1/C51/Activity-4b",
+                "name": "Weekly Bill vs. Monthly Bill II"
+            }
+        },
+        "C54": {
+            "Activity 1": {
+                "link": "/L1/C54/Activity-1",
+                "name": "The Smart Shopper’s Basket"
+            },
+            "Activity 2": {
+                "link": "/L1/C54/Activity-2",
+                "name": "Shopping Bill Mystery"
+            },
+            "Activity 3": {
+                "link": "/L1/C54/Activity-3",
+                "name": "Budget Detective"
+            },
+            "Activity 4": {
+                "link": "/L1/C54/Activity-4",
+                "name": "Birthday Party Planner"
+            }
+        },
+        "C55": {
+            "Warm up activity": {
+                "link": "/L1/C55/Warm-up-activity",
+                "name": "Guess the Coin"
+            },
+            "Activity 1": {
+                "link": "/L1/C55/Activity-1",
+                "name": "Meet the Currency"
+            },
+            "Activity 2": {
+                "link": "/L1/C55/Activity-2",
+                "name": "Currency Match-Up Game"
+            },
+            "Activity 3a": {
+                "link": "/L1/C55/Activity-3a",
+                "name": "Currency Exchange I"
+            },
+            "Activity 3b": {
+                "link": "/L1/C55/Activity-3b",
+                "name": "Currency Exchange II"
+            },
+            "Activity 4a": {
+                "link": "/L1/C55/Activity-4a",
+                "name": "Price Around the World!"
+            },
+            "Additional Activity": {
+                "link": "/L1/C55/Additional-Activity",
+                "name": "Currency Swap Challenge"
+            },
+            "PCA": {
+                "link": "/L1/C55/PCA",
+                "name": "Currency Hunt"
+            }
+        },
+        "C56": {
+            "Warm up activity": {
+                "link": "/L1/C56/Warm-up-activity",
+                "name": "Would You Take It?"
+            },
+            "Activity 1a": {
+                "link": "/L1/C56/Activity-1a",
+                "name": "Long Train Journey I"
+            },
+            "Activity 1b": {
+                "link": "/L1/C56/Activity-1b",
+                "name": "Long Train Journey II"
+            },
+            "Activity 2a": {
+                "link": "/L1/C56/Activity-2a",
+                "name": "Market Adventure I"
+            },
+            "Activity 2b": {
+                "link": "/L1/C56/Activity-2b",
+                "name": "Market Adventure II"
+            },
+            "Activity 3a": {
+                "link": "/L1/C56/Activity-3a",
+                "name": "Saving Superstars I"
+            },
+            "Activity 3b": {
+                "link": "/L1/C56/Activity-3b",
+                "name": "Saving Superstars II"
+            },
+            "Activity 4c": {
+                "link": "/L1/C56/Activity-4c",
+                "name": "International Shopper’s Journey"
+            },
+            "Additional-Activity-b": {
+                "link": "/L1/C56/Additional-Activity-b",
+                "name": "Spend, Save & Share II"
+            }
+        }
+    },
+    "L2": {
+        "C51": {
+            "Warm up activity": {
+                "link": "/L2/C51/Warm-up-activity",
+                "name": "Pack Your Jungle Safari"
+            },
+            "Activity 1a": {
+                "link": "/L2/C51/Activity-1a",
+                "name": "Essential or Non-Essential I"
+            },
+            "Activity 1b": {
+                "link": "/L2/C51/Activity-1b",
+                "name": "Essential or Non-Essential II"
+            },
+            "Activity 2": {
+                "link": "/L2/C51/Activity-2",
+                "name": "Grocery Grab Challenge"
+            },
+            "Activity 3": {
+                "link": "/L2/C51/Activity-3",
+                "name": "Picnic Planner I"
+            },
+            "Activity 4a": {
+                "link": "/L2/C51/Activity-4a",
+                "name": "Picnic Planner II"
+            },
+            "Activity 4b": {
+                "link": "/L2/C51/Activity-4b",
+                "name": "Buffer rule"
+            },
+            "Activity 4c": {
+                "link": "/L2/C51/Activity-4c",
+                "name": "Picnic Planner III"
+            }
+        },
+        "C54": {
+            "Warm Up Activity": {
+                "link": "/L2/C54/Warm-up-activity",
+                "name": "The Fun-O-Meter Game"
+            },
+            "Activity 1a": {
+                "link": "/L2/C54/Activity-1a",
+                "name": "Profit or Loss I"
+            },
+            "Activity 1b": {
+                "link": "/L2/C54/Activity-1b",
+                "name": "Profit or Loss II"
+            },
+            "Activity 2a": {
+                "link": "/L2/C54/Activity-2a",
+                "name": "Mini-Market Money Math I"
+            },
+            "Activity 4": {
+                "link": "/L2/C54/Activity-4",
+                "name": "The Investor’s Choice"
+            },
+            "PCA": {
+                "link": "/L2/C54/PCA",
+                "name": "Home Purchases ROI Tracker"
+            }
+        },
+        "C55": {
+            "Warm up activity": {
+                "link": "/L2/C55/Warm-up-activity",
+                "name": "Guess the Currency!"
+            },
+            "Activity 1a": {
+                "link": "/L2/C55/Activity-1a",
+                "name": "Meet the Currency"
+            },
+            "Activity 1b": {
+                "link": "/L2/C55/Activity-1b",
+                "name": "Currency exchange"
+            },
+            "Activity 2": {
+                "link": "/L2/C55/Activity-2",
+                "name": "Global Price Detective"
+            },
+            "Activity 3c": {
+                "link": "/L2/C55/Activity-3c",
+                "name": "International travel prep"
+            },
+            "Activity 4": {
+                "link": "/L2/C55/Activity-4",
+                "name": "Card Choices for Travel"
+            },
+            "PCA": {
+                "link": "/L2/C55/PCA",
+                "name": "International Grocery Tracker"
+            }
+        },
+        "C56": {
+            "Activity 2a": {
+                "link": "/L2/C56/Activity-2b",
+                "name": "What is Tax?"
+            },
+            "Activity 3": {
+                "link": "/L2/C56/Activity-3",
+                "name": "Why Pay Tax?"
+            },
+            "Activity 4": {
+                "link": "/L2/C56/Activity-4",
+                "name": "The Tax Journey"
+            },
+            "Additional Activity": {
+                "link": "/L2/C56/Additional-Activity",
+                "name": "Tax Match-Up"
+            }
+        }
+    },
+    "L3": {
+        "C51": {
+            "Activity 1a": {
+                "link": "/L3/C51/Activity-1a",
+                "name": "Spot the Right Service I"
+            },
+            "Activity 1b": {
+                "link": "/L3/C51/Activity-1b",
+                "name": "Spot the Right Service II"
+            },
+            "Activity 2a": {
+                "link": "/L3/C51/Activity-2a",
+                "name": "Account Match-Up I"
+            },
+            "Activity 2b": {
+                "link": "/L3/C51/Activity-2b",
+                "name": "Account Match-Up II"
+            },            
+            "Activity 3d": {
+                "link": "/L3/C51/Activity-3d",
+                "name": "Cheque Check IV"
+            },
+            "Activity 4": {
+                "link": "/L3/C51/Activity-4",
+                "name": "Slip It Right"
+            },
+            "Additional-Activity": {
+                "link": "/L3/C51/Additional-Activity",
+                "name": "Cash Deposit Challenge"
+            },
+            "PCA": {
+                "link": "/L3/C51/PCA",
+                "name": "Savings Planner Challenge"
+            }
+        },
+        "C54": {
+            "Warm up activity": {
+                "link": "/L3/C54/Warm-up-activity",
+                "name": "Guess the Currency!"
+            },
+            "Activity 1a": {
+                "link": "/L3/C54/Activity-1a",
+                "name": "Meet the Currency"
+            },
+            "Activity 1b": {
+                "link": "/L3/C54/Activity-1b",
+                "name": "Currency exchange"
+            },
+            "Activity 2c": {
+                "link": "/L3/C54/Activity-2c",
+                "name": "International travel prep"
+            },
+            "Activity 3": {
+                "link": "/L3/C54/Activity-3",
+                "name": "Stock Adventures"
+            },
+            "Activity 4": {
+                "link": "/L3/C54/Activity-4",
+                "name": "Mini Stock Market"
+            },
+            "Additional Activity": {
+                "link": "/L3/C54/Additional-Activity",
+                "name": "Finance Quick Fire"
+            },
+            "PCA": {
+                "link": "/L3/C54/pca",
+                "name": "Stock Watch Challenge"
+            }
+        },
+        "C55": {
+            "Warm up activity": {
+                "link": "/L3/C55/Warm-up-activity",
+                "name": "The Fun-O-Meter Game"
+            },
+            "Activity 1a": {
+                "link": "/L3/C55/Activity-1a",
+                "name": "Mini Market"
+            },
+            "Activity 2a": {
+                "link": "/L3/C55/Activity-2a",
+                "name": "Appreciation vs Depreciation Hunt I"
+            },
+            "Activity 2b": {
+                "link": "/L3/C55/Activity-2b",
+                "name": "Appreciation vs Depreciation Hunt II"
+            },
+            "Activity 3a": {
+                "link": "/L3/C55/Activity-3a",
+                "name": "Money Magic Plan I"
+            },
+            "Activity 3b": {
+                "link": "/L3/C55/Activity-3b",
+                "name": "Money Magic Plan II"
+            },
+            "Additional Activity": {
+                "link": "/L3/C55/Additional-Activity",
+                "name": "Quick Investment Q&A"
+            },
+            "PCA": {
+                "link": "/L3/C55/PCA",
+                "name": "Appreciate or Depreciate?"
+            }
+        },
+        "C56": {
+            "Activity 2b": {
+                "link": "/L3/C56/Activity-2b",
+                "name": "What Is Tax?"
+            },
+            "Activity 3": {
+                "link": "/L3/C56/Activity-3",
+                "name": "Why Pay Tax?"
+            },
+            "Activity 4": {
+                "link": "/L3/C56/Activity-4",
+                "name": "The Tax Journey"
+            },
+            "Additional Activity": {
+                "link": "/L3/C56/Additional-Activity",
+                "name": "Tax Match-Up"
+            }
+        }
+    }
+}
