@@ -103,6 +103,9 @@ export default function Com() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-8">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+          Essential v/s Non-essential items
+        </h1>
         <p className="text-center text-lg text-gray-600 mb-8">
           Drag items from the shopping list into the correct baskets: Essential or Non-Essential
         </p>
@@ -112,7 +115,7 @@ export default function Com() {
             <div className={`inline-block px-6 py-3 rounded-lg text-2xl font-bold ${
               checkAnswers() ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
             }`}>
-              {checkAnswers() ? 'All items are correctly sorted!' : 'Some items are in the wrong basket. Try again!'}
+              {checkAnswers() ? 'All items are sorted correctly!' : 'Some items are in the wrong basket. Try again!'}
             </div>
           </div>
         )}

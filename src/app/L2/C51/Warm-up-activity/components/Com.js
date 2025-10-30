@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-
+import Image from 'next/image';
+import S1 from '../assets/s1.png';
+import S2 from '../assets/s2.png';
 const items = [
-  { id: 1, name: "Water bottle", emoji: "🫙"},
+  { id: 1, name: "Water bottle", image: S2},
   { id: 2, name: "Compass", emoji: "🧭"},
   { id: 3, name: "Map of the jungle", emoji: "🗺️"},
-  { id: 4, name: "Binoculars", emoji: "🔭"},
+  { id: 4, name: "Binoculars", image: S1},
   { id: 5, name: "Camera", emoji: "📸"},
   { id: 6, name: "First-aid kit", emoji: "🧰"},
   { id: 7, name: "Snacks", emoji: "🥞🧇🫐🍒🥐"},
@@ -76,7 +78,19 @@ export default function Com() {
                   
                   <div>
                     <p className="font-medium text-gray-800">{item.name}</p>
-                    <p className="text-4xl">{item.emoji}</p>
+                    {item.image ? (
+                      <div className="w-16 h-16 flex items-center justify-center">
+                        <Image 
+                          src={item.image} 
+                          alt={item.name}
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <p className="text-4xl">{item.emoji}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -90,11 +104,7 @@ export default function Com() {
             <div
               onDragOver={handleDragOver}
               onDrop={handleDrop}
-              className={`min-h-[400px] border-2 border-dashed rounded-lg p-4 ${
-                backpackItems.length >= 10 
-                  ? 'border-red-300 bg-red-50' 
-                  : 'border-green-300 bg-green-50'
-              }`}
+              className="min-h-[400px] border-2 border-dashed border-green-300 bg-green-50 rounded-lg p-4"
             >
               {backpackItems.length === 0 ? (
                 <div className="flex items-center justify-center h-full text-gray-500">
@@ -110,7 +120,19 @@ export default function Com() {
                       
                       <div className="flex-1">
                         <p className="font-medium text-gray-800 text-sm">{item.name}</p>
-                        <p className="text-lg">{item.emoji}</p>
+                        {item.image ? (
+                          <div className="w-8 h-8 flex items-center justify-center">
+                            <Image 
+                              src={item.image} 
+                              alt={item.name}
+                              width={24}
+                              height={24}
+                              className="object-contain"
+                            />
+                          </div>
+                        ) : (
+                          <p className="text-lg">{item.emoji}</p>
+                        )}
                       </div>
                       <button
                         onClick={() => removeFromBackpack(item.id)}
@@ -125,9 +147,9 @@ export default function Com() {
             </div>
             
             {backpackItems.length >= 10 && (
-              <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-lg">
-                <p className="text-red-700 text-center font-medium">
-                  Backpack is full! Remove items to add new ones.
+              <div className="mt-4 p-3 bg-green-100 border border-green-300 rounded-lg">
+                <p className="text-green-700 text-center font-medium">
+                  Backpack is full!
                 </p>
               </div>
             )}

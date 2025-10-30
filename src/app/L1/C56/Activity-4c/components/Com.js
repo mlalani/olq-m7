@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Com() {
+  const router = useRouter();
+
   const [visitingCurrency, setVisitingCurrency] = useState("");
   const [homeCurrency, setHomeCurrency] = useState("");
   const [exchangeRate, setExchangeRate] = useState(1);
@@ -32,13 +35,54 @@ export default function Com() {
     }
   };
 
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleComplete = () => {
+    setShowConfirmation(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8 px-4">
       <div className="max-w-6xl mx-auto">
-
-        {/* Main Content Card */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        {/* External Links */}
+        <div className="mb-8">
+          <a href="https://www.xe.com/currencyconverter/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Currency Converter</a>
+          <br />
+          <br />
+          <a href="https://www.amazon.de/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon’s German website</a>
+          <br />
+          <br />          
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon's USA website</a>
+        </div>
+        {/* Confirmation Screen */}
+        {showConfirmation ? (
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden p-8 flex flex-col items-center">
+            <h2 className="text-3xl font-bold text-green-700 mb-4">🎉 Congratulations! Your shopping list is ready</h2>
+            <div className="w-full max-w-xl mb-8">
+              <div className="flex justify-between items-center font-semibold text-gray-700 bg-gray-50 px-4 py-2 rounded-lg mb-2">
+                <span>Item</span>
+                <span>Price in visiting currency</span>
+                <span>Price in home currency</span>
+              </div>
+              <ul>
+                {items.filter(item => item.name.trim() !== "").map((item, idx) => (
+                  <li key={idx} className="flex justify-between items-center py-2 border-b border-gray-200">
+                    <span className="font-medium text-gray-800">{item.name}</span>
+                    <span className="text-gray-600">{item.visitingPrice} {visitingCurrency || ""}</span>
+                    <span className="text-gray-600">{item.homePrice.toFixed(2)} {homeCurrency || ""}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 w-full"
+              onClick={() => setShowConfirmation(false)}
+            >
+              Back to Edit
+            </button>
+          </div>
+        ) : (
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden flex flex-col min-h-[70vh]">
           {/* Currency Selection Section */}
           <div className="p-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -105,7 +149,7 @@ export default function Com() {
           </div>
 
           {/* Shopping List Section */}
-          <div className="p-8">
+          <div className="p-8 flex flex-col flex-1">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-semibold text-gray-800 flex items-center">
                 <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,7 +169,7 @@ export default function Com() {
             </div>
 
             {/* Table */}
-            <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+            <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm flex-1">
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
@@ -189,9 +233,20 @@ export default function Com() {
                 </tbody>
               </table>
             </div>
-
+            <div className="mt-8">
+              <button
+                onClick={handleComplete}
+                className="bg-green-600 text-white px-2 py-2 rounded-lg hover:bg-green-700 transition-all duration-200 flex items-center justify-center w-full text-lg font-semibold shadow-lg hover:shadow-xl"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Complete
+              </button>
+            </div>
           </div>
         </div>
+        )}
       </div>
     </div>
   );

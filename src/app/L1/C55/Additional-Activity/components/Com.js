@@ -29,12 +29,18 @@ export default function Com() {
           Currency Swap Challenge
           </h1>
           <div className="flex items-center gap-8 my-4">
-            <p className="text-slate-600 text-lg flex-1">Jay lives in Japan, but today he wants to shop online from the USA. The prices he sees are in US Dollars ($), but he needs to know the price in Japanese Yen (¥). Lets become his shopping helpers and do the conversion!
+            <p className="text-slate-600 text-lg flex-1">Jay lives in Japan, but today he wants to shop online from a website in the USA. The prices he sees are in US Dollars ($), but he needs to know the price in Japanese Yen (¥). Lets become his shopping helpers and do the conversion!
             </p>
             <Image src={S1} alt="Jay" className="rounded-xl shadow-md w-[150px] flex-shrink-0" />
           </div>
         </header>
-
+      <p>Tool: <a 
+        style={{
+          color: '#2563EB',
+          textDecoration: 'underline',
+          fontStyle: 'italic',
+        }}
+        href="https://www.xe.com/currencyconverter/">Currency Converter</a> </p>
 
 
         <section className="bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden border border-white/20">

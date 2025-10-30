@@ -7,23 +7,27 @@ export default function Com() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8 flex flex-col items-center">
-      <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">Appreciate or Depreciate?</h1>
-      <div className="mb-8 text-center space-y-2 text-gray-600 ">
-        <p className="max-w-xl text-center">
-          Ask family member & friends about 2-3 things they recently bought.
+    <div className="min-h-screen bg-gray-50 p-8 flex flex-col items-left">
+      <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-left">Appreciate or Depreciate?</h1>
+      <div className="mb-8 text-left space-y-2 text-gray-600 ">
+        <p className="max-w-xl text-left">
+          Ask family members & friends about 2-3 items they recently bought (example: sneakers, phone, laptop, car).
         </p>
         <p>
           Guess if its current value has appreciated or depreciated since it was bought.
         </p>
         <p>
-          Guess if it will appreciate or depreciate in the next 1 year.
+          Guess if it will appreciate or depreciate in the next year.
         </p>
         <p>
-          Ask your family member to verify your guess. 
+          Ask your family member to verify your guess.
         </p>
         <p>
-          Here’s a sample table to record your answers.
+          Record your answers in a table as shown below.
+        </p>
+        <p>
+          Reflect on your learnings and record yourself presenting the table.
+          Share the recording with the teacher.
         </p>
       </div>
 

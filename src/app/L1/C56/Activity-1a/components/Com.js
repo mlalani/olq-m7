@@ -8,80 +8,86 @@ export default function Com() {
 
   const screens = [
     {
-      title: "So what are essential items?",
+      title: "What are essential items?",
       content: "",
       image: "",
       showNext: true
     },
     {
-      title: "Essential items are things we really need for daily life, like food, clothes, water, and a place to live.",
-      content: "So what are essential items?",
+      title: "Essential items are things we must have. For example, water, food, clothes.",
+      content: "What are essential items?",
       image: "",
       showNext: true
     },
     {
-      title: "We also learned about non-essential items, what are they?",
+      title: "What are non-essential items?",
       content: "",
       image: "",
       showNext: true
     },
     {
       title: "Non-essential items are things that are nice to have, but we can live without them. For example, toys, video games, or extra fancy clothes.",
-      content: "We also learned about non-essential items, what are they?",
+      content: "What are non-essential items?",
       image: "",
       showNext: true
     },
     {
-      title: "So what are healthy foods?",
+      title: "Which food choices are healthy?",
       content: "",
       image: "",
       showNext: true
     },
     {
-      title: "Healthy foods are foods that help our body grow strong and give us energy, like fruits, vegetables, milk, rice, and eggs.",
-      content: "So what are healthy foods?",
+      title: "Healthy food helps our body grow strong. It gives us energy. For example, fruits, protein bars.",
+      content: "Which food choices are healthy?",
       image: "",
       showNext: true
     },
     {
-      title: "We also learned about junk food, what are they?",
+      title: "Which food choices are unhealthy?",
       content: "",
       image: "",
       showNext: true
     },
     {
-      title: "Junk foods are foods that taste yummy but are not good for our health if we eat too much, like chips, candy, soda, and burgers.",
-      content: "We also learned about junk food, what are they?",
+      title: "Unhealthy or junk food tastes yummy and are special treats we can occasionally enjoy. For example, chips, candy, and soda.",
+      content: "Which food choices are unhealthy?",
       image: "",
       showNext: true
     },
     {
-      title: "While making a list, what items should one prioritize from essential, non-essential, healthy, and junk food?",
+      title: "Which items should be prioritized?",
       content: "",
       image: "",
       showNext: true
     },
     {
-      title: "One should prioritize essential items first, because we need them to live.",
-      content: "While making a list, what items should one prioritize from essential, non-essential, healthy, and junk food?",
+      title: "Essential over non-essential & Healthy over junk food",
+      content: "Which items should be prioritized?",
       image: "",
       showNext: true
     },
     {
-      title: "From food, one should choose healthy food more often because it keeps us strong and active.",
-      content: "While making a list, what items should one prioritize from essential, non-essential, healthy, and junk food?\n\nOne should prioritize essential items first, because we need them to live.",
+      title: "We should choose healthy food more often because it keeps us strong and active.",
+      content: "Which items should be prioritized?\n\nEssential over non-essential & Healthy over junk food",
+      image: "",
+      showNext: true
+    },
+    {
+      title: "We should choose healthy food more often because it keeps us strong and active.",
+      content: "Which items should be prioritized?\n\nEssential over non-essential & Healthy over junk food\n\nWe should prioritize essential items because we need such items to live.",
       image: "",
       showNext: true
     },
     {
       title: "Non-essential items can come later, if we have extra space or money.",
-      content: "While making a list, what items should one prioritize from essential, non-essential, healthy, and junk food?\n\nOne should prioritize essential items first, because we need them to live.\nFrom food, one should choose healthy food more often because it keeps us strong and active.",
+      content: "Which items should be prioritized?\n\nEssential over non-essential & Healthy over junk food\n\nWe should prioritize essential items because we need such items to live.\nWe should choose healthy food more often because it keeps us strong and active.",
       image: "",
       showNext: true
     },
     {
       title: "Junk food should be the last priority, and eaten only sometimes as a treat.",
-      content: "While making a list, what items should one prioritize from essential, non-essential, healthy, and junk food?\n\nOne should prioritize essential items first, because we need them to live.\nFrom food, one should choose healthy food more often because it keeps us strong and active.\nNon-essential items can come later, if we have extra space or money.",
+      content: "Which items should be prioritized?\n\nEssential over non-essential & Healthy over junk food\n\nWe should prioritize essential items because we need such items to live.\nWe should choose healthy food more often because it keeps us strong and active.\nNon-essential items can come later, if we have extra space or money.",
       image: "",
       showNext: false
     }
@@ -113,7 +119,7 @@ export default function Com() {
 
               {/* Content */}
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                He is going on a 2-day train ride to visit his grandma&apos;s in Sunnyville. The conductor tells Henry that his suitcase can only fit 10 things. Since it&apos;s a long trip, Henry will need all the essentials and healthy items with him for the long journey. He has made a big list of items but he is confused which items to take and which not to as he is allowed to carry only 10 items.
+                He is going to visit his grandma in Sunnyville. He can carry only the cabin luggage! So he needs to pick only the essential items so that everything fits into his luggage. Let's help Henry check his long list of items and select ten items he can carry.
               </p>
 
               {/* Next button */}

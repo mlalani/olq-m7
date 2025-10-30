@@ -9,7 +9,7 @@ const initialItems = [
   { name: "Real Estate"},
   { name: "Gold/Precious Metals"},
   { name: "Emergency Fund"},
-  { name: "Starting a Small Business"},
+  { name: "Recurring Deposit"},
 ];
 
 const answerKey = {
@@ -22,7 +22,7 @@ const answerKey = {
     "Term Deposit (FD)",
     "Real Estate",
     "Gold/Precious Metals",
-    "Starting a Small Business",
+    "Recurring Deposit",
     "Interday Trading", // If you want Interday Trading as long-term, add here
   ],
 };

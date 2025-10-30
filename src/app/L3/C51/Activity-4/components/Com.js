@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Com() {
   const [currency, setCurrency] = useState("INR");
@@ -22,6 +22,12 @@ export default function Com() {
     { bankName: "", chequeNo: "", qty: "", amount: "" },
     { bankName: "", chequeNo: "", qty: "", amount: "" }
   ]);
+  const [errors, setErrors] = useState({});
+  const [showSuccess, setShowSuccess] = useState(false);
+  const dateInputRefs = useRef([]);
+  const bankDateInputRefs = useRef([]);
+  const accountInputRefs = useRef([]);
+  const bankAccountInputRefs = useRef([]);
 
   const currencyConfig = {
     INR: { symbol: "₹", major: "Rupees" },
@@ -38,16 +44,50 @@ export default function Com() {
         const newAccountNumber = [...bankAccountNumber];
         newAccountNumber[index] = value;
         setBankAccountNumber(newAccountNumber);
+        
+        // Move to next input if value is entered and not the last input
+        if (value && index < bankAccountNumber.length - 1) {
+          const nextInput = bankAccountInputRefs.current[index + 1];
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
       } else {
         const newAccountNumber = [...accountNumber];
         newAccountNumber[index] = value;
         setAccountNumber(newAccountNumber);
+        
+        // Move to next input if value is entered and not the last input
+        if (value && index < accountNumber.length - 1) {
+          const nextInput = accountInputRefs.current[index + 1];
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
       }
     }
   };
 
   const handleAccountNumberKeyDown = (e, index, isBank = false) => {
-    if (e.key === 'Backspace' || e.key === 'Delete') {
+    // Handle backspace to move to previous input
+    if (e.key === 'Backspace' && !(isBank ? bankAccountNumber[index] : accountNumber[index]) && index > 0) {
+      e.preventDefault();
+      const prevInput = isBank ? bankAccountInputRefs.current[index - 1] : accountInputRefs.current[index - 1];
+      if (prevInput) {
+        prevInput.focus();
+        // Clear the previous input when moving back
+        if (isBank) {
+          const newAccountNumber = [...bankAccountNumber];
+          newAccountNumber[index - 1] = '';
+          setBankAccountNumber(newAccountNumber);
+        } else {
+          const newAccountNumber = [...accountNumber];
+          newAccountNumber[index - 1] = '';
+          setAccountNumber(newAccountNumber);
+        }
+      }
+    } else if (e.key === 'Delete') {
+      // Handle delete key normally
       if (isBank) {
         const newAccountNumber = [...bankAccountNumber];
         newAccountNumber[index] = "";
@@ -66,10 +106,47 @@ export default function Com() {
         const newDate = [...bankDate];
         newDate[index] = value;
         setBankDate(newDate);
+        
+        // Move to next input if value is entered and not the last input
+        if (value && index < bankDate.length - 1) {
+          const nextInput = bankDateInputRefs.current[index + 1];
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
       } else {
         const newDate = [...date];
         newDate[index] = value;
         setDate(newDate);
+        
+        // Move to next input if value is entered and not the last input
+        if (value && index < date.length - 1) {
+          const nextInput = dateInputRefs.current[index + 1];
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
+      }
+    }
+  };
+
+  const handleDateKeyDown = (index, e, isBank = false) => {
+    // Handle backspace to move to previous input
+    if (e.key === 'Backspace' && !(isBank ? bankDate[index] : date[index]) && index > 0) {
+      e.preventDefault();
+      const prevInput = isBank ? bankDateInputRefs.current[index - 1] : dateInputRefs.current[index - 1];
+      if (prevInput) {
+        prevInput.focus();
+        // Clear the previous input when moving back
+        if (isBank) {
+          const newDate = [...bankDate];
+          newDate[index - 1] = '';
+          setBankDate(newDate);
+        } else {
+          const newDate = [...date];
+          newDate[index - 1] = '';
+          setDate(newDate);
+        }
       }
     }
   };
@@ -96,9 +173,99 @@ export default function Com() {
   const customerTotal = calculateTotal(customerRows);
   const bankTotal = calculateTotal(bankRows);
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Check if account numbers match
+    if (accountNumber.join("") !== bankAccountNumber.join("")) {
+      newErrors.accountNumber = "Account numbers must match in both sections";
+    }
+
+    // Check if dates match
+    if (date.join("") !== bankDate.join("")) {
+      newErrors.date = "Dates must match in both sections";
+    }
+
+    // Check if account holder names match
+    if (accountHolderName !== bankAccountHolderName) {
+      newErrors.accountHolderName = "Account holder names must match in both sections";
+    }
+
+    // Check if amounts in words match
+    if (amountInWords !== bankAmountInWords) {
+      newErrors.amountInWords = "Amounts in words must match in both sections";
+    }
+
+    // Check if totals match
+    if (customerTotal !== bankTotal) {
+      newErrors.total = "Total amounts must match in both sections";
+    }
+
+    // Check required fields
+    if (!accountNumber.join("")) {
+      newErrors.accountNumber = newErrors.accountNumber || "Account number is required";
+    }
+    if (!date.join("")) {
+      newErrors.date = newErrors.date || "Date is required";
+    }
+    if (!accountHolderName) {
+      newErrors.accountHolderName = newErrors.accountHolderName || "Account holder name is required";
+    }
+    if (!amountInWords) {
+      newErrors.amountInWords = newErrors.amountInWords || "Amount in words is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
+        {/* Error Messages at the top */}
+        {Object.keys(errors).length > 0 && (
+          <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+            <h3 className="text-red-800 font-bold mb-2">Please fix the following errors:</h3>
+            <ul className="text-red-700 space-y-1">
+              {Object.entries(errors).map(([key, message]) => (
+                <li key={key} className="flex items-center gap-2">
+                  <span className="text-red-500">•</span>
+                  {message}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Success Message at the top */}
+        {showSuccess && (
+          <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
+            <div className="flex items-center gap-2">
+              <span className="text-green-500 text-xl">✓</span>
+              <span className="text-green-800 font-bold">Deposit submitted successfully!</span>
+            </div>
+          </div>
+        )}
+
+        {/* Submit Button at the top */}
+        <div className="mb-6 flex justify-center">
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+          >
+            Deposit Now
+          </button>
+        </div>
+
         <div className="mb-4 flex justify-end">
           <select
             value={currency}
@@ -131,10 +298,12 @@ export default function Com() {
                   {date.map((digit, index) => (
                     <input
                       key={index}
+                      ref={(el) => (dateInputRefs.current[index] = el)}
                       type="text"
                       maxLength="1"
                       value={digit}
                       onChange={(e) => handleDateChange(index, e.target.value)}
+                      onKeyDown={(e) => handleDateKeyDown(index, e)}
                       className="w-7 h-7 border border-gray-400 rounded text-center font-bold text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                       placeholder={index < 2 ? "D" : index < 4 ? "M" : "Y"}
                     />
@@ -147,6 +316,7 @@ export default function Com() {
                   {accountNumber.map((digit, index) => (
                     <input
                       key={index}
+                      ref={(el) => (accountInputRefs.current[index] = el)}
                       type="text"
                       maxLength="1"
                       value={digit}
@@ -281,10 +451,12 @@ export default function Com() {
                   {bankDate.map((digit, index) => (
                     <input
                       key={index}
+                      ref={(el) => (bankDateInputRefs.current[index] = el)}
                       type="text"
                       maxLength="1"
                       value={digit}
                       onChange={(e) => handleDateChange(index, e.target.value, true)}
+                      onKeyDown={(e) => handleDateKeyDown(index, e, true)}
                       className="w-7 h-7 border border-gray-400 rounded text-center font-bold text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                       placeholder={index < 2 ? "D" : index < 4 ? "M" : "Y"}
                     />
@@ -299,6 +471,7 @@ export default function Com() {
                 {bankAccountNumber.map((digit, index) => (
                   <input
                     key={index}
+                    ref={(el) => (bankAccountInputRefs.current[index] = el)}
                     type="text"
                     maxLength="1"
                     value={digit}

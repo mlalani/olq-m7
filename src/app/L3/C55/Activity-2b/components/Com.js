@@ -8,28 +8,31 @@ import S3 from "../assets/s3.jpeg";
 import S4 from "../assets/s4.jpeg"; 
 import S5 from "../assets/s5.jpeg"; 
 import S6 from "../assets/s6.jpeg"; 
+import S7 from "../assets/s7.jpeg"; 
 
 const images = {
-  Car: S1,
+  "Shoes": S1,
   House: S2,
   Laptop: S3,
   "Diamond Ring": S4,
   Bicycle: S5,
   "Rare Pokémon Card": S6,
+  "Gold": S7,
 };
 
 const initialItems = [
-  { name: "Car", img: images.Car },
+  { name: "Shoes", img: images.Shoes },
   { name: "House", img: images.House },
   { name: "Laptop", img: images.Laptop },
   { name: "Diamond Ring", img: images["Diamond Ring"] },
   { name: "Bicycle", img: images.Bicycle },
   { name: "Rare Pokémon Card", img: images["Rare Pokémon Card"] },
+  { name: "Gold", img: images.Gold },
 ];
 
 const answerKey = {
-  Appreciates: ["House", "Diamond Ring", "Rare Pokémon Card"],
-  Depreciates: ["Car", "Laptop", "Bicycle"],
+  Appreciates: ["House", "Diamond Ring", "Rare Pokémon Card", "Gold"],
+  Depreciates: ["Shoes", "Laptop", "Bicycle"],
 };
 
 export default function Com() {

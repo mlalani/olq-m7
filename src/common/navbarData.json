@@ -15,9 +15,13 @@
             }
         },
         "C54": {
-            "Activity 1": {
-                "link": "/L1/C54/Activity-1",
-                "name": "The Smart Shopper’s Basket"
+            "Activity 1a": {
+                "link": "/L1/C54/Activity-1a",
+                "name": "The Smart Shopper’s Basket I"
+            },
+            "Activity 1b": {
+                "link": "/L1/C54/Activity-1b",
+                "name": "The Smart Shopper’s Basket II"
             },
             "Activity 2": {
                 "link": "/L1/C54/Activity-2",
@@ -30,6 +34,10 @@
             "Activity 4": {
                 "link": "/L1/C54/Activity-4",
                 "name": "Birthday Party Planner"
+            },
+            "Post Class Activity": {
+                "link": "/L1/C54/PCA",
+                "name": "Receipt Reveal"
             }
         },
         "C55": {
@@ -45,13 +53,9 @@
                 "link": "/L1/C55/Activity-2",
                 "name": "Currency Match-Up Game"
             },
-            "Activity 3a": {
-                "link": "/L1/C55/Activity-3a",
+            "Activity 3": {
+                "link": "/L1/C55/Activity-3",
                 "name": "Currency Exchange I"
-            },
-            "Activity 3b": {
-                "link": "/L1/C55/Activity-3b",
-                "name": "Currency Exchange II"
             },
             "Activity 4a": {
                 "link": "/L1/C55/Activity-4a",
@@ -99,9 +103,13 @@
                 "link": "/L1/C56/Activity-4c",
                 "name": "International Shopper’s Journey"
             },
-            "Additional-Activity-b": {
-                "link": "/L1/C56/Additional-Activity-b",
-                "name": "Spend, Save & Share II"
+            "Additional-Activity": {
+                "link": "/L1/C56/Additional-Activity",
+                "name": "Spend, Save & Share"
+            },
+            "PCA":{
+                "link": "/L1/C56/PCA",
+                "name": "Shopping List"
             }
         }
     },
@@ -133,11 +141,15 @@
             },
             "Activity 4b": {
                 "link": "/L2/C51/Activity-4b",
-                "name": "Buffer rule"
+                "name": "Picnic Planner III"
             },
             "Activity 4c": {
                 "link": "/L2/C51/Activity-4c",
-                "name": "Picnic Planner III"
+                "name": "Buffer rule"
+            },
+            "Post Class Activity": {
+                "link": "/L2/C51/PCA",
+                "name": "My Home Shopping List"
             }
         },
         "C54": {
@@ -157,9 +169,17 @@
                 "link": "/L2/C54/Activity-2a",
                 "name": "Mini-Market Money Math I"
             },
-            "Activity 4": {
-                "link": "/L2/C54/Activity-4",
-                "name": "The Investor’s Choice"
+            "Activity 3": {
+                "link": "/L2/C54/Activity-3",
+                "name": "Build Your Own Business Plan"
+            },
+            "Activity 4a": {
+                "link": "/L2/C54/Activity-4a",
+                "name": "The Investor’s Choice I"
+            },
+            "Activity 4b": {
+                "link": "/L2/C54/Activity-4b",
+                "name": "The Investor’s Choice II"
             },
             "PCA": {
                 "link": "/L2/C54/PCA",
@@ -179,9 +199,13 @@
                 "link": "/L2/C55/Activity-1b",
                 "name": "Currency exchange"
             },
-            "Activity 2": {
-                "link": "/L2/C55/Activity-2",
-                "name": "Global Price Detective"
+            "Activity 2a": {
+                "link": "/L2/C55/Activity-2a",
+                "name": "Global Price Detective I"
+            },
+            "Activity 2b": {
+                "link": "/L2/C55/Activity-2b",
+                "name": "Global Price Detective II"
             },
             "Activity 3c": {
                 "link": "/L2/C55/Activity-3c",
@@ -232,10 +256,14 @@
             "Activity 2b": {
                 "link": "/L3/C51/Activity-2b",
                 "name": "Account Match-Up II"
-            },            
-            "Activity 3d": {
-                "link": "/L3/C51/Activity-3d",
-                "name": "Cheque Check IV"
+            },         
+            "Activity 3a": {
+                "link": "/L3/C51/Activity-3a",
+                "name": "Cheque Check I"
+            },
+            "Activity 3b": {
+                "link": "/L3/C51/Activity-3b",
+                "name": "Cheque Check II"
             },
             "Activity 4": {
                 "link": "/L3/C51/Activity-4",
@@ -273,7 +301,7 @@
             },
             "Activity 4": {
                 "link": "/L3/C54/Activity-4",
-                "name": "Mini Stock Market"
+                "name": "Owl Mind Stock Exchange"
             },
             "Additional Activity": {
                 "link": "/L3/C54/Additional-Activity",

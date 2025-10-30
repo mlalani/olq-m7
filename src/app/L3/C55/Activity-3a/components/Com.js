@@ -11,10 +11,8 @@ const screens = [
           The GreenWave Community Club
         </h2>
         <p className="text-lg text-slate-700 text-center mb-6">
-          The GreenWave Community Club worked together to clean up a very dirty beach.<br />
-          Their efforts impressed the city, and they won a cash award.<br />
-          Now, the club members are deciding: Where should they invest the money so that money is safe and keeps growing?<br />
-          They have listed some short-term and long-term investment plans, but they aren’t sure which belongs in which category.
+          The GreenWave Community Club works together to clean up a very dirty beach.<br />
+          Their efforts impressed the city, so they won a cash award. Now, the members are trying to decide: Where should they invest the money so that it’s safe and continues to grow? They have listed some short-term and long-term investment plans, but they aren’t sure which belongs in what category.
         </p>
         <div className="flex justify-center mb-6">
           <Image src={S1} alt="GreenWave Club Beach Cleanup" className="rounded-xl shadow w-[350px] h-auto" />
@@ -22,44 +20,66 @@ const screens = [
       </>
     ),
   },
+  // Short-term investment question
   {
     content: (
       <>
         <h3 className="text-xl font-bold text-blue-700 mb-4 text-center">
-          Do you know what short-term investment plans mean?
+          What is a short-term investment plan?
         </h3>
       </>
     ),
   },
+  // Short-term simple definition
   {
     content: (
       <>
         <div className="bg-blue-50 p-6 rounded-lg shadow text-center">
-          <h3 className="text-xl font-bold text-green-700 mb-2">Fun Definition:</h3>
+          <h3 className="text-xl font-bold text-green-700 mb-2">Simple Definition:</h3>
           <p className="text-lg mb-2">A quick-access treasure chest: money you can use anytime you need it!</p>
-          <h3 className="text-xl font-bold text-blue-700 mb-2">Definition:</h3>
-          <p className="text-lg">Investments where you can access your money quickly, usually within a year.</p>
         </div>
       </>
     ),
   },
+  // Short-term full definition
+  {
+    content: (
+      <>
+        <div className="bg-blue-50 p-6 rounded-lg shadow text-center">
+          <h3 className="text-xl font-bold text-blue-700 mb-2">Definition:</h3>
+          <p className="text-lg">Investments where you can access your money any time easily.</p>
+        </div>
+      </>
+    ),
+  },
+  // Long-term investment question
   {
     content: (
       <>
         <h3 className="text-xl font-bold text-blue-700 mb-4 text-center">
-          Do you know what long-term investment plans mean?
+          What is a long-term investment plan?
         </h3>
       </>
     ),
   },
+  // Long-term simple definition
   {
     content: (
       <>
         <div className="bg-green-50 p-6 rounded-lg shadow text-center">
-          <h3 className="text-xl font-bold text-green-700 mb-2">Fun Definition:</h3>
-          <p className="text-lg mb-2">A magic growth garden: money you plant now and watch it grow over years!</p>
+          <h3 className="text-xl font-bold text-green-700 mb-2">Simple Definition:</h3>
+          <p className="text-lg mb-2">It’s like a magic growth garden: money you plant now to watch it grow over the years!</p>
+        </div>
+      </>
+    ),
+  },
+  // Long-term full definition
+  {
+    content: (
+      <>
+        <div className="bg-green-50 p-6 rounded-lg shadow text-center">
           <h3 className="text-xl font-bold text-blue-700 mb-2">Definition:</h3>
-          <p className="text-lg">Investments where money is kept for a long time to grow in value.</p>
+          <p className="text-lg">Investments where money is stored for a long time to grow in value.</p>
         </div>
       </>
     ),

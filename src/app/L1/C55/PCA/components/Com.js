@@ -13,7 +13,7 @@ export default function Com() {
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
-           Currency Hunt
+            Currency hunt!
           </h1>
         </header>
 
@@ -24,10 +24,11 @@ export default function Com() {
             <div>
               <h3 className="font-semibold text-lg mb-2">What to do:</h3>
               <ul className="space-y-2 list-disc list-inside">
-                <li>Search online for 5 different currency symbols</li>
-                <li>Draw each symbol neatly in your notebook</li>
-                <li>Find the currency name and country</li>
-                <li>Check the conversion rate to your home currency</li>
+                <li>Search online (with the help of an elder at home) and find 5 different currency symbols (like $, £, €, ¥, ₹). </li>
+                <li>Draw each symbol neatly in your notebook or on paper.</li>
+                <li>Next to each symbol, write the name of that currency and the country it belongs to.</li>
+                <li>Mention the conversion rate as compared to your home country currency like: “1 [Home Currency Name] = ___ [That Currency]”</li>
+                <li>Checkout the sample example in the post class activity"</li>
               </ul>
             </div>
 

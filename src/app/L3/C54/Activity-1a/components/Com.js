@@ -9,28 +9,27 @@ import S4 from "../assets/s4.png";
 
 const questions = [
   {
-    question: "Can you guess if all the currencies are used for the same thing (buying/selling), why does each country use a different currency?",
-    answer: "Because each country has its own economy, government, and history. A currency represents a country’s financial system, so every nation has its own money.",
-    example: "Imagine every country is like a different team in a big sports tournament. Each team wears its own special jersey to show who they are. In the same way, every country has its own money to show it belongs to them and works best for their people. That’s why countries use different currencies!",
+    question: "Can you buy/sell in any currency? Why does each country use a different currency?",
+    answer: "Yes, we can buy/sell in any currency. While buying online, the website converts the currency into their choice of currency based on their native country and popular currency of the time. A currency represents a country’s financial system, so every nation has its own money.",
+    example: "Imagine countries as different teams in cultural festivals. Each team shows its own performance to represent cultural values. In the same way, every country has its own money to represent its economy.",
     image: S1
   },
   {
-    question: "If every country has its own money, how do people pay when they visit another country? Or, when one country buys something from another country, how do they pay for it?",
-    answer: "They convert the currency of their country into the currency of the country they are visiting. The value of one currency compared to another is called the exchange rate. Exchange rate: It tells us how much one country’s money is worth in another country.",
-    example: "Imagine you have 1 AED (United Arab Emirates dirham) and you want to buy something in Japan. If the exchange rate says 1 AED = ¥40, you can exchange your 1 AED for ¥40 to spend in Japan!",
+    question: "If every country has its own currency, how do people make purchases when they visit another country?",
+    answer: "They convert the currency of their country into the currency of the country they are visiting. The value of a currency compared to another is called the exchange rate. The exchange rate tells us how much a country’s money is worth in another country.",
+    example: "If you have 5 USD, and you want to buy something in INR. You need to know the exchange rate from USD to INR. If the exchange rate says 1 USD = 88 INR,  you can exchange 5 USD and get INR 440 [5 x 88] to spend!",
     image: S2
   },
   {
-    question: "Can you guess which currency is globally used by countries for exchange? And why?",
-    answer: "The US Dollar (USD). Because the US has one of the largest economies, and many countries trust it for trade.",
-    example: "Think of the US Dollar as the 'common language' of money. Just like English is spoken worldwide to help people from different countries communicate, the US Dollar helps countries trade and exchange money easily.",
-    image: S3
+    question: "What is the strongest currency in the world?",
+    answer: "The Kuwaiti Dinar is the strongest currency in the world.",
+    image: S4
   },
   {
-    question: "Do you know how to calculate the exchange value?",
-    answer: "We multiply the amount of foreign money by the exchange rate of that currency into our local currency.",
-    example: "If you have $10 (US Dollars) and the exchange rate is 1 USD = ¥7.3, then $10 × 7.3 = ¥73. So, $10 is equal to ¥73 in Chinese Yuan!",
-    image: S4
+    question: "Which currency is globally used by countries for exchange? Why?",
+    answer: "The US Dollar (USD) because the US has one of the largest economies, and many countries trust it for trade.",
+    example: "Think of the US Dollar as the 'common language' of money. Just like English is spoken by people from different countries to communicate globally, the US Dollar helps countries trade and exchange money easily.",
+    image: S3
   },
   {
     question: "Do you know which is the currency of your country?",
@@ -72,7 +71,7 @@ export default function Com() {
           <div className="mb-6">
             <p className="text-green-800 font-semibold text-lg mb-4">{current.answer}</p>
             {/* Render image only with example */}
-            {current.example && current.image && (
+            {current.image && (
               <div className="flex justify-center mb-6">
                 <Image
                   src={current.image}

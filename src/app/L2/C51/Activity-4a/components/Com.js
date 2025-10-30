@@ -8,8 +8,8 @@ export default function Com() {
 
   const steps = [
     {
-      title: "The three friends: Mia, Arjun, and Rohan, are excited about their long weekend trip. They've packed their bags and are ready to go. But there's a problem! Because they waited too long to book 1 day before the travel fares have increased.",
-      subtitle: "Arjun checks his phone: \"Oh no! Because it's a long weekend and we delayed booking, the travel prices have increased!\"",
+      title: "Three friends: Mia, Arjun, and Rohan are excited to go to picnic. They’ve packed their bags and are ready to go. But there’s a problem! Because they waited too long to book i.e. just a day before, the travel fares have now increased!",
+      subtitle: "Oh no! Because it’s a long weekend and we delayed booking, the travel prices have increased",
       showPrices: true,
       showImage: true
     },
@@ -36,8 +36,8 @@ export default function Com() {
   ];
 
   const step1Content = {
-    title: "The three friends: Mia, Arjun, and Rohan, are excited about their long weekend trip. They've packed their bags and are ready to go. But there's a problem! Because they waited too long to book 1 day before the travel fares have increased.",
-    subtitle: "Arjun checks his phone: \"Oh no! Because it's a long weekend and we delayed booking, the travel prices have increased!\""
+    title: "Three friends: Mia, Arjun, and Rohan are excited to go to picnic. They’ve packed their bags and are ready to go. But there’s a problem! Because they waited too long to book i.e. just a day before, the travel fares have now increased!",
+    subtitle: "Oh no! Because it’s a long weekend and we delayed booking, the travel prices have increased"
   };
 
   const currentStep = steps[step];
@@ -59,7 +59,7 @@ export default function Com() {
                 <Image
                   src={S1}
                   alt="Travel scenario"
-                  className="rounded-xl w-[300px] h-[300px] object-cover"
+                  className="rounded-xl w-[450px]"
                 />
               </div>
             )}
@@ -74,22 +74,22 @@ export default function Com() {
               <div className="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
                 <span className="font-semibold text-gray-700">Bus Fare:</span>
                 <div className="text-right">
-                  <span className="text-gray-500 line-through mr-2">$15</span>
-                  <span className="text-red-600 font-bold">$30</span>
+                  <span className="text-gray-500 mr-2">was $15 -</span>
+                  <span className="text-red-600 font-bold">now $30</span>
                 </div>
               </div>
               <div className="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
                 <span className="font-semibold text-gray-700">Train Fare:</span>
                 <div className="text-right">
-                  <span className="text-gray-500 line-through mr-2">$20</span>
-                  <span className="text-red-600 font-bold">$32</span>
+                  <span className="text-gray-500 mr-2">was $20 -</span>
+                  <span className="text-red-600 font-bold">now $32</span>
                 </div>
               </div>
               <div className="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
                 <span className="font-semibold text-gray-700">Taxi Fare:</span>
                 <div className="text-right">
-                  <span className="text-gray-500 line-through mr-2">$35</span>
-                  <span className="text-red-600 font-bold">$40</span>
+                  <span className="text-gray-500 mr-2">was $35 -</span>
+                  <span className="text-red-600 font-bold">now $40</span>
                 </div>
               </div>
             </div>

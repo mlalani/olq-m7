@@ -197,7 +197,7 @@ export default function Com() {
                 onChange={(e) => setPlace(e.target.value)}
               >
                 <option value="">Select a place...</option>
-                <option value="Hersheypark">Hersheypark</option>
+                <option value="Disneyland Park in USA">Disneyland Park in USA</option>
                 <option value="Shanghai Disneyland">Shanghai Disneyland</option>
               </select>
             </div>
@@ -230,7 +230,7 @@ export default function Com() {
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="block text-md font-medium mb-[10px]">My homeland currency (code)</label>
+              <label className="block text-md font-medium mb-[10px]">My homeland currency</label>
               <select
                 className="mt-1 w-full rounded-xl border px-3 py-2"
                 value={homeCurrency}
@@ -267,7 +267,7 @@ export default function Com() {
             </div>
             <div>
               <label className="block text-md font-medium mb-[10px]">
-                Visiting country currency (code)
+                Visiting country currency
               </label>
               <select
                 className="mt-1 w-full rounded-xl border px-3 py-2"

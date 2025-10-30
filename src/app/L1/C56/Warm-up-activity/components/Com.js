@@ -4,7 +4,6 @@ import Image from "next/image";
 import S1 from "../assets/s1.jpg";
 import S2 from "../assets/s2.jpg";
 import S3 from "../assets/s3.jpg";
-import S4 from "../assets/s4.jpg";
 import S5 from "../assets/s5.jpg";
 import S6 from "../assets/s6.jpg";
 import S7 from "../assets/s7.jpg";
@@ -15,7 +14,6 @@ const obj = [
   { image: S1, label: "Water bottle" },
   { image: S2, label: "Bed" },
   { image: S3, label: "Television" },
-  { image: S4, label: "Apple" },
   { image: S5, label: "Clothes" },
   { image: S6, label: "Sandwich" },
   { image: S7, label: "Bicycle" },
@@ -40,12 +38,20 @@ export default function Com() {
         />
         <div className="flex justify-center w-full items-center">        
           {step < obj.length - 1 ? (
-            <button
-              onClick={() => setStep(step + 1)}
-              className="px-6 py-2 bg-blue-600 text-white rounded-xl text-lg font-semibold hover:bg-blue-700 transition"
-            >
-              Next
-            </button>
+              <>
+                <button
+                  onClick={() => setStep(step + 1)}
+                  className="px-6 py-2 bg-green-600 text-white rounded-xl text-lg font-semibold hover:bg-green-700 transition mr-4"
+                >
+                  Take
+                </button>
+                <button
+                  onClick={() => setStep(step + 1)}
+                  className="px-6 py-2 bg-red-600 text-white rounded-xl text-lg font-semibold hover:bg-red-700 transition"
+                >
+                  Drop
+                </button>
+              </>
           ) : (
             <span className="text-green-600 text-lg font-semibold">
               {/* All done! */}

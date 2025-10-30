@@ -27,6 +27,8 @@ export default function Com() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+        <h1 className="text-3xl font-bold text-blue-700 mb-4">Guess my country</h1>
+        <p className="text-lg text-gray-800 mb-8">Identify the country to which this coin belongs?</p>
         <Image
           src={obj[step]}
           alt={`Image ${step + 1}`}

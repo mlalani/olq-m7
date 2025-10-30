@@ -66,9 +66,9 @@ export default function Com() {
         </h1>
 
         <p className="text-lg text-gray-700 max-w-2xl text-xl text-center mb-6">
-        Now, Milo’s shopping cart is finally sorted, he now knows which things are essential, which are non-essential, which are healthy foods, and which are junk foods. But suddenly, Milo looks at the grocery bill.
+        Milo’s shopping cart is finally sorted by essential vs. non-essential, and healthy vs. junk. But when Milo notices the grocery bill.
         <br />
-        He scratches his head and says: “Oh no! I don’t know how much money I spent on each group. Did I spend more on healthy food or junk food? Did I spend too much on non-essential things?”           
+        He scratches his head and says: “Oh no! I don’t know how much money I spent on each group. Did I spend more on healthy food or junk food? Did I spend too much on non-essential things?
         </p>
 
         <Image

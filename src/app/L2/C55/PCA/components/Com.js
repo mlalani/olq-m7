@@ -37,11 +37,34 @@ export default function GroceryTracker() {
     <div className="min-h-screen bg-slate-50 flex flex-col items-center py-10 px-4">
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow p-8 border border-slate-200">
         <h1 className="text-3xl font-bold text-slate-800 mb-4 text-center">
-          International Grocery Tracker
+          Identify pricing in diverse countries!
         </h1>
-        <p className="mb-6 text-slate-600 text-center text-xl">
-          Write down the things you buy for your home every day, like groceries, milk, bread, eggs, and other essentials. Compare prices in your country and two others.
-        </p>
+
+        <ul className="list-disc list-inside mb-6">
+          <li className="mb-2 text-slate-700">
+            Write what you buy for your home every day: groceries, milk, bread, eggs, and other essentials.
+          </li>
+          <li className="mb-2 text-slate-700">
+            Make a table similar to what’s give below
+          </li>
+          <li className="mb-2 text-slate-700">
+            Mention the price of each item in your country and an observation note: Milk is more expensive in Spain.
+          </li>
+          <li className="mb-2 text-slate-700">
+            Search (or estimate) the price of the same items in two different countries.
+            You can use : google, amazon website or ChatGPT
+          </li>
+          <li className="mb-2 text-slate-700">
+            Do this for a couple of days (max 3).
+          </li>
+          <li className="mb-2 text-slate-700">
+            Add up the total cost for each country.
+          </li>
+          <li className="mb-2 text-slate-700">
+            Compare the total to see if it would have cost you more or less in another country.
+          </li>
+        </ul>
+
         <div className="overflow-x-auto">
           <table className="w-full border border-slate-300 rounded-lg text-lg">
             <thead className="bg-slate-100 text-slate-700">
@@ -74,7 +97,8 @@ export default function GroceryTracker() {
           </table>
         </div>
         <p className="mt-6 text-slate-600 text-center">
-          Look up (or estimate) the price of the same items in two different countries using Google, Amazon, or ChatGPT. Do this for 2–3 days and compare the totals!
+          Reflect on how prices vary in different countries.
+          Please record yourself describing the various items and cost. Narrate your learning and share it with the teacher.
         </p>
       </div>
     </div>

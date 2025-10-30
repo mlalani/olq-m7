@@ -23,11 +23,11 @@ const DATA = [
         <li>Water bottle – $2</li>
         <li>Sandwich – $7</li>
       </ul>
-      <p class="mt-2">But she is confused which one will be the right picks for her.</p>
+      <p class="mt-2">Help Ria to choose what food to take!</p>
       </div>
     `,
     questions: [
-      "What items should Ria pick to stay within $15?",
+      " What items should Ria pick to stay within the budget of $15?",
       "Do your choices cover all needs (fruits, snacks, juice)?",
       "Was this a smart budget choice? Why/why not?"
     ],
@@ -50,7 +50,7 @@ const DATA = [
     questions: [
       "If Jay picks caramel popcorn ($6) + chocolate bar ($5) + donut ($4), is he within budget?",
       "Are these healthy choices?",
-      "What healthier combination could he choose instead with $12?",
+      "What are some healthier combinations he can choose instead with $12?",
     ],
   },
   {
@@ -60,15 +60,16 @@ const DATA = [
     <div class='text-lg'>
       <p>Leena had <strong>$10</strong> to spend at the school canteen. She picked:</p>
       <ul class="list-disc ml-6 mt-2">
+        <li>Sandwich – $4</li>
         <li>Pizza slice – $6</li>
         <li>Cupcake – $5</li>
       </ul>
-      <p class="mt-2">Oh no! That’s $11, which is over her budget.</p>
+      <p class="mt-2">Oh no! That’s $15, which is over her budget.</p>
       </div>
     `,
     questions: [
       "Did Leena go over budget? By how much?",
-      "What could she do differently to stay under $10?",
+      "What can she do differently to stay under $10?",
       "Which item might she swap or skip?",
     ],
   },

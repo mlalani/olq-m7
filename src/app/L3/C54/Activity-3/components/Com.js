@@ -10,26 +10,27 @@ const stockEducation = {
   Stock: {
     heading: "Stock",
     definition: "A stock is like owning a tiny piece of a company.",
-    example: "Imagine your favorite toy company (like LEGO). If you buy 1 stock, it’s like owning one LEGO brick of the whole LEGO castle (company). The more bricks you collect, the bigger your part in the castle!",
+    example: "Imagine your favorite toy company (like LEGO). If you buy a single stock, it’s like owning a LEGO brick of the whole LEGO castle (company). The more bricks you have, the bigger your share in the castle!",
     image: S1
   },
   StockExchange: {
     heading: "Stock Exchange",
-    definition: "It’s the marketplace where people buy and sell stocks.",
-    example: "Think of it like a school fair. There are stalls (companies), and kids (investors) can trade items (stocks). Everyone comes together in one place to exchange.",
+    definition: "What it means: It’s the marketplace where people buy and sell stocks.",
+    example: "Think of it like a school fair with stalls (companies), where kids (investors) can trade items (stocks). Everyone comes together in one place to exchange.",
     image: S2
   },
   HowItWorks: {
     heading: "How It Works",
     explanation: "The price of a stock can go up or down depending on how well the company is doing and how many people want it.",
-    example: "Imagine a roller coaster. If the toy company releases a super-cool toy, lots of kids want stocks → the ride goes up (price rises). If the toy breaks easily and no one likes it, fewer kids want stocks → the ride goes down (price falls).",
+    example: "Imagine if the toy company releases a super-cool toy, lots of kids would want stocks. Why? Because the item is sellable in numbers. But if the toy isn’t durable and no one likes it, how do you think it would play out? Fewer kids would want stocks.",
     image: S3
   },
   HowStocksHelp: {
-    heading: "How Stocks Help in Money Growing",
-    explanation: "When you buy a stock, it’s like owning a small piece of a company. If the company does well, the company’s value increases, and so does the stock price.",
-    example: "If you buy a stock at $10 and later the price goes up to $20, you can sell it and make a profit of $10.",
-    image: S4
+    heading: "How Stocks Help in Growing Money",
+    explanation: "When you buy a stock, it’s like owning a small piece of a company. If the company does well, people would love the company and the value of the company would increase.By selling more products or launching new items, the company shows it’s doing well. When the company’s value goes up, the price of its stock also increases.",
+    example: "If you buy a stock at $10 and later the price goes up to $20, you can sell it and make a profit of $10. ",
+    image: S4,
+    a1:"That’s why it is important to research and think cautiously before investing in stocks. Wise choices can help grow money over time!"
   }
 };
 
@@ -58,6 +59,11 @@ export default function Com() {
         <div className="bg-slate-700 rounded-xl p-4 text-lg">
           <strong>Example:</strong> {current.example}
         </div>
+        {current.a1 && (
+          <div className="bg-slate-700 rounded-xl p-4 text-lg">
+            {current.a1}
+          </div>
+        )}
         <div className="flex justify-end mt-6">
           {step < keys.length - 1 ? (
             <button

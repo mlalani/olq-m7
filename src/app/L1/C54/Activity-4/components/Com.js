@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
+import introImg from "../assets/s1.png";
 
 const BUDGET = 30;
 
@@ -20,6 +22,7 @@ const CATALOG = [
 export default function BirthdayPlanner() {
   const [cart, setCart] = useState({});
   const [message, setMessage] = useState(null);
+  const [showGame, setShowGame] = useState(false);
 
   const itemsInCart = useMemo(() => {
     return Object.entries(cart)
@@ -82,10 +85,43 @@ export default function BirthdayPlanner() {
     });
   };
 
+  // 🚀 Screen 1 (Intro)
+  if (!showGame) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 via-yellow-50 to-rose-50 p-6">
+        <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
+          Mila&apos;s Birthday Party Planning
+        </h1>
+        
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <p className="text-lg text-gray-700 text-center">
+              Mila is super excited to throw the best birthday party ever for her friends. But the problem is that Lila only has $30 to spend. She wants a yummy cake, some balloons, some juice, some chips, and maybe even return gifts for friends. But she knows she won&apos;t be able to buy everything with the money she has got!
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <Image
+              src={introImg}
+              alt="Mila's Birthday Party"
+              className="w-[400px] object-contain rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+        
+        <button
+          onClick={() => setShowGame(true)}
+          className="px-8 py-4 bg-pink-500 text-white text-xl rounded-xl shadow-lg hover:bg-pink-600 transition"
+        >
+          Next
+        </button>
+      </div>
+    );
+  }
+
+  // 🚀 Screen 2 (Main Game)
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-yellow-50 to-rose-50">
-      {/* Top bar */}
-      <h1> note :: a image screen will come before this</h1>
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <div className="flex items-center justify-between">
@@ -96,11 +132,13 @@ export default function BirthdayPlanner() {
           </div>
 
           <div
-            className={`flex items-center gap-2 rounded-2xl px-4 py-2 text-sm md:text-base font-semibold shadow ${overBudget ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
+            className={`flex items-center gap-3 rounded-2xl px-6 py-4 text-lg md:text-xl font-bold shadow-lg ${overBudget ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
               }`}
           >
-            <span className="text-3xl">💰</span> {/* Bigger wallet icon */}
-            Balance: ${balance >= 0 ? balance : 0} / ${BUDGET}
+            <span className="text-4xl">💰</span> {/* Bigger wallet icon */}
+            <span className="text-xl md:text-xl font-extrabold">
+              Balance: ${balance >= 0 ? balance : 0} / ${BUDGET}
+            </span>
           </div>
         </div>
 

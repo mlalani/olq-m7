@@ -5,33 +5,36 @@ import Image from 'next/image';
 import S1 from "../assets/s1.png";
 import S2 from "../assets/s2.png";
 import S3 from "../assets/s3.png";
+import T1 from "../assets/t1.png";
+import T2 from "../assets/t2.png";
+
 
 const travelOptions = [
-  { id: 1, name: "Bus Tickets (for 3)", price: 15, time: 40, icon: "🚌"  },
-  { id: 2, name: "Train Tickets (for 3)", price: 20, time: 30, icon: "🚂"  },
-  { id: 3, name: "Taxi Ride (for 3)", price: 35, time: 20, icon: "🚕"  }
+  { id: 1, name: "Bus Tickets (for 3)", price: 8, time: 25, icon: "🚌"  },
+  { id: 2, name: "Train Tickets (for 3)", price: 12, time: 20, icon: "🚂"  },
+  { id: 3, name: "Taxi Ride (for 3)", price: 18, time: 15, icon: "🚕"  }
 ];
 
 const foodOptions = [
-  { id: 4, name: "Burger Pack (3)", price: 18, time: 30, icon: "🍔"  },
-  { id: 5, name: "Sandwich Pack (3)", price: 12, time: 20, icon: "🥪"  },
-  { id: 6, name: "Fruit Basket (for 3)", price: 8, time: 15, icon: "🍎"  },
-  { id: 7, name: "Pizza (3 small)", price: 22, time: 35, icon: "🍕"  },
-  { id: 8, name: "Hotdog Pack (3)", price: 16, time: 25, icon: "🌭"  }
+  { id: 4, name: "Burger Pack (3)", price: 10, time: 20, icon: "🍔"  },
+  { id: 5, name: "Sandwich Pack (3)", price: 7, time: 15, icon: "🥪"  },
+  { id: 6, name: "Fruit Basket (for 3)", price: 5, time: 10, icon: "🍎"  },
+  { id: 7, name: "Pizza (3 small)", price: 12, time: 25, icon: "🍕"  },
+  { id: 8, name: "Hotdog Pack (3)", price: 9, time: 18, icon: "🌭"  }
 ];
 
 const activityOptions = [
-  { id: 10, name: "Kids' Movie Tickets (3)", price: 30, time: 120, icon: "🎬"  },
-  { id: 11, name: "Nature Trail Pass (3)", price: 28, time: 150, icon: "🥾"  },
-  { id: 12, name: "Playground Fun (3)", price: 20, time: 60, icon: "🎠"  }
+  { id: 10, name: "Joy ride pass (3)", price: 15, time: 45, icon: "🎬", image: T1  },
+  { id: 11, name: "Nature Trail Pass (3)", price: 12, time: 50, icon: "🥾"  },
+  { id: 12, name: "Waterpark pass (3)", price: 10, time: 30, icon: "🎠", image: T2  }
 ];
 
 const allOptions = [...travelOptions, ...foodOptions, ...activityOptions];
 
 export default function Com() {
   const [currentScreen, setCurrentScreen] = useState(0);
-  const [budget, setBudget] = useState(130);
-  const [timeLeft, setTimeLeft] = useState(360);
+  const [budget, setBudget] = useState(100);
+  const [timeLeft, setTimeLeft] = useState(180);
   const [cart, setCart] = useState([]);
   const [warning, setWarning] = useState("");
   const [showResults, setShowResults] = useState(false);
@@ -102,18 +105,18 @@ export default function Com() {
     const totalTime = getTotalTime();
     const { hasTravel, hasFood, hasActivity } = checkRequirements();
     
-    if (totalCost > 130) {
-      setWarning("⚠️ Over Budget! You've spent $" + totalCost + " but only have $130. Please remove some items.");
+    if (totalCost > 100) {
+      setWarning("⚠️ Over Budget! You've spent $" + totalCost + " but only have $100. Please remove some items.");
       return;
     }
     
-    if (totalTime > 360) {
-      setWarning("⚠️ Over Time Limit! You've used " + Math.floor(totalTime/60) + " hours " + (totalTime%60) + " minutes but only have 6 hours. Please remove some items.");
+    if (totalTime > 180) {
+      setWarning("⚠️ Over Time Limit! You've used " + Math.floor(totalTime/60) + " hours " + (totalTime%60) + " minutes but only have 3 hours. Please remove some items.");
       return;
     }
     
     if (!hasTravel) {
-      setWarning("⚠️ Missing Requirements! You need to select one travel option.");
+      setWarning("⚠️ Missing Requirements! You need to select Select one Travel option.");
       return;
     }
     
@@ -131,8 +134,8 @@ export default function Com() {
   };
 
   const resetGame = () => {
-    setBudget(130);
-    setTimeLeft(360);
+    setBudget(100);
+    setTimeLeft(180);
     setCart([]);
     setCurrentScreen(0);
     setShowResults(false);
@@ -152,8 +155,8 @@ export default function Com() {
   if (showResults) {
     const totalCost = getTotalCost();
     const totalTime = getTotalTime();
-    const remainingBudget = 130 - totalCost;
-    const remainingTime = 360 - totalTime;
+    const remainingBudget = 100 - totalCost;
+    const remainingTime = 180 - totalTime;
     
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-8">
@@ -177,7 +180,19 @@ export default function Com() {
                 {cart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <span className="text-2xl">{item.icon}</span>
+                      {item.image ? (
+                        <div className="w-8 h-8 flex items-center justify-center">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-2xl">{item.icon}</span>
+                      )}
                       <span className="font-medium">{item.name}</span>
                     </div>
                     <div className="text-right">
@@ -196,15 +211,15 @@ export default function Com() {
                 <div className="space-y-2">
                   <div className="flex items-center space-x-3 p-2 bg-green-50 rounded-lg">
                     <span className="text-xl">✅</span>
-                    <span>One Travel Option</span>
+                    <span>Select one Travel option</span>
                   </div>
                   <div className="flex items-center space-x-3 p-2 bg-green-50 rounded-lg">
                     <span className="text-xl">✅</span>
-                    <span>Two to Three Food Items</span>
+                    <span>Choose two to three food options</span>
                   </div>
                   <div className="flex items-center space-x-3 p-2 bg-green-50 rounded-lg">
                     <span className="text-xl">✅</span>
-                    <span>One to Two Activity Tickets</span>
+                    <span>Choose one or two park activities</span>
                   </div>
                 </div>
               </div>
@@ -227,7 +242,7 @@ export default function Com() {
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
                   <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
                   <p>They&apos;re already packing their bags.</p>
-                  <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
+                  <p>But they need help planning the picnic. They have a budget of $100 and a total of 3 hours to enjoy their day. So budget your time!</p>
                 </div>
                 <div className="flex justify-center space-x-8">
                   <div className="text-center">
@@ -272,7 +287,7 @@ export default function Com() {
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
                   <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
                   <p>They&apos;re already packing their bags.</p>
-                  <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
+                  <p>But they need help planning the picnic. They have a budget of $100 and a total of 3 hours to enjoy their day. So budget your time!</p>
                 </div>
                 <div className="flex justify-center space-x-8">
                   <div className="text-center">
@@ -318,7 +333,7 @@ export default function Com() {
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
                   <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
                   <p>They&apos;re already packing their bags.</p>
-                  <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
+                  <p>But they need help planning the picnic. They have a budget of $100 and a total of 3 hours to enjoy their day. So budget your time!</p>
                 </div>
                 <div className="flex justify-center space-x-8">
                   <div className="text-center">
@@ -365,7 +380,7 @@ export default function Com() {
                 <div className="text-xl text-gray-700 space-y-4 mb-8">
                   <p>Three best friends: Mia, Arjun, and Leo, are super excited. They&apos;ve decided to go for a picnic in the park!</p>
                   <p>They&apos;re already packing their bags.</p>
-                  <p>But they need help planning the picnic. They have a budget of $130 and a total of 6 hours to enjoy their day.</p>
+                  <p>But they need help planning the picnic. They have a budget of $100 and a total of 3 hours to enjoy their day. So budget your time!</p>
                 </div>
                 <div className="flex justify-center space-x-8">
                   <div className="text-center">
@@ -438,15 +453,15 @@ export default function Com() {
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2">
                     <span className="text-blue-500">•</span>
-                    <span className="text-lg">One Travel Option</span>
+                    <span className="text-lg">Select one Travel option</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-green-500">•</span>
-                    <span className="text-lg">Two to Three Food Items</span>
+                    <span className="text-lg">Choose two to three food options</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-purple-500">•</span>
-                    <span className="text-lg">One to Two Activity Tickets</span>
+                    <span className="text-lg">Choose one or two park activities</span>
                   </div>
                 </div>
               </div>
@@ -466,9 +481,9 @@ export default function Com() {
                         <div className="flex items-center space-x-3">
                           <span className="text-2xl">{item.icon}</span>
                           <div>
-                            <p className="font-medium text-sm">{item.name}</p>
-                            <p className="text-lg font-bold text-blue-600">${item.price}</p>
-                            <p className="text-sm text-gray-600">⏱{formatTime(item.time)}</p>
+                            <p className="font-medium text-md">{item.name}</p>
+                            <p className="text-xl font-bold text-blue-600">${item.price}</p>
+                            <p className="text-md text-gray-600">⏱{' '}{formatTime(item.time)}</p>
                           </div>
                         </div>
                         <button
@@ -493,9 +508,9 @@ export default function Com() {
                         <div className="flex items-center space-x-2">
                           <span className="text-xl">{item.icon}</span>
                           <div className="flex-1">
-                            <p className="font-medium text-sm">{item.name}</p>
-                            <p className="text-lg font-bold text-blue-600">${item.price}</p>
-                            <p className="text-xs text-gray-600">⏱{formatTime(item.time)}</p>
+                            <p className="font-medium text-md">{item.name}</p>
+                            <p className="text-xl font-bold text-blue-600">${item.price}</p>
+                            <p className="text-md text-gray-600">⏱{' '}{formatTime(item.time)}</p>
                           </div>
                         </div>
                         <button
@@ -518,11 +533,23 @@ export default function Com() {
                     <div key={item.id} className="border-2 border-gray-200 bg-white rounded-lg p-3">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                          <span className="text-2xl">{item.icon}</span>
+                          {item.image ? (
+                            <div className="w-8 h-8 flex items-center justify-center">
+                              <Image 
+                                src={item.image} 
+                                alt={item.name}
+                                width={32}
+                                height={32}
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <span className="text-2xl">{item.icon}</span>
+                          )}
                           <div>
-                            <p className="font-medium text-sm">{item.name}</p>
-                            <p className="text-lg font-bold text-blue-600">${item.price}</p>
-                            <p className="text-sm text-gray-600">⏱{formatTime(item.time)}</p>
+                            <p className="font-medium text-md">{item.name}</p>
+                            <p className="text-xl font-bold text-blue-600">${item.price}</p>
+                            <p className="text-md text-gray-600">⏱{' '}{formatTime(item.time)}</p>
                           </div>
                         </div>
                         <button
@@ -549,7 +576,19 @@ export default function Com() {
                 cart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-2">
-                      <span className="text-lg">{item.icon}</span>
+                      {item.image ? (
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name}
+                            width={24}
+                            height={24}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-lg">{item.icon}</span>
+                      )}
                       <div>
                         <p className="font-medium text-xs">{item.name}</p>
                         <p className="text-gray-600 text-xs">${item.price} • {formatTime(item.time)}</p>

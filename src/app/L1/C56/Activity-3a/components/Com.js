@@ -8,16 +8,20 @@ export default function Com() {
 
   const screens = [
     {
-      question: "But how do we save money?",
-      answer: "One way to save money is to spend it wisely. That means:\n1. Buy what we really need.\n2. Avoid spending too much on things which we want.\nThis way, we can save money and later we can buy bigger or more important things."
+      question:"What is saving?",
+      answer:"Saving is when we keep our money safe for later, so we can buy something big or use it for important things."
     },
     {
-      question: "Can you explain what a need is, with an example?",
-      answer: "Needs are things we really must have to stay healthy and safe.\nExample: Food, water, and clothes are needed because they help us every day."
+      question: "How do we save money?",
+      answer: "To save money, spend it wisely. This means:\nBuy what we really need.\nAvoid spending too much on fancy things which we may not really require, but are wants or special treats.\nThis way, we can save money now and buy bigger or more important things later\nBefore we play our Saving Superstar game, let’s recall:"
     },
     {
-      question: "Can you explain what a want is, with an example?",
-      answer: "Wants are things that are fun or nice, but we can still live without them.\nExample: Toys, video games, or candy are wanted because they are fun, but not something we need to stay healthy and safe."
+      question: "What is a need?",
+      answer: "Needs are things we really must have to stay healthy and safe. \nExample: Food, water, and clothes."
+    },
+    {
+      question: "What is a want?",
+      answer: "Wants are things that are fun or nice, but we can still live without them.\nExample: toys, video games."
     }
   ];
 

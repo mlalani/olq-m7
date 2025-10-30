@@ -9,50 +9,43 @@ export default function Com() {
     {
       id: "water-bottle",
       choice: "Water Bottle",
-      reason: "Keeps you hydrated during school",
-      outcome: "Saves money, keeps you healthy, and always have clean water",
+      reason: "We pack a water bottle because it hydrates during schooltime.",
+      outcome: "It helps save money, stay healthy, and drink hygienic water.",
       price: "$5"
     },
     {
       id: "school-bag",
       choice: "School Bag",
-      reason: "Needed for carrying books & supplies",
-      outcome: "Good investment, useful every day",
+      reason: "We get a school bag for carrying books & supplies",
+      outcome: "Good investment, as it’s useful every day.",
       price: "$12"
     },
     {
       id: "toy-car",
       choice: "Toy Car",
-      reason: "Fun but not useful at school",
-      outcome: "Temporary fun, but not useful at school",
+      reason: "We buy it for fun, not because it’s useful ",
+      outcome: "Temporary fun, but not useful",
       price: "$10"
-    },
-    {
-      id: "watch",
-      choice: "Watch",
-      reason: "Helps track time & stay punctual, but costly",
-      outcome: "Helps you know the time & useful for planning activities",
-      price: "$19"
     },
     {
       id: "lunchbox",
       choice: "Lunchbox",
-      reason: "Needed for carrying food to school",
-      outcome: "Keeps food fresh & helps you eat homemade healthy food every day",
+      reason: "We buy a lunchbox to carry food",
+      outcome: "Keeps your food fresh, and carries healthy homemade food everyday",
       price: "$8"
     },
     {
       id: "coloring-book",
       choice: "Coloring Book",
-      reason: "Fun & relaxing activity after school",
-      outcome: "Creative fun, but not essential for school",
+      reason: "We buy a coloring book because it’s nice to be creative and do a relaxing but attentive activity after school",
+      outcome: "Creative and improved focus, but not considered essential for homework",
       price: "$6"
     },
     {
       id: "soft-toy",
       choice: "Soft Toy",
-      reason: "Fun toy to play with",
-      outcome: "Comforting, but not useful at school",
+      reason: "We buy a soft toy to play",
+      outcome: "Playful, but not useful",
       price: "$12"
     }
   ];
@@ -74,6 +67,9 @@ export default function Com() {
           <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
             Henry&apos;s Shopping Choices
           </h1>
+          <div className="mb-4 text-xl italic text-gray-700 text-center font-semibold">
+            Instructions: Select items that are useful for Henry
+          </div>
           
 
           <div className="overflow-x-auto">
@@ -84,14 +80,12 @@ export default function Com() {
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Choice</th>
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Reason</th>
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Outcome</th>
-                  <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Price</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {tableData.map((item) => {
                   const isSelected = selectedItems.find(selected => selected.id === item.id);
                   const isDisabled = !isSelected && selectedItems.length >= 4;
-                  
                   return (
                     <tr key={item.id} className={`${isSelected ? 'bg-blue-50' : 'hover:bg-gray-50'} ${isDisabled ? 'opacity-50' : ''}`}>
                       <td className="px-6 py-4">
@@ -111,9 +105,6 @@ export default function Com() {
                       </td>
                       <td className="px-6 py-4 text-lg text-gray-700">
                         {item.outcome}
-                      </td>
-                      <td className="px-6 py-4 text-lg font-semibold text-gray-900">
-                        {item.price}
                       </td>
                     </tr>
                   );

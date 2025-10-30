@@ -11,7 +11,7 @@ export default function Com() {
 
   const screens = [
     {
-      title: "Henry is back from Sunnyville and his summer holidays are finished and school starts next week. Hence he is out with his parents to shop for useful things for school.",
+      title: "After the holidays in Sunnyville, Henry is ready to start school next week. So he goes shopping with his parents. But here’s the challenge: Henry can only buy 4 items! So he must choose wisely and think about the value for money.",
       content: "",
       image: S1,
       showNext: true
@@ -23,7 +23,7 @@ export default function Com() {
       showNext: true
     },
     {
-      title: "It means picking things that are really useful and worth what they cost, not just fun for a little while, but things that will help Maya at school.",
+      title: "It means picking things that are really useful and worth their cost. It also means avoiding fun items.",
       content: "What does value for money mean?",
       image: "",
       showNext: true
@@ -33,44 +33,38 @@ export default function Com() {
   const tableData = [
     {
       choice: "Water Bottle",
-      reason: "Keeps you hydrated during school",
-      outcome: "Saves money, keeps you healthy, and always have clean water",
+      reason: "We pack a water bottle because it hydrates during schooltime.",
+      outcome: "It helps save money, stay healthy, and drink hygienic water.",
       price: "$5"
     },
     {
       choice: "School Bag",
-      reason: "Needed for carrying books & supplies",
-      outcome: "Good investment, useful every day",
+      reason: "We get a school bag for carrying books & supplies",
+      outcome: "Good investment, as it’s useful every day.",
       price: "$12"
     },
     {
       choice: "Toy Car",
-      reason: "Fun but not useful at school",
-      outcome: "Temporary fun, but not useful at school",
+      reason: "We buy it for fun, not because it’s useful ",
+      outcome: "Temporary fun, but not useful",
       price: "$10"
     },
     {
-      choice: "Watch",
-      reason: "Helps track time & stay punctual, but costly",
-      outcome: "Helps you know the time & useful for planning activities",
-      price: "$19"
-    },
-    {
       choice: "Lunchbox",
-      reason: "Needed for carrying food to school",
-      outcome: "Keeps food fresh & helps you eat homemade healthy food every day",
+      reason: "We buy a lunchbox to carry food",
+      outcome: "Keeps your food fresh, and carries healthy homemade food everyday",
       price: "$8"
     },
     {
       choice: "Coloring Book",
-      reason: "Fun & relaxing activity after school",
-      outcome: "Creative fun, but not essential for school",
+      reason: "We buy a coloring book because it’s nice to be creative and do a relaxing but attentive activity after school",
+      outcome: "Creative and improved focus, but not considered essential for homework",
       price: "$6"
     },
     {
       choice: "Soft Toy",
-      reason: "Fun toy to play with",
-      outcome: "Comforting, but not useful at school",
+      reason: "We buy a soft toy to play",
+      outcome: "Playful, but not useful",
       price: "$12"
     }
   ];
@@ -169,7 +163,6 @@ export default function Com() {
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Choice</th>
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Reason</th>
                   <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Outcome</th>
-                  <th className="px-6 py-4 text-left text-lg font-semibold text-gray-700">Price</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -190,9 +183,6 @@ export default function Com() {
                       </td>
                       <td className="px-6 py-4 text-lg text-gray-700">
                         {shouldShowDetails ? item.outcome : (shouldShowChoice ? "" : "???")}
-                      </td>
-                      <td className="px-6 py-4 text-lg font-semibold text-gray-900">
-                        {shouldShowDetails ? item.price : (shouldShowChoice ? "" : "???")}
                       </td>
                     </tr>
                   );

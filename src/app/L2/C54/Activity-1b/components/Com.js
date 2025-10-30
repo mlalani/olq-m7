@@ -30,6 +30,14 @@ export default function Com() {
     <div className="min-h-screen bg-gradient-to-b from-teal-50 via-yellow-50 to-orange-50 p-8">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-3xl shadow-2xl border border-gray-200">
         <h1 className="text-4xl font-extrabold text-teal-700 mb-6 tracking-tight">Profit & Loss</h1>
+        <div className="mb-8 p-4 bg-yellow-50 rounded-xl border border-yellow-200 text-lg text-gray-800">
+          <strong>Instructions:</strong><br />
+          Check CP and SP.<br />
+          Check difference between selling price and cost price. <strong>SP − CP</strong>.<br />
+          If the result is positive, select <strong>Profit</strong>.<br />
+          If the result is negative, select <strong>Loss</strong>.<br />
+          If the result is zero, select <strong>Breakeven</strong>.
+        </div>
         <table className="w-full table-auto border-separate border-spacing-y-2">
           <thead>
             <tr className="bg-teal-100 text-teal-900">

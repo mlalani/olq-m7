@@ -3,36 +3,52 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import S1 from "../assets/s1.png";
+import S2 from "../assets/s2.png";
+import S3 from "../assets/s3.png";
+import S4 from "../assets/s4.png";
+import S5 from "../assets/s5.png";
 
 const shopItems = [
   { id: 1, name: "Rice (5 kg)", price: 15, icon: "🍚", essential: true },
   { id: 2, name: "Chips", price: 4, icon: "🍟", essential: false },
-  { id: 3, name: "Mixed Vegetables (1 packet)", price: 8, icon: "🥬", essential: true },
-  { id: 4, name: "Oil (1 liter)", price: 12, icon: "🛢️", essential: true },
+  { id: 3, name: "Mixed Vegetables (2 packets)", price: 16, icon: "🥬", image: S2, essential: true },
+  { id: 4, name: "Oil (1 liter)", price: 12, icon: "🛢️", image: S3, essential: true },
   { id: 5, name: "Cookies", price: 6, icon: "🍪", essential: false },
   { id: 6, name: "Lemons (10 pieces)", price: 6, icon: "🍋", essential: true },
   { id: 7, name: "Sugar (1 kg)", price: 4, icon: "🍯", essential: true },
-  { id: 8, name: "Pizza", price: 18, icon: "🍕", essential: false },
+  { id: 8, name: "Donets", price: 8, icon: "🍩", essential: false },
   { id: 9, name: "Chocolate", price: 5, icon: "🍫", essential: false },
   { id: 10, name: "Ice Cream", price: 8, icon: "🍦", essential: false },
   { id: 11, name: "Juice Box", price: 3, icon: "🧃", essential: false },
   { id: 12, name: "Candy", price: 2, icon: "🍭", essential: false },
   { id: 13, name: "Soda", price: 4, icon: "🥤", essential: false },
   { id: 14, name: "Cake", price: 12, icon: "🍰", essential: false },
-  { id: 15, name: "Water (2 liters)", price: 3, icon: "🫙", essential: true },
+  { id: 15, name: "Water (2 liters)", price: 3, icon: "🫙", image: S5, essential: true },
+  { id: 16, name: "Milk (1 liter)", price: 4, icon: "🥛", essential: true },
+  { id: 17, name: "Noodles (2 packets)", price: 6, icon: "🍜", essential: true },
+  { id: 18, name: "Onions (1 kg)", price: 3, icon: "🧅", essential: true },
+  { id: 19, name: "Garlic (1 packet)", price: 2, icon: "🧄", essential: true },
+  { id: 20, name: "Soy Sauce", price: 5, icon: "🫗", image: S4, essential: true },
+  { id: 21, name: "Tacos", price: 8, icon: "🌮", essential: false },
 ];
 
 const requiredEssentials = [
   "Rice (5 kg)",
-  "Mixed Vegetables (1 packet)", 
+  "Mixed Vegetables (2 packets)", 
   "Oil (1 liter)",
   "Lemons (10 pieces)",
   "Sugar (1 kg)",
-  "Water (2 liters)"
+  "Water (2 liters)",
+  "Milk (1 liter)",
+  "Chocolate",
+  "Noodles (2 packets)",
+  "Onions (1 kg)",
+  "Garlic (1 packet)",
+  "Soy Sauce"
 ];
 
 export default function Com() {
-  const [budget, setBudget] = useState(60);
+  const [budget, setBudget] = useState(100);
   const [cart, setCart] = useState([]);
   const [showStart, setShowStart] = useState(true);
   const [showResults, setShowResults] = useState(false);
@@ -90,8 +106,8 @@ export default function Com() {
     const totalCost = getTotalCost();
     const hasAllEssentials = checkEssentialItems();
     
-    if (totalCost > 60) {
-      setWarning("⚠️ Over Budget! You've spent $" + totalCost + " but only have $60. Please remove some items.");
+    if (totalCost > 100) {
+      setWarning("⚠️ Over Budget! You've spent $" + totalCost + " but only have $100. Please remove some items.");
       return;
     }
     
@@ -107,7 +123,7 @@ export default function Com() {
   };
 
   const resetGame = () => {
-    setBudget(60);
+    setBudget(100);
     setCart([]);
     setShowStart(true);
     setShowResults(false);
@@ -121,8 +137,8 @@ export default function Com() {
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="text-lg text-gray-700 space-y-4 text-left max-w-3xl mx-auto">
               <p>Meet Leo, a curious 9-year-old who dreams of becoming a chef.</p>
-              <p>One sunny afternoon, Chef Marco from the local food cart calls and says: &apos;Leo, I&apos;m short on time! Can you grab my groceries from the supermarket?</p>
-              <p>Today&apos;s menu has to be ready for the customers. The list is all mixed up! Some items are essential for today&apos;s menu, while others are just extras. You only have $60 to spend.</p>
+              <p>On a sunny afternoon, Chef Marco from the local food cart calls and says: ‘Leo, I’m short on time! Can you grab my groceries from the supermarket?</p>
+              <p>Today’s menu has to be ready for the customers. The list is all mixed up! Some items are essential for today’s menu, while others are just extras. But you only have $100 to spend. First, buy the essentials. If there’s money left, you can add a few extras!’</p>
             </div>
             <br />
             <Image 
@@ -147,7 +163,7 @@ export default function Com() {
   if (showResults) {
     const hasAllEssentials = checkEssentialItems();
     const totalCost = getTotalCost();
-    const remainingBudget = 60 - totalCost;
+    const remainingBudget = 100 - totalCost;
     
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-8">
@@ -172,7 +188,19 @@ export default function Com() {
                 {cart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <span className="text-2xl">{item.icon}</span>
+                      {item.image ? (
+                        <div className="w-8 h-8 flex items-center justify-center">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-2xl">{item.icon}</span>
+                      )}
                       <span className="font-medium">{item.name}</span>
                     </div>
                     <div className="text-right">
@@ -187,7 +215,7 @@ export default function Com() {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Today&apos;s Menu Requirements</h2>
               <div className="space-y-2">
-                <p className="text-lg font-semibold text-orange-600 mb-4">Veggie Rice Bowl + Lemonade</p>
+                <p className="text-lg font-semibold text-orange-600 mb-2">Veggie Rice Bowl + Lemonade + Chocolate Milk Shake and Hakka Noodles</p>
                 <p className="text-lg font-semibold text-green-600 mb-2">Required Essentials:</p>
                 {requiredEssentials.map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 p-2 bg-green-50 rounded-lg">
@@ -223,7 +251,7 @@ export default function Com() {
             <div className="mt-4">
               <h3 className="text-lg font-bold text-gray-800 mb-3">Today&apos;s Menu</h3>
               <div className="bg-gray-50 rounded-lg p-3 mb-3">
-                <p className="font-semibold text-orange-600 mb-2">Veggie Rice Bowl + Lemonade</p>
+                <p className="font-semibold text-orange-600 mb-2">Veggie Rice Bowl + Lemonade + Chocolate Milk Shake and Hakka Noodles</p>
                 <p className="text-sm text-gray-600 mb-3">Required Essentials:</p>
                 <div className="space-y-1">
                   {requiredEssentials.map((item, index) => (
@@ -244,7 +272,19 @@ export default function Com() {
                 <div key={item.id} className="border-2 border-gray-200 bg-white rounded-lg p-3">
                   <div className="flex flex-col space-y-2">
                     <div className="flex items-center space-x-2">
-                      <span className="text-xl">{item.icon}</span>
+                      {item.image ? (
+                        <div className="w-8 h-8 flex items-center justify-center">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-xl">{item.icon}</span>
+                      )}
                       <div className="flex-1">
                         <p className="font-medium text-sm">{item.name}</p>
                         <p className="text-lg font-bold text-blue-600">${item.price}</p>
@@ -282,7 +322,19 @@ export default function Com() {
                 cart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <span className="text-xl">{item.icon}</span>
+                      {item.image ? (
+                        <div className="w-6 h-6 flex items-center justify-center">
+                          <Image 
+                            src={item.image} 
+                            alt={item.name}
+                            width={24}
+                            height={24}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <span className="text-xl">{item.icon}</span>
+                      )}
                       <div>
                         <p className="font-medium text-sm">{item.name}</p>
                         <p className="text-gray-600 text-sm">${item.price} × {item.quantity}</p>

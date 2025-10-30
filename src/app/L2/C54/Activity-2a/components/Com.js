@@ -9,19 +9,16 @@ const screens = [
     content: (
       <>
         <p className="mb-4 text-xl text-gray-700">
-          There is a town called Sunnyville that is having a Festival Market Day. Lots of kids set up small stalls to sell things: ice cream, lemonade, books, snacks, balloons, fruit, and even a mini arcade booth!
+          The town of Sunnyville is hosting a Festival Market. Kids are invited to set up small stalls to sell things: ice cream, lemonade, books, snacks, balloons, fruit, and even a mini arcade booth!
         </p>
         <p className="mb-4 text-xl text-gray-700">
           Each stall has some costs (what they spend) and revenue (what they earn).
         </p>
         <p className="mb-4 text-xl text-gray-700">
-          Mia the Market Manager. Her job is to figure out: <br />
+          Mia the Market Manager wants to find out: <br />
           Who made a profit? <br />
           Who faced a loss? <br />
           Who had the best return on investment (ROI)?
-        </p>
-        <p className="mb-6 text-xl text-gray-700">
-          But since Mia is new to the job, she is finding it difficult to do this on her own.
         </p>
         <Image
           src={S1}
@@ -46,9 +43,9 @@ const screens = [
   {
     content: (
       <>
-        <p className="mb-6 text-xl text-gray-700">
-          You have $10. If you spend it on a video game or toy that you enjoy for 10 days, that’s a good ROI because your $10 gives you lots of value and fun over time.<br /><br />
-          But if you spend the same $10 on snacks that are gone in 5 minutes, that’s a bad ROI because the money didn’t last or give long-term value.
+        <p className="mb-6 text-xl text-gray-700">          
+          Max has $10. If he spends it on a toy that enjoys playing repeatedly for several days, it’s a good ROI. That’s because $10 gives him a lot of value over time. <br /><br />
+          But if he spends the same $10 on a 2 min arcade game, that’s a bad ROI, as there is no long-term value.
         </p>
       </>
     ),
@@ -57,10 +54,10 @@ const screens = [
     content: (
       <>
         <p className="mb-6 text-xl text-gray-700">
-          You invest $100 in a small online shop. After selling items, you earn $150.<br /><br />
-          Profit = $150 – $100 = $50<br />
-          ROI = (Profit ÷ Investment) × 100<br />
-          ROI = (50 ÷ 100) × 100 = 50%<br /><br />
+          Ron invests $100 in setting up a website to sell products online. After selling items, he earns $150. <br /><br />
+          Profit = 150 – 100 = 50 <br />
+          ROI = (Profit ÷ Investment) × 100 <br />
+          ROI = (50/100) × 100 = 50% <br /><br />
           So, your ROI is 50%, which means the business is successful.
         </p>
       </>

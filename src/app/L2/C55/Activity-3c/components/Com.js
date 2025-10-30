@@ -100,8 +100,7 @@ export default function Com() {
       doc.text(`Price at Home: ${shoppingHomePrice || "-"} ${homeCurrency}`, 10, 110);
       doc.text(`Price There: ${shoppingVisitPrice || "-"} ${visitingCurrency}`, 10, 118);
     }
-    doc.text(`Total (Visiting Currency): ${format(totalVisiting)} ${visitingCurrency}`, 10, 126);
-    doc.text(`Total (Home Currency): ${format(totalHome)} ${homeCurrency}`, 10, 134);
+    doc.text(`You will need a total of ${format(totalHome)} ${homeCurrency} for the travel`, 10, 126);
     doc.save("travel-prep-currency-pack.pdf");
   };
 
@@ -187,20 +186,20 @@ export default function Com() {
       {/* Filler & Place Picker */}
       <section className="mx-auto max-w-5xl px-4 pb-4">
         <div className="rounded-2xl bg-slate-800 p-6 shadow border border-slate-900">
-          <div className="mt-2 grid gap-4 sm:grid-cols-2">
+          <div className="mt-2">
             <div>
               <label className="block text-md font-medium mb-[10px]">Place you want to visit</label>
               <select
                 className="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 value={place}
-                onChange={(e) => setPlace(e.target.value)}
+                onChange={(e) => {setPlace(e.target.value); setVisitingCountry(e.target.value.includes("USA") ? "USA" : "China")}}
               >
                 <option value="">Select a place...</option>
-                <option value="Hersheypark">Hersheypark</option>
-                <option value="Shanghai Disneyland">Shanghai Disneyland</option>
+                <option value="Legoland California USA">Legoland California, USA</option>
+                <option value="Legoland Shanghai China">Legoland Shanghai, China</option>
               </select>
             </div>
-            <div>
+            {/* <div>
               <label className="block text-md font-medium mb-[10px]">
                 {place ? `${place}` : "Selected place"} is in which country?
               </label>
@@ -213,7 +212,7 @@ export default function Com() {
                 <option value="USA">USA</option>
                 <option value="China">China</option>
               </select>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -229,7 +228,7 @@ export default function Com() {
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="block text-md font-medium mb-[10px]">My homeland currency (code)</label>
+              <label className="block text-md font-medium mb-[10px]">My homeland currency</label>
               <select
                 className="mt-1 w-full rounded-xl border px-3 py-2"
                 value={homeCurrency}
@@ -266,7 +265,7 @@ export default function Com() {
             </div>
             <div>
               <label className="block text-md font-medium mb-[10px]">
-                Visiting country currency (code)
+                Visiting country currency
               </label>
               <select
                 className="mt-1 w-full rounded-xl border px-3 py-2"
@@ -280,7 +279,7 @@ export default function Com() {
             </div>
           </div>
 
-<br />
+          <br />
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
@@ -317,6 +316,15 @@ export default function Com() {
 
       {/* Research – Food */}
       <section className="mx-auto max-w-5xl px-4 pb-4">
+        <div className="rounded-2xl bg-slate-800 p-6 mb-4 shadow border border-slate-900">
+          <a
+            style={{
+              textDecoration: 'underline',
+              fontStyle: 'italic',
+            }}
+            href="https://chatgpt.com/">ChatGPT</a>
+        </div>
+
         <div className="rounded-2xl bg-slate-800 p-6 shadow border border-slate-900">
           <h2 className="text-xl font-semibold">Research Cost of Food</h2>
           <p className="mt-1 ">

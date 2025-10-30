@@ -11,14 +11,30 @@ const screens = [
     content: (
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Bank Accounts</h2>
-        <div className="text-lg text-gray-700 space-y-4">
-          <p>Think of it like choosing the right kind of money box:</p>
-          <div className="space-y-2">
-            <p>1. One box is for money you use every day.</p>
-            <p>2. Another box is for saving money for the future.</p>
-            <p>3. And another helps you build up money little by little.</p>
+        <div className="text-lg text-gray-700 space-y-6">
+          <p>Think of bank as choosing the right kind of money jar:</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 text-center">
+              <div className="text-4xl mb-3">💰</div>
+              <h3 className="font-semibold text-blue-800 mb-2">Everyday Money</h3>
+              <p className="text-md text-blue-700">A jar for everyday money</p>
+            </div>
+            
+            <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4 text-center">
+              <div className="text-4xl mb-3">🏦</div>
+              <h3 className="font-semibold text-green-800 mb-2">Future Savings</h3>
+              <p className="text-md text-green-700">Another jar saving money for the future</p>
+            </div>
+            
+            <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4 text-center">
+              <div className="text-4xl mb-3">📈</div>
+              <h3 className="font-semibold text-purple-800 mb-2">Building Wealth</h3>
+              <p className="text-md text-purple-700">Finally, the last jar to build up some money</p>
+            </div>
           </div>
-          <p className="mt-6">In the banking world, these money boxes are called accounts. There are many types of bank accounts, but today we will explore a few of them!</p>
+          
+          <p className="mt-6">In the banking world, these money jars are called accounts. There are many types of bank accounts, but today we will explore only a few of them!</p>
         </div>
       </div>
     )
@@ -29,7 +45,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Mr. Everyday – Savings Account</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Savings Account is like a flexible money box. You can put in money, earn some interest, and take it out whenever you need.</p>
+          <p><strong>Definition:</strong> A Savings Account is like a flexible money jar. You can put in money, earn some interest, and withdraw it whenever you need. </p>
           <div className="flex justify-start">
             <Image
               src={S1}
@@ -47,7 +63,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Mr. Everyday – Savings Account</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Savings Account is like a flexible money box. You can put in money, earn some interest, and take it out whenever you need.</p>
+          <p><strong>Definition:</strong> A Savings Account is like a flexible money jar. You can put in money, earn some interest, and withdraw it whenever you need. </p>
           <div className="flex justify-start">
             <Image
               src={S1}
@@ -55,7 +71,8 @@ const screens = [
               className="rounded-xl w-[400px] object-contain"
             />
           </div>
-          <p className="mt-4 p-4 bg-blue-50 rounded-lg">Interest is like a thank-you gift from the bank for keeping your money with them. And it is given by the bank</p>
+          <p className="mt-4 p-4 bg-blue-50 rounded-lg">Interest is like a reward the bank gives you for protecting money with them. The reward is decided by a percentage.
+          </p>
         </div>
       </div>
     )
@@ -66,7 +83,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Mr. Everyday – Savings Account</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Savings Account is like a flexible money box. You can put in money, earn some interest, and take it out whenever you need.</p>
+          <p><strong>Definition:</strong> A Savings Account is like a flexible money jar. You can put in money, earn some interest, and withdraw it whenever you need. </p>
           <div className="flex justify-start">
             <Image
               src={S1}
@@ -75,10 +92,10 @@ const screens = [
             />
           </div>
           <div className="mt-4 p-4 bg-blue-50 rounded-lg space-y-2">
-            <p>Interest is like a thank-you gift from the bank for keeping your money with them. And it is given by the bank</p>
+            <p>Interest is like a reward the bank gives you for protecting money with them. The reward is decided by a percentage.</p>
             <p>If you keep $100 in your account, the bank might give you a few extra dollars every year, like $3 or $4.</p>
             <p>Interest is like a reward the bank gives you for keeping money with them. The reward is decided by a percentage.</p>
-            <p>For example, if the bank says 4%, and you keep $100 in the bank, you will get $4 as interest.</p>
+            <p>For example, let’s say you have $1,000 in your savings account, and the bank offers 4% interest per year. After one year, the bank will give you an extra $40 - so your total money becomes $1,040!</p>
           </div>
         </div>
       </div>
@@ -88,7 +105,7 @@ const screens = [
     type: "why_interest",
     content: (
       <div className="text-left">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Why do you think banks give this interest?</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Why do you think banks give interest?</h2>
         <div className="text-lg text-gray-700 space-y-4">
         </div>
       </div>
@@ -98,9 +115,9 @@ const screens = [
     type: "why_interest_answer",
     content: (
       <div className="text-left">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Why do you think banks give this interest?</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Why do you think banks give interest?</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p className="mt-4 p-4 bg-green-50 rounded-lg">Because the bank uses your money to give loans to other people, and they share a tiny part of that money with you.</p>
+          <p className="mt-4 p-4 bg-green-50 rounded-lg">Because the bank uses your money to give loans to other people, and they share a tiny amount of that money with you.</p>
         </div>
       </div>
     )
@@ -122,7 +139,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Captain Lock – Term Deposit (FD)</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Term Deposit is when you keep money in the bank for a fixed time, like 1 year or 5 years. You earn more interest from the savings account, but you can&apos;t use it before the time ends.</p>
+          <p><strong>Definition:</strong> A Term Deposit is when you store money in the bank for a fixed period of time, like a year or five years. You earn more interest from the savings account, but you won’t be able to use it before it’s time.</p>
           <div className="flex justify-start">
             <Image
               src={S2}
@@ -151,7 +168,7 @@ const screens = [
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Little Builder – Recurring Deposit</h2>
         <div className="text-lg text-gray-700 space-y-4">
-          <p><strong>Definition:</strong> A Recurring Deposit is like a money-building plan. You put in a small fixed amount every month for a set time, and it grows with interest. Perfect for long-term goals.</p>
+          <p><strong>Definition:</strong> A Recurring Deposit is like a money-building plan. You put in a small, fixed amount every month for a set period of time, and it grows with interest. Perfect for long-term goals.</p>
           <div className="flex justify-start">
             <Image
               src={S3}

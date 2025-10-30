@@ -4,20 +4,38 @@ import { useState, useEffect } from "react";
 const SCREENS = [
   {
     id: 1,
-    title: "It's a weekend and you need $100 for an emergency.",
+    title: "It's the weekend and you need $100 for something urgent.",
     answer: "ATM",
     showImage: false
   },
   {
     id: 2,
-    title: "You have paid the school fee, but the school hasn't received it, and you can't resolve this issue on call with the bank. Where should you go?",
+    title: "You have paid the school fee, but the school hasn't received it yet! Despite calling the branch, you are not able to resolve this issue. Where should you go?",
     answer: "Branch",
     showImage: false
   },
   {
     id: 3,
-    title: "You want to send money to your friend",
+    title: "You want to send money to your father.",
     answer: "Online",
+    showImage: false
+  },
+  {
+    id: 4,
+    title: "You need to pay your mobile or electricity bill quickly before the due date.",
+    answer: "Online",
+    showImage: false
+  },
+  {
+    id: 5,
+    title: "Max is thinking of buying a new car and wants to learn about loan options.",
+    answer: "Branch",
+    showImage: false
+  },
+  {
+    id: 6,
+    title: "Rohit is out shopping and realises, he has no cash left in your wallet.",
+    answer: ["ATM", "Online"],
     showImage: false
   }
 ];
@@ -41,7 +59,9 @@ export default function Com() {
     if (quizCompleted || currentScreen >= SCREENS.length) return;
     
     setSelectedAnswer(answer);
-    const correct = answer === currentScreenData.answer;
+    const correct = Array.isArray(currentScreenData.answer) 
+      ? currentScreenData.answer.includes(answer)
+      : answer === currentScreenData.answer;
     setIsCorrect(correct);
     setShowMessage(true);
     
@@ -79,6 +99,14 @@ export default function Com() {
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 p-8 flex items-center justify-center">
       <div className="w-full max-w-4xl">
         <div className="bg-white/90 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden border border-white/20 p-8">
+          
+          {currentScreen === 0 && (
+            <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+              <p className="text-xl text-blue-800 font-medium">
+                <strong>Instructions:</strong> Read the task and check if it is best done face-to-face (Branch), some instantly (ATM), and others digitally (Online).
+              </p>
+            </div>
+          )}
           
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-indigo-700 bg-clip-text text-transparent mb-6">
@@ -150,7 +178,7 @@ export default function Com() {
             )} */}
 
             <div className="flex justify-center items-center">
-              {showMessage && currentScreen < SCREENS.length - 1 && (
+              {showMessage && isCorrect && currentScreen < SCREENS.length - 1 && (
                 <button
                   onClick={nextScreen}
                   className="px-6 py-3 rounded-xl font-medium transition-all duration-200 bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 hover:shadow-lg transform hover:-translate-y-0.5"

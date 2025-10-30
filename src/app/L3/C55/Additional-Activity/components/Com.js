@@ -3,31 +3,31 @@ import React, { useState } from "react";
 
 const investments = [
   {
-    question: "Why is a Savings Account considered short-term?",
-    answer: "Because you can take money out anytime for emergencies or small needs. It’s quick and safe!"
+    question: "Why is a savings account considered short-term?",
+    answer: "Because you can take money out anytime for urgent or basic needs. It’s fast and safe!"
   },
   {
-    question: "Why is Intraday Trading short-term?",
-    answer: "You buy and sell stocks within a single day or a few days, so it’s meant for quick profits, not long-term growth."
+    question: "Why is intraday trading short-term?",
+    answer: "You buy and sell stocks within a single day or a few days, so it’s meant for fast profits, not long-term growth."
   },
   {
-    question: "Why is a Term Deposit long-term?",
+    question: "Why is a term deposit long-term?",
     answer: "You keep the money in the bank for months or years to earn interest. It grows slowly over time."
   },
   {
-    question: "Why is Real Estate long-term?",
+    question: "Why is real estate long-term?",
     answer: "Property usually takes years to increase in value, so it’s a long-term way to grow money."
   },
   {
-    question: "Why is Gold / Precious Metals long-term?",
-    answer: "Gold and other precious metals gain value over years and are best held for the long run."
+    question: "Why are items such as gold & precious metals long-term?",
+    answer: "Gold and other precious metals gain value over time and are best held for the long run."
   },
   {
-    question: "Why is an Emergency Fund short-term?",
-    answer: "This money is kept for sudden needs, like medical bills or urgent repairs, so it must be easy to access."
+    question: "Why is an urgency fund short-term?",
+    answer: "This money is used for sudden needs, like health-related bills or urgent situations, so it must be easy to access."
   },
   {
-    question: "Why is Starting a Small Business long-term?",
+    question: "Why is starting a small business long-term?",
     answer: "A business takes time to grow and become profitable, so it’s a long-term investment in your future."
   }
 ];

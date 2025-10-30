@@ -11,11 +11,10 @@ const steps = [
     content: (
       <>
         <h2 className="text-2xl md:text-4xl font-extrabold text-slate-800 mb-4 text-center">
-          Carrying Money Abroad
+          Travel Abroad: Expense Management
         </h2>
         <p className="text-xl text-slate-600 text-center">
-          What are your options for carrying money from your country to{" "}
-          <span className="text-blue-600 font-bold">[VISITING COUNTRY NAME]</span>?
+          What are the options of carrying money from your country to the visiting country?
         </p>
       </>
     ),
@@ -28,10 +27,12 @@ const steps = [
         <p className="text-slate-600">
           Cash is the paper money and coins you can carry.
         </p>
+        <br />
+        <p className="text-slate-600">Challenges of using cash:</p>
         <ul className="list-disc ml-6 mt-4 text-slate-600 space-y-2">
-          <li>Can be heavy if you carry a lot.</li>
-          <li>At risk of being lost or stolen.</li>
-          <li>Customs may limit how much you can take with you.</li>
+          <li>Can be heavy to carry.</li>
+          <li>Can get lost or stolen.</li>
+          <li>There might be a restriction on how much cash you can carry. </li>
         </ul>
       </div>
     ),
@@ -54,18 +55,19 @@ const steps = [
   {
     type: "image",
     image: S1,
+    heading:"Different types of cards for international travel",
     content: (
       <div className="p-6">
         <h3 className="font-bold text-2xl mb-2 text-blue-600">FOREX Card</h3>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Fun Definition:</b> A magic travel wallet that already has the money you need for your trip!
+          <b className="text-slate-800">Fun Definition:</b> A Forex card is a magic travel wallet that already has the money you need for your trip!
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Definition:</b> A card pre-loaded with foreign currency for secure international use.
+          <b className="text-slate-800">Definition:</b> A card already filled with foreign currency for safe international use.
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Use Case:</b> If you buy something, like a Lego set in{" "}
-          <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span> with a Forex card, you dont have to pay any extra charges. This is because the money is already loaded in the local currency.
+          <b className="text-slate-800">Use Case:</b>
+          If you are making a payment to buy anything, like a Lego using a Forex card in <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span> you don’t have to pay any extra charge. This is because the money is already on your card in that country’s currency.
         </p>
         <div className="overflow-x-auto mt-4">
           <table className="w-full text-sm text-left text-slate-500 rounded-lg">
@@ -97,18 +99,19 @@ const steps = [
   {
     type: "image",
     image: S2,
+    heading:"Different types of cards for international travel",
     content: (
       <div className="p-6">
         <h3 className="font-bold text-2xl mb-2 text-slate-800">Credit Card</h3>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Fun Definition:</b> A borrow-now, pay-later card that sometimes asks for a little extra when used abroad.
+          <b className="text-slate-800">Fun Definition:</b> A borrow-now, pay-later card that sometimes asks for a little extra when using abroad.
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Definition:</b> A bank card that lets you buy now and pay later; may have international transaction fees.
+          <b className="text-slate-800">Definition:</b> A bank card that lets you buy now and pay later, but might incur international transaction fees.
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Use Case:</b> When you use a Credit card to buy a Lego set in{" "}
-          <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span>, you may have to pay a 2% extra charge. This fee is added by banks for international transactions.
+          <b className="text-slate-800">Use Case:</b>
+          If you are making a payment to buy anything, like a Lego using a Credit card in <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span>, you may have to pay an extra 2%. This charge is applied by the banks as the fees for using the card abroad.
         </p>
         <div className="overflow-x-auto mt-4">
           <table className="w-full text-sm text-left text-slate-500 rounded-lg">
@@ -140,18 +143,19 @@ const steps = [
   {
     type: "image",
     image: S3,
+    heading:"Different types of cards for international travel",
     content: (
       <div className="p-6">
         <h3 className="font-bold text-2xl mb-2 text-slate-800">Debit Card</h3>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Fun Definition:</b> Your personal money card that can be used anywhere in the world.
+          <b className="text-slate-800">Fun Definition:</b> Your personal money card that can be globally used.
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Definition:</b> A card linked directly to your bank account for spending your own money.
+          <b className="text-slate-800">Definition:</b> A card linked directly to your bank account to spend your own money.
         </p>
         <p className="mb-3 text-slate-600">
-          <b className="text-slate-800">Use Case:</b> When using a Debit card in{" "}
-          <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span>, your bank may add extra fees (0-20 in [YOUR CURRENCY]) for international transactions. This is because your bank needs to convert your money to the local currency.
+          <b className="text-slate-800">Use Case:</b>
+          If you are making a payment to buy anything, like a Lego using a Debit card in <span className="text-blue-600 font-bold">[VISITING COUNTRY]</span>, the debit card varies based on the bank. Some banks may charge additional fees <span className="text-blue-600 font-bold">(0–20 in [YOU CURRENCY])</span> for international transactions. This is because your bank needs to convert the money into the local currency.
         </p>
         <div className="overflow-x-auto mt-4">
           <table className="w-full text-sm text-left text-slate-500 rounded-lg">
@@ -185,7 +189,7 @@ const steps = [
     content: (
       <div className="bg-white p-6 rounded-lg shadow-md border border-slate-200">
         <h3 className="font-bold text-2xl mb-4 text-slate-800 text-center">
-          Which is the best card to carry?
+          Which card is the best to carry and why?
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left text-slate-500 rounded-lg">
@@ -222,11 +226,8 @@ const steps = [
     type: "text",
     content: (
       <div className="bg-blue-500 text-white p-6 rounded-lg shadow-lg text-center">
-        <h3 className="text-3xl font-extrabold mb-2">
-          Best Card: The <span className="underline">FOREX Card</span>
-        </h3>
         <p className="text-lg">
-          Because it is pre-loaded with foreign money, safe, and usually has no extra charges, making it the easiest and most secure way to pay while traveling internationally.
+          <span className="underline">FOREX Card</span> is the best card to carry because it is preloaded with foreign money, is safe, and usually doesn’t have any additional fees. This makes the card the easiest and the safest way to pay while traveling internationally.
         </p>
       </div>
     ),
@@ -240,6 +241,13 @@ export default function Com() {
     <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col items-center justify-center px-4 py-6">
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-xl p-2 border border-slate-200 transition-all duration-300 transform scale-100 hover:shadow-2xl">
         <div className="transition-all duration-500 ease-in-out">
+
+          {steps[step].heading && (
+            <h1 className="text-center mb-4 text-2xl font-bold">
+              {steps[step].heading}
+            </h1>
+          )}
+
           {steps[step].type === "image" && (
             <div className="flex justify-center mb-6">
               <Image

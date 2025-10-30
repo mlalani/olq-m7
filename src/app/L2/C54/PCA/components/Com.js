@@ -8,10 +8,10 @@ export default function Com() {
       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl text-center">
         <h2 className="text-2xl font-bold mb-6 text-teal-700">Home Purchases ROI Tracker</h2>
         <p className="mb-4 text-lg text-gray-700">
-          For the next 2–3 days, keep a small notebook or use a sheet of paper. Whenever you buy something or your parents buy something for home, write it down.
+          For the next 2–3 days, make a note of purchases made by you and your family.
         </p>
         <p className="mb-4 text-lg text-gray-700">
-          <strong>Record in the following manner:</strong>
+          <strong>Create a table as below.:</strong>
         </p>
         <table className="w-full mb-6 border border-gray-300 rounded-lg overflow-hidden">
           <thead>
@@ -32,14 +32,14 @@ export default function Com() {
           </tbody>
         </table>
         <div className="mb-4 text-left text-gray-700">
-          <strong>Process to Decide ROI Level:</strong>
+          <strong>Evaluate ROI of each item:</strong>
           <ul className="list-disc ml-6 mt-2">
             <li>
-              <strong>Low ROI:</strong> You spend money, but the product isn’t very useful, or the benefit doesn’t last long.<br />
+              <strong>Low ROI:</strong> You spend money, but the product isn’t very useful, or the benefit doesn’t last long. <br />
               Example: Buying a fancy toy for $20 that you play with only once.
             </li>
             <li className="mt-2">
-              <strong>Moderate ROI:</strong> The product is somewhat useful and gives benefit for some time.<br />
+              <strong>Moderate ROI:</strong>he product is somewhat useful and yields benefits for some time.<br />
               Example: Buying a $10 T-shirt you wear a few times in a month.
             </li>
             <li className="mt-2">
@@ -48,7 +48,17 @@ export default function Com() {
             </li>
           </ul>
         </div>
-        
+
+        <br />
+        <div>
+          <p className="text-left">
+            Reflect to review the table and present summary of your learnings: <br />
+            Which of the purchases yielded a high ROI?<br />
+            Which of the purchases showed Low ROI (maybe avoid next time)?<br />
+            How can this help you and your family make smarter money choices?<br />
+          </p>
+        </div>
+
       </div>
     </div>
   );

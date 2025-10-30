@@ -15,22 +15,22 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                Aria, an 8-year-old who loves puzzles, overheard her parents worrying, the shopping list was all mixed up! Some things were important, but others weren&apos;t.
+                Aria, an 8-year-old who loves puzzles, overheard her parents worrying about the shopping list being all mixed up! Some things were important, but others weren’t. She ran to her brother and whispered:
               </p>
               <p className="text-xl text-gray-700 leading-relaxed mb-4">
-                She ran to her brother and whispered: &quot;Let&apos;s be the elves, like in the shoemaker story, and fix the list&quot;
+                “Let’s be the elves, like in the shoemaker story, and fix the list”
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                But when they started sorting Aria got confused on how to figure out which are essential & non-essential items. Let&apos;s help Aria!
+                But when they started sorting, Aria got confused about how to identify essential & non-essential items.
               </p>
-              <Image 
+              <Image
                 src={S1}
-                alt="Aria with puzzle" 
+                alt="Aria with puzzle"
                 className="w-[400px] object-cover rounded-lg mx-auto mb-6"
               />
 
             </div>
-            <button 
+            <button
               onClick={() => setCurrentScreen(1)}
               className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
             >
@@ -46,10 +46,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-gray-800 mb-6">
-                What do you think the word essential means when we&apos;re talking about shopping?
+                What are essential items?
               </p>
               {!showAnswer ? (
-                <button 
+                <button
                   onClick={() => setShowAnswer(true)}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
                 >
@@ -58,12 +58,12 @@ export default function Com() {
               ) : (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-6">
                   <p className="text-xl text-green-800 font-semibold">
-                    Things we really need, like food or things we use every day.
+                    Things we really need such as food or things we use every day.
                   </p>
                 </div>
               )}
               {showAnswer && (
-                <button 
+                <button
                   onClick={() => {
                     setCurrentScreen(2);
                     setShowAnswer(false);
@@ -84,10 +84,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-gray-800 mb-6">
-                And what might non-essential mean?
+                What are non-essential items?
               </p>
               {!showAnswer ? (
-                <button 
+                <button
                   onClick={() => setShowAnswer(true)}
                   className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
                 >
@@ -96,12 +96,12 @@ export default function Com() {
               ) : (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-6">
                   <p className="text-xl text-green-800 font-semibold">
-                    Things that are extra, just for fun, like toys or treats that we can live without.
+                    Extra items that are just for fun such as toys or snacks we can live without.
                   </p>
                 </div>
               )}
               {showAnswer && (
-                <button 
+                <button
                   onClick={() => {
                     setCurrentScreen(3);
                     setShowAnswer(false);
@@ -122,10 +122,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-gray-800 mb-6">
-                If we only had a little money, should we spend it on milk or video games? Why?
+                If we have limited money, should we spend it on milk or video games? Why?
               </p>
               {!showAnswer ? (
-                <button 
+                <button
                   onClick={() => setShowAnswer(true)}
                   className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
                 >
@@ -134,12 +134,12 @@ export default function Com() {
               ) : (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-6">
                   <p className="text-xl text-green-800 font-semibold">
-                    Milk, because food and daily needs come before fun extras like games.
+                    We should spend it on milk because food and daily needs come before extras like games.
                   </p>
                 </div>
               )}
               {showAnswer && (
-                <button 
+                <button
                   onClick={() => {
                     setCurrentScreen(4);
                     setShowAnswer(false);
@@ -160,10 +160,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-gray-800 mb-6">
-                Can we live without biscuits? Can we live without rice?
+                What is essential - rice or biscuit?
               </p>
               {!showAnswer ? (
-                <button 
+                <button
                   onClick={() => setShowAnswer(true)}
                   className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg"
                 >
@@ -172,10 +172,10 @@ export default function Com() {
               ) : (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-6">
                   <p className="text-xl text-green-800 font-semibold mb-2">
-                    We can live without biscuits because they are just snacks.
+                    Rice is essential because it is a food that fills us up.
                   </p>
                   <p className="text-xl text-green-800 font-semibold">
-                    We can&apos;t live without rice because it&apos;s food that fills us up.
+                    Biscuits are non-essential because they are just snacks.
                   </p>
                 </div>
               )}
