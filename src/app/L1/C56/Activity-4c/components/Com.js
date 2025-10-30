@@ -49,10 +49,10 @@ export default function Com() {
           <a href="https://www.xe.com/currencyconverter/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Currency Converter</a>
           <br />
           <br />
-          <a href="https://www.amazon.de/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon’s German website</a>
+          <a href="https://www.amazon.de/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon&apos;s German website</a>
           <br />
           <br />          
-          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon's USA website</a>
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline font-semibold hover:text-blue-900">Amazon&apos;s USA website</a>
         </div>
         {/* Confirmation Screen */}
         {showConfirmation ? (

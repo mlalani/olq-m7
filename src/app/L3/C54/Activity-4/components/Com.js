@@ -124,7 +124,7 @@ export default function Com() {
 						</li>
 					</ul>
 					<p className="text-lg text-gray-800 mb-6">
-						Let's see how the Interday transactions work.
+						Let&apos;s see how the Interday transactions work.
 					</p>
 					<button
 						className="bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-teal-700 transition"

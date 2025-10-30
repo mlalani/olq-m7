@@ -28,7 +28,7 @@ export default function Com() {
                 <li>Draw each symbol neatly in your notebook or on paper.</li>
                 <li>Next to each symbol, write the name of that currency and the country it belongs to.</li>
                 <li>Mention the conversion rate as compared to your home country currency like: “1 [Home Currency Name] = ___ [That Currency]”</li>
-                <li>Checkout the sample example in the post class activity"</li>
+                <li>Checkout the sample example in the post class activity</li>
               </ul>
             </div>
 

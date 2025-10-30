@@ -119,7 +119,7 @@ export default function Com() {
 
               {/* Content */}
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                He is going to visit his grandma in Sunnyville. He can carry only the cabin luggage! So he needs to pick only the essential items so that everything fits into his luggage. Let's help Henry check his long list of items and select ten items he can carry.
+                He is going to visit his grandma in Sunnyville. He can carry only the cabin luggage! So he needs to pick only the essential items so that everything fits into his luggage. Let&apos;s help Henry check his long list of items and select ten items he can carry.
               </p>
 
               {/* Next button */}
