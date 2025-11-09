@@ -11,15 +11,15 @@ export default function Com() {
     { item: "Apples", quantity: 10, pricePerUnit: "$2", totalPrice: "$25" },
     { item: "Milk (1L)", quantity: 1, pricePerUnit: "$20", totalPrice: "$20" },
     { item: "Bread", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" },
-    { item: "Biscuits (B1G1)", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" },
-    { item: "Bread (again!)", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" }
+    { item: "Biscuits (Buy 1 Get 1 Free)", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" },
+    { item: "Bread", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" }
   ];
 
   const correctedBill = [
     { item: "Apples", quantity: 10, pricePerUnit: "$2", totalPrice: "$20" },
     { item: "Milk (1L)", quantity: 1, pricePerUnit: "$4", totalPrice: "$4" },
     { item: "Bread", quantity: 2, pricePerUnit: "$2", totalPrice: "$4" },
-    { item: "Biscuits (B1G1)", quantity: 2, pricePerUnit: "$2", totalPrice: "$2" }
+    { item: "Biscuits (Buy 1 Get 1 Free)", quantity: 2, pricePerUnit: "$2", totalPrice: "$2" }
   ];
 
   const handleSelectionChange = (index, value) => {
@@ -28,9 +28,9 @@ export default function Com() {
 
   const steps = [
     {
-      title: "Meet Ria, she loves helping around the house. One day, her mom says, Ria, can you please check this grocery bill? I think something's not right!",
-      subtitle: "Ria looks at the bill and gets confused, too many numbers, item names, and some charges look odd.",
-      instruction: "Let's help Ria to identify the mistakes in the bill!",
+      title: "Meet Ria. She loves helping around the house. One day, her mom says, “Ria, can you please check this grocery bill? I think something’s not right!",
+      subtitle: "Ria looks at the bill and gets confused. There are too many numbers, item names, and some charges look odd.",
+      instruction: "Let’s help Ria to identify the mistakes in the bill!",
       showImage: true,
       showStartButton: true
     },
@@ -221,7 +221,7 @@ export default function Com() {
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2 font-semibold">Total</td>
-                        <td className="border border-gray-300 px-4 py-2">$40</td>
+                        <td className="border border-gray-300 px-4 py-2">$20</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2 font-semibold">Billing Date</td>

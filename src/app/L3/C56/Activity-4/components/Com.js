@@ -14,43 +14,89 @@ export default function Com() {
   const screens = [
     {
       title: "Earning Money",
-      description: "Meet Mr. Jay, the Doctor. He treats sick children and helps them recover every day. For his work, he earns money, which is called a salary or income. Just as students may get points or grades for their effort in school, adults receive money for the effort they put into their jobs.",
+      description: (
+        <>
+          Meet Mr. Jay, the Doctor working at the City Hospital.<br />
+          He treats children who are not well to help recover everyday.<br />
+          For his work, he earns money, which is called a salary or an income.<br />
+          Just like students get grades or points for doing good work in class,<br />
+          grown-ups get salary or income for their good work.
+        </>
+      ),
       image: S1
     },
     {
       title: "Calculating Tax",
-      description: "The government needs to know how much money Mr. Jay earned so it can decide the fair share of tax. Every country has rules for this, some take a bigger portion, some a smaller portion, but everyone contributes.",
+      description: (
+        <>
+          The government needs to know how much money Mr. Jay earned.<br />
+          So, the City Hospital administration deducts income tax from his salary each month.<br />
+          <b>Income tax is deducted from salaries each month.</b> Higher the salary, higher is the income tax.<br />
+          Every country has its own rules for calculating income tax.<br />
+          Some take a bigger portion, some take a smaller portion, but everyone has to contribute.<br />
+          In addition, everyone is expected to share a record of their earnings and taxes paid annually.
+        </>
+      ),
       image: S2
     },
     {
       title: "Annual Tax Filing",
-      description: "Once a year, Mr. Jay has to inform government about: How much money he earned this year, and how much tax he has already paid or still needs to pay. This process is known as annual tax filing. In this one has to fill out a special form for the government.",
+      description: (
+        <>
+          Every year, Mr. Jay has to inform the government about his earnings.<br />
+          Every earning person, whether employed with company, running business or self employed, has to inform:<br />
+          <ul className="list-disc ml-6 my-2 text-left">
+            <li>How much money he earned this year</li>
+            <li>How much tax he has already paid or still needs to pay.</li>
+          </ul>
+          This is a process called <b>annual tax filing</b>.<br />
+          This means he fills out a special form for the government.
+        </>
+      ),
       image: S3
     },
     {
       title: "Who Can File Income Tax",
-      description: "Any individual who earns money (like Mr. Jay.) Sometimes, parents file taxes on behalf of their children if the child earns money like a child actor or YouTuber!",
+      description: (
+        <ul className="list-disc ml-6 my-2 text-left">
+          <li>Any individual who earns money and is employed with an organisation/company (like Mr. Jay.)</li>
+          <li>Self employed professionals like lawyers or architects</li>
+          <li>Business owners</li>
+          <li>Sometimes, parents file taxes on behalf of their children if the child earns money. e.g. kidpreneur, child actor or a YouTuber!</li>
+        </ul>
+      ),
       image: null
     },
     {
       title: "Who Helps with Filing",
-      description: "People can file taxes by themselves online. But many people take the help of a CA (Chartered Accountant).",
+      description: (
+        <>
+          People can file taxes online by themselves.<br />
+          But many people take the help of a <b>CA (Chartered Accountant)</b>.
+        </>
+      ),
       image: null
     },
     {
       title: "Who is a Chartered Accountant (CA)",
-      description: "A CA is a trained money expert who knows all the tax rules. They make sure everything is filed correctly so people don't make mistakes.",
+      description: (
+        <>
+          A Chartered Accountant is a finance and accounting expert,<br />
+          who helps people and businesses manage their money, pay taxes correctly, and follow government rules.
+        </>
+      ),
       image: null
     },
     {
-      title: "Benefits of Taking Help from a CA",
-      description: "Accuracy: No mistakes in the forms. Time-saving: Individuals don't have to struggle with confusing numbers. Stress-free: They explain rules in simple words. Smart planning: They help you plan your finances better for the future.",
+      title: "What does a CA do?",
+      description: (
+        <ul className="list-disc ml-6 my-2 text-left">
+          <li>A CA records how much money you earn and spend. You always know where your money goes.</li>
+          <li>Taxes can be tricky as every country has several rules! A CA helps you calculate and pay the correct tax to the government.</li>
+          <li>They advise people and companies on how to save money, invest wisely, and grow safely.</li>
+        </ul>
+      ),
       image: null
-    },
-    {
-      title: "Community Help",
-      description: "Finally, the money collected from Mr. Arun and millions of other people goes to the government. The government then uses it to pay for parks, roads, street cleaning, fire trucks, and more!",
-      image: S4
     }
   ];
 
@@ -71,11 +117,12 @@ export default function Com() {
         </div>
         
         <div className={screens[currentScreen].image ? "grid md:grid-cols-2 gap-8 items-center mb-8" : "flex justify-center mb-8"}>
-          <div className={screens[currentScreen].image ? "space-y-6" : "space-y-6 max-w-2xl text-center"}>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              {screens[currentScreen].description}
-            </p>
-            
+          <div className={screens[currentScreen].image ? "space-y-6 text-[1.35rem] text-gray-700 leading-relaxed" : "space-y-6 max-w-2xl text-center text-[1.35rem] text-gray-700 leading-relaxed"}>
+            {typeof screens[currentScreen].description === 'string' ? (
+              <p>{screens[currentScreen].description}</p>
+            ) : (
+              screens[currentScreen].description
+            )}
           </div>
           
           {screens[currentScreen].image && (

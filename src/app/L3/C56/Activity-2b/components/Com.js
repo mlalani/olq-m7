@@ -13,45 +13,151 @@ export default function Com() {
 
   const screens = [
     {
-      title: "Direct Tax",
-      description:"Paid directly to the government from the money people earn.",
-      example:"If a person earns $1000 from their job, a small part of it goes as tax to the government.",
-      image:null
+      title: "What is tax?",
+      description: (
+        <>
+          Taxes are money that people and businesses give to the government.<br />
+          It is like a community piggy bank that everyone puts money into.<br /><br />
+          <span className="font-semibold">Who collects it?</span><br />
+          The government of every country collects tax.<br /><br />
+          <span className="font-semibold">Why do you think the government collects tax?</span><br />
+          The government uses this tax money to build infrastructure like roads, transportation, schools, hospitals, and provide public services like police and firefighters.
+        </>
+      ),
+      image: null
     },
     {
-      title:"Indirect Tax",
-      description:"Added to the price of goods and services we buy. Shops collect it from us and pass it on to the government.",
-      example:"Sales Tax like in this fuel bill.",
-      image:null,
+      title: "Direct v/s Indirect Tax",
+      description: (
+        <>
+          There are two main types of taxes:<br /><br />
+          <span className="font-bold">Direct Tax:</span> Paid directly to the government from the money people earn.<br />
+          Example: If Rohan earns $2000, he has to pay a part of his income to the government as tax.<br />
+          <span className="italic">It is a Direct Tax because it is paid directly from a person’s income to the government.</span><br /><br />
+        </>
+      ),
+      image: null
     },
     {
-      title: "Income Tax",
-      description: "This is the tax taken from the money people earn from their jobs.",
-      example: "Example: If a Rohan earns $2000, he has to pay a part of his income to the government as tax.",
-      extra:"It is a Direct Tax because it is paid directly from a person’s income to the government.",
-      image: S2
+      title: "Direct v/s Indirect Tax",
+      description: (
+        <>
+          There are two main types of taxes:<br /><br />
+          <span className="font-bold">Direct Tax:</span> Paid directly to the government from the money people earn.<br />
+          Example: If Rohan earns $2000, he has to pay a part of his income to the government as tax.<br />
+          <span className="italic">It is a Direct Tax because it is paid directly from a person’s income to the government.</span><br /><br />
+          <span className="font-bold">Indirect Tax:</span> Added to the price of goods and services we buy. Shops collect it from us and pass it on to the government.<br />
+          Example: Sales Tax like in this fuel bill.
+        </>
+      ),
+      image: null
     },
     {
-      title: "Sales Tax",
-      description: "This is the tax added to things you buy, just like we saw in the food bill.",
-      example: "Example: If you buy a toy for $50 and sales tax is $5, you pay $55 in total.",
-      extra:"It is an Indirect Tax because it is collected when buying goods or services.",
-      image: S1
+      title: "Key characteristics of a direct tax",
+      description: (
+        <ul className="list-disc ml-6 my-2 text-left text-lg">
+          <li><b>Paid directly to the government:</b> The person who earns the money gives tax straight to the government.</li>
+          <li><b>Non-transferable:</b> Only the person who earns pays it. They can’t make someone else pay it for them.</li>
+          <li><b>Progressive:</b> Based on income or profit. The more money you earn, the more tax you pay.</li>
+          <li><b>Collected once a year:</b> Usually paid when people calculate how much they earned in a year.</li>
+        </ul>
+      ),
+      image: null
     },
     {
-      title: "Toll Tax",
-      description: "Sometimes when cars travel on highways or special bridges, they stop at a toll gate and pay a small fee called toll tax.",
-      example: "Example: A car pays $1 at a toll booth to use the highway.",
-      extra:"It is an Indirect Tax because it is paid for using a service we used like roads and bridges.",
-      image: S3
+      title: "Key features of Indirect tax",
+      description: (
+        <ul className="list-disc ml-6 my-2 text-left text-lg">
+          <li><b>Transferable:</b> As it is paid through the seller, who collects it from buyers and transfers it to the government.</li>
+          <li><b>Included in the price of goods:</b> You don’t pay it separately — it’s already added to the cost.</li>
+          <li><b>Shared by everyone:</b> Everyone who buys things pays this tax — rich or poor, young or old.</li>
+          <li><b>Collected throughout the year:</b> Since people keep buying things every day, this tax is collected all year round.</li>
+        </ul>
+      ),
+      image: null
     },
     {
-      title: "Entertainment Tax",
-      description: "This is the tax we pay when we enjoy things like movies, concerts, or theme parks.",
-      example: "Example: If a movie ticket is $90 and entertainment tax is $10, the total ticket price becomes $100.",
-      extra:"It is an Indirect Tax because it is included in the price of entertainment services.",
-      image: S4
-    }
+      title: "Examples of Direct Tax",
+      description: (
+        <>
+          <span className="font-bold">Income tax:</span> This is the tax taken from the money people earn from their jobs.<br />
+          Example: Your parents pay income tax on their salary.<br /><br />
+        </>
+      ),
+      image: null
+    },
+    {
+      title: "Examples of Direct Tax",
+      description: (
+        <>
+          <span className="font-bold">Property Tax:</span> An annual tax paid by a real estate owner based on the value of their property.<br />
+          Example: If your parents own a house, they must pay property tax to the government.<br /><br />
+        </>
+      ),
+      image: null
+    },
+    {
+      title: "Examples of Direct Tax",
+      description: (
+        <>
+          <span className="font-bold">Capital Gains Tax:</span> Paid when profit is earned on selling something valuable like land, house, or shares.<br />
+          Example: Raima holds equity or shares of a company. When she sells her shares later for a higher price than she bought them — she earns a profit. That profit is called a Capital Gain.<br /><br />
+          <span className="font-bold">LTCG:</span> If Raima keeps her shares for more than 1 year before selling them, it is called a Long-Term Capital Gain (LTCG).<br />
+          <span className="font-bold">STCG:</span> If she sells them within 1 year, it’s a Short-Term Capital Gain (STCG).
+        </>
+      ),
+      image: null
+    },
+    {
+      title: "Examples of Indirect Tax",
+      description: (
+        <>
+          <span className="font-bold">Sales Tax/ Value added tax [VAT] / Goods and Services Tax [GST]:</span> This is the tax added to things people buy. The government earns money from purchases we make every day.<br />
+          Example: You buy a T-shirt for $10, and your state’s sales tax is 8%. You pay $10.80 — the store sends the $0.80 to the government.<br /><br />
+        </>
+      ),
+      image: null
+    },
+    {
+      title: "Examples of Indirect Tax",
+      description: (
+        <>
+          <span className="font-bold">Customs Duty (Import Tax):</span> This is a tax on goods that come into a country from another country. It helps local businesses by making imported goods a little more expensive.<br />
+          Example: If a company imports cars from another country, it pays customs duty when the goods enter the port. That’s why imported items sometimes cost more.<br /><br />
+        </>
+      ),
+      image: null
+    },    
+    {
+      title: "Examples of Indirect Tax",
+      description: (
+        <>
+          <span className="font-bold">Excise duty:</span> This tax is charged on specific items that are harmful or luxury goods.<br />
+          Example: It is levied on soda, tobacco, or energy drinks.<br /><br />
+        </>
+      ),
+      image: null
+    },    
+        {
+      title: "Examples of Indirect Tax",
+      description: (
+        <>
+          <span className="font-bold">Toll Tax:</span> This tax is paid when vehicles travel on highways or special bridges. This is the toll tax used for road maintenance.<br />
+          Example: The Golden Gate Bridge toll is $9.25.<br /><br />
+        </>
+      ),
+      image: null
+    },
+        {
+      title: "Examples of Indirect Tax",
+      description: (
+        <>
+          <span className="font-bold">Entertainment Tax:</span> This tax is paid when we spend money on fun or entertainment activities like watching movies, going to amusement parks, concerts, or sports events.<br />
+          Example: A movie ticket for $10 includes $1 as entertainment tax.
+        </>
+      ),
+      image: null
+    },
   ];
 
   const handleNext = () => {
@@ -69,33 +175,35 @@ export default function Com() {
           </h1>
           <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className={screens[currentScreen].image ? "grid md:grid-cols-2 gap-8 items-center mb-8" : "flex justify-center mb-8"}>
           <div className={screens[currentScreen].image ? "space-y-6" : "space-y-6 max-w-2xl text-center"}>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              {screens[currentScreen].description}
-            </p>
-            
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-              <p className="text-xl text-gray-800 font-medium">
-                {screens[currentScreen].example}
-              </p>
-            </div>
-            
+            {typeof screens[currentScreen].description === 'string' ? (
+              <p className="text-xl text-gray-700 leading-relaxed">{screens[currentScreen].description}</p>
+            ) : (
+              <div className="text-xl text-gray-700 leading-relaxed">{screens[currentScreen].description}</div>
+            )}
+            {screens[currentScreen].example && (
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg mt-4">
+                <p className="text-xl text-gray-800 font-medium">
+                  {screens[currentScreen].example}
+                </p>
+              </div>
+            )}
             {screens[currentScreen].extra && (
-              <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+              <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg mt-4">
                 <p className="text-lg text-gray-800 font-medium">
                   {screens[currentScreen].extra}
                 </p>
               </div>
             )}
           </div>
-          
+
           {screens[currentScreen].image && (
-          <div className="flex justify-center">
-            <Image 
-              src={screens[currentScreen].image} 
-              alt={screens[currentScreen].title}
+            <div className="flex justify-center">
+              <Image
+                src={screens[currentScreen].image}
+                alt={screens[currentScreen].title}
                 className="w-[350px] object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -113,7 +221,7 @@ export default function Com() {
           </div>
         )}
 
-      
+
       </div>
     </div>
   );

@@ -29,10 +29,10 @@ export default function Com() {
           <div className="text-center max-w-6xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Ria&apos;s mom brought a few more grocery bills, one from last week and one from this month, and asked her to compare them. While looking through, Ria noticed something interesting: some items cost less when bought in larger quantities. But with so many items, she&apos;s feeling a bit confused.
+                Ria’s mom brought home a few more grocery bills: a bill from last week and another from last month. She asked Ria to compare. While looking through, Ria noticed something interesting: some items cost less when bought in larger quantities. But with so many items, she’s feeling a bit confused.
               </p>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Let&apos;s help Ria go through these bills!
+                Let&apos;s help Ria go through these!
               </p>
               <Image 
                 src={S1}
@@ -54,7 +54,7 @@ export default function Com() {
           <div className="text-center max-w-7xl">
             <div className="flex gap-8 justify-center">
               <div className="bg-white rounded-lg shadow-lg p-8 w-[600px]">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">WEEKLY BILL</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Weekly Expense</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-lg">
                     <thead>
@@ -79,7 +79,7 @@ export default function Com() {
                 </div>
               </div>
               <div className="bg-white rounded-lg shadow-lg p-8 w-[600px]">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">MONTHLY BILL</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Monthly Expense</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-lg">
                     <thead>
@@ -120,7 +120,7 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed">
-                Now let&apos;s think, is shopping only about saving money? Or are there other things we should notice too?
+                Now let’s think. Is shopping only about saving money? Or are there other things we should notice too?
               </p>
             </div>
             <button 
@@ -139,10 +139,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Now let&apos;s think, is shopping only about saving money? Or are there other things we should notice too?
+                Now let’s think. Is shopping only about saving money? Or are there other things we should notice too?
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                We saw that some items save money in bulk, and some don&apos;t. But when families shop, they don&apos;t just look at prices. They also think about various factors.
+                We saw how we can save money on some items by buying in bulk. But for some others, it doesn’t matter. When families shop, they don’t just look at prices, they also think about various factors.
               </p>
             </div>
             <button 
@@ -161,7 +161,7 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Imagine if your we bought 100 ice creams at once.
+                Imagine if you were to buy 100 ice-creams in one go.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
                 Would that be a good idea?
@@ -188,10 +188,10 @@ export default function Com() {
           <div className="text-center max-w-4xl">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
               <p className="text-2xl font-bold text-red-600 mb-4">
-                No, it wouldn&apos;t be a good idea!
+                Of course not!
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Ice creams melt and spoil quickly if we don&apos;t eat them in time. Buying too many at once means they might go to waste.
+                Ice-creams melt and spoil easily. Buying too many in a go would mean wasting them.
               </p>
             </div>
           </div>

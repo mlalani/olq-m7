@@ -126,6 +126,10 @@ export default function Com() {
       Tax Match-Up
       </h1>
 
+      <h2 className="text-lg italic text-center mb-6 text-gray-800">
+        Match the type of tax with its description
+      </h2>
+
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="flex gap-6">
           <div className="w-1/3 bg-white rounded-2xl shadow-lg p-4">

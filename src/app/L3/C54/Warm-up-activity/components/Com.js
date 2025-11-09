@@ -27,6 +27,7 @@ export default function Com() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+        <h2 className="text-3xl font-bold text-indigo-700 mb-6 text-center">Guess the country of this currency.</h2>
         <Image
           src={obj[step]}
           alt={`Image ${step + 1}`}

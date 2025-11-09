@@ -1,17 +1,33 @@
 {
     "L1": {
         "C51": {
+            "Warm up activity": {
+                "link": "/L1/C51/Warm-up-activity",
+                "name": "Receipt Riddles"
+            },
+            "Activity 1": {
+                "link": "/L1/C51/Activity-1",
+                "name": "Receipt Breakdown"
+            },
+            "Activity 2": {
+                "link": "/L1/C51/Activity-2",
+                "name": "Read My Bill!"
+            },
             "Activity 3": {
                 "link": "/L1/C51/Activity-3",
                 "name": "Oops! Fix the Bill!"
             },
             "Activity 4a": {
                 "link": "/L1/C51/Activity-4a",
-                "name": "Weekly Bill vs. Monthly Bill I"
+                "name": "Weekly Expenses vs. Monthly Expenses I"
             },
             "Activity 4b": {
                 "link": "/L1/C51/Activity-4b",
-                "name": "Weekly Bill vs. Monthly Bill II"
+                "name": "Weekly Expenses vs. Monthly Expenses II"
+            },
+            "Additional-Activity": {
+                "link": "/L1/C51/Additional-Activity",
+                "name": "From Plate to Paper"
             }
         },
         "C54": {
@@ -221,13 +237,29 @@
             }
         },
         "C56": {
-            "Activity 2a": {
+            "Activity 1": {
+                "link": "/L2/C56/Activity-1",
+                "name": "Read My Bill!"
+            },
+            "Activity 2a":{
+                "link": "/L2/C56/Activity-2a",
+                "name": "Food Bill"
+            },
+            "Activity 2b": {
                 "link": "/L2/C56/Activity-2b",
                 "name": "What is Tax?"
             },
-            "Activity 3": {
-                "link": "/L2/C56/Activity-3",
-                "name": "Why Pay Tax?"
+            "Activity 3a":{
+                "link": "/L2/C56/Activity-3a",
+                "name": "Why We Pay Taxes?"
+            },
+            "Activity 3b": {
+                "link": "/L2/C56/Activity-3b",
+                "name": "Public Sector and Private Sector I"
+            },
+            "Activity 3c": {
+                "link": "/L2/C56/Activity-3c",
+                "name": "Public Sector and Private Sector II"
             },
             "Activity 4": {
                 "link": "/L2/C56/Activity-4",
@@ -241,6 +273,10 @@
     },
     "L3": {
         "C51": {
+            "Warm-up-activity": {
+                "link": "/L3/C51/Warm-up-activity",
+                "name": "Time Travelers Talk"
+            },
             "Activity 1a": {
                 "link": "/L3/C51/Activity-1a",
                 "name": "Spot the Right Service I"
@@ -315,11 +351,11 @@
         "C55": {
             "Warm up activity": {
                 "link": "/L3/C55/Warm-up-activity",
-                "name": "The Fun-O-Meter Game"
+                "name": "Guess the Gadget"
             },
             "Activity 1a": {
                 "link": "/L3/C55/Activity-1a",
-                "name": "Mini Market"
+                "name": "Mini Market I"
             },
             "Activity 2a": {
                 "link": "/L3/C55/Activity-2a",
@@ -347,13 +383,25 @@
             }
         },
         "C56": {
+            "Activity 1": {
+                "link": "/L3/C56/Activity-1",
+                "name": "Read My Bill!"
+            },
+            "Activity 2a": {
+                "link": "/L3/C56/Activity-2a",
+                "name": "Fuel Bill"
+            },
             "Activity 2b": {
                 "link": "/L3/C56/Activity-2b",
                 "name": "What Is Tax?"
             },
-            "Activity 3": {
-                "link": "/L3/C56/Activity-3",
+            "Activity 3a": {
+                "link": "/L3/C56/Activity-3a",
                 "name": "Why Pay Tax?"
+            },
+            "Activity 3b": {
+                "link": "/L3/C56/Activity-3b",
+                "name": "Identify Which Tax Is Paid"
             },
             "Activity 4": {
                 "link": "/L3/C56/Activity-4",
@@ -362,6 +410,10 @@
             "Additional Activity": {
                 "link": "/L3/C56/Additional-Activity",
                 "name": "Tax Match-Up"
+            },
+            "Post Class Activity": {
+                "link": "/L3/C56/PCA",
+                "name": "Bill Detective"
             }
         }
     }
