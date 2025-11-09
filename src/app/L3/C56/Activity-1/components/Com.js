@@ -4,23 +4,21 @@ import { useState } from "react";
 import Image from "next/image";
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
-import s3 from "../assets/s1.png";
-import s4 from "../assets/s1.png";
-import s5 from "../assets/s1.png";
-import s6 from "../assets/s1.png";
-import s7 from "../assets/s1.png";
-import s8 from "../assets/s1.png";
-import s9 from "../assets/s1.png";
-import s10 from "../assets/s1.png";
-import s11 from "../assets/s1.png";
-import s12 from "../assets/s1.png";
-import s13 from "../assets/s1.png";
-import s14 from "../assets/s1.png";
-import s15 from "../assets/s1.png";
-import s16 from "../assets/s1.png";
-import s17 from "../assets/s1.png";
-import s18 from "../assets/s1.png";
-import s19 from "../assets/s1.png";
+import s3 from "../assets/s3.png";
+import s4 from "../assets/s4.png";
+import s5 from "../assets/s5.png";
+import s6 from "../assets/s6.png";
+import s7 from "../assets/s7.png";
+import s8 from "../assets/s8.png";
+import s9 from "../assets/s9.png";
+import s10 from "../assets/s10.png";
+import s11 from "../assets/s11.png";
+import s12 from "../assets/s12.png";
+import s13 from "../assets/s13.png";
+import s14 from "../assets/s14.png";
+import s15 from "../assets/s15.png";
+import s16 from "../assets/s16.png";
+import s17 from "../assets/s17.png";
 
 const mcqs = [
   {
@@ -131,34 +129,34 @@ const mcqs = [
     question: "In which month was the highest electricity used?",
     description: "",
     answer: "In July, with 460 kWh used.",
-    image: s16
+    image: s15
   },
   {
     question: "What is kWh that we see on the bill?",
     description: "",
     answer: "kWh is a unit to measure electricity, it tells us how much electrical energy we used.",
     example: "We use centimeters (cm) to measure length, and we use kilowatt-hours (kWh) to measure electricity. So, just like saying a pencil is 10 cm long, we can say a home used 200 kWh of electricity in a month!",
-    image: s17
+    image: s15
   },
   {
     question: "In which month was the lowest electricity used?",
     description: "",
     answer: "A: April, with 320 kWh used.",
-    image: s18
+    image: s15
   },
   {
     question: "What is shown in the Summary section?",
     description: "",
     answer: "A quick recap of key details, account number, due date, total amount, and amount enclosed.",
     example: "Just like a summary box on a report card showing your overall grades at a glance.",
-    image: s19
+    image: s16
   },
   {
     question: "What does “Amount Enclosed” mean?",
     description: "",
     answer: "It’s the space where you write how much you’re paying if you send a paper payment.",
     example: "Like writing the total marks you think you’ll score before submitting your answer sheet, a final check before turning it in.",
-    image: s19
+    image: s17
   }
 ];
 
@@ -180,11 +178,11 @@ export default function Com() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 max-w-8xl w-full flex flex-col md:flex-row overflow-hidden">
         {/* Left image: dedicated for each QnA */}
-        <div className="md:w-1/2 flex flex-col items-center justify-center bg-indigo-50 p-8">
-          <Image src={mcqs[mcqIdx].image} alt={`Q${mcqIdx + 1} Image`} className="rounded-xl shadow-md w-[60%]" />
+        <div className="md:w-3/5 flex flex-col items-center justify-center bg-indigo-50 p-8">
+          <Image src={mcqs[mcqIdx].image} alt={`Q${mcqIdx + 1} Image`} className="rounded-xl shadow-md w-[100%]" />
         </div>
         {/* Right content: MCQ only */}
-        <div className="md:w-1/2 flex flex-col justify-center p-8">
+        <div className="md:w-2/5 flex flex-col justify-center p-8">
           <div className="flex flex-col justify-center h-full">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-indigo-700 mb-2">{mcqs[mcqIdx].question}</h2>

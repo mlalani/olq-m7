@@ -123,7 +123,7 @@
                 "link": "/L1/C56/Additional-Activity",
                 "name": "Spend, Save & Share"
             },
-            "PCA":{
+            "PCA": {
                 "link": "/L1/C56/PCA",
                 "name": "Shopping List"
             }
@@ -241,7 +241,7 @@
                 "link": "/L2/C56/Activity-1",
                 "name": "Read My Bill!"
             },
-            "Activity 2a":{
+            "Activity 2a": {
                 "link": "/L2/C56/Activity-2a",
                 "name": "Food Bill"
             },
@@ -249,7 +249,7 @@
                 "link": "/L2/C56/Activity-2b",
                 "name": "What is Tax?"
             },
-            "Activity 3a":{
+            "Activity 3a": {
                 "link": "/L2/C56/Activity-3a",
                 "name": "Why We Pay Taxes?"
             },
@@ -292,7 +292,7 @@
             "Activity 2b": {
                 "link": "/L3/C51/Activity-2b",
                 "name": "Account Match-Up II"
-            },         
+            },
             "Activity 3a": {
                 "link": "/L3/C51/Activity-3a",
                 "name": "Cheque Check I"
@@ -414,6 +414,14 @@
             "Post Class Activity": {
                 "link": "/L3/C56/PCA",
                 "name": "Bill Detective"
+            }
+        }
+    },
+    "AIBOT": {
+        "A1": {
+            "Warm-up-activity": {
+                "link": "/AIBot/A1",
+                "name": "A1 Bot"
             }
         }
     }
