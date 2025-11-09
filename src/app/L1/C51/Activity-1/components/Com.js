@@ -201,7 +201,7 @@ export default function Com() {
             <div className="flex flex-col items-center justify-center h-full">
               <h2 className="text-2xl font-bold text-indigo-700 mb-4 text-center">What is a receipt?</h2>
               <p className="text-lg text-gray-700 mb-8 text-center">
-                It's a little paper or digital note the shop gives you after you buy things. It shows what you bought and how much money you paid.
+                It&apos;s a little paper or digital note the shop gives you after you buy things. It shows what you bought and how much money you paid.
               </p>
               <button
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg hover:shadow-xl"

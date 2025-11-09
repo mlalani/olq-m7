@@ -93,7 +93,7 @@ const screens = [
           <Image src={usdGlobal} alt="USD Global" width={300} height={180} className="rounded-xl shadow-md" />
         </div>
         <p className="mt-2 text-xl md:text-xl text-center">
-          <strong>Example:</strong> Think of the US Dollar as the 'common language' of money. Just like English is spoken by people from different countries to communicate globally, the US Dollar helps countries trade and exchange money easily.
+          <strong>Example:</strong> Think of the US Dollar as the common language of money. Just like English is spoken by people from different countries to communicate globally, the US Dollar helps countries trade and exchange money easily.
         </p>
       </div>
     ),
