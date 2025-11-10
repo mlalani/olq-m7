@@ -208,7 +208,7 @@ export default function Com() {
               setReplayIndex(idx => idx + 1);
               runReplayItem(index + 1);
             }, 750);
-          }, 2000);
+          }, 500);
         }, horizontalDuration + 50);
       }, verticalDuration + 50);
     }, 30);

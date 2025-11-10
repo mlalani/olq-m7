@@ -133,7 +133,8 @@ export default function Com() {
     }
     const item = replayQueue[index];
     // create fixed anim element starting from center-left of the viewport
-    const animSize = 80;
+    // anim size set to 100 to match the displayed image size (140x140 visual)
+    const animSize = 100;
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const startX = Math.floor(vw * 0.15); // center-left (~15% from left)
@@ -425,7 +426,7 @@ export default function Com() {
           </div>
         )}
 
-        <div className="flex justify-between w-full gap-8">
+        <div className="flex justify-between w-full gap-2">
           {/* Left side: Items in single row with scroll */}
           <div className="flex-1 overflow-x-auto"
             style={{
@@ -502,7 +503,7 @@ export default function Com() {
           </div>
 
           {/* Right side: Bins */}
-          <div className="flex flex-col gap-8 items-center" style={{ width: '150px' }}>
+          <div className="flex flex-col gap-8 items-center" style={{ width: '180px' }}>
             <div
               ref={wetRef}
               className="flex flex-col items-center cursor-pointer transition-transform hover:scale-105"
@@ -537,7 +538,7 @@ export default function Com() {
           </div>
         </div>
 
-  {/* No Next button on this screen; flow continues automatically when sorting is done */}
+        {/* No Next button on this screen; flow continues automatically when sorting is done */}
       </div>
     );
   }
@@ -546,7 +547,8 @@ export default function Com() {
   if (screen === 4) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <div className="text-3xl md:text-4xl font-bold text-center mb-8">Dummy text here</div>
+        <div className="text-3xl md:text-4xl font-semibold text-center mb-8">Now let’s see how well our AI Bot has been trained.</div>
+        <br />
         <div className="w-full flex justify-center">
           <button
             className="px-8 py-3 text-2xl bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold shadow-lg"
@@ -563,7 +565,7 @@ export default function Com() {
   if (screen === 5) {
     return (
       <div className="min-h-screen flex flex-col items-center bg-white">
-        <div className="w-full flex justify-center pt-8">
+        <div className="w-full flex justify-center pt-2">
           <div ref={robotRef}>
             <Image src={robotImg} alt="robot" width={170} />
           </div>
@@ -583,20 +585,29 @@ export default function Com() {
               overflow: 'hidden',
             }}
           >
-            <Image src={animatingItem.src} alt={animatingItem.label} 
-            width={120} height={120} />
+            {/* Adjusted replay image size to 140x140 (originally 120x120) */}
+            <Image src={animatingItem.src} alt={animatingItem.label}
+              width={140} height={140} />
           </div>
         )}
 
-        <div className="flex-1 flex items-end justify-center pb-12 w-full">
+        <div className="flex-1 flex items-end justify-center pb-6 w-full">
           <div className="flex gap-12 items-end">
             <div ref={replayWetRef} className="flex flex-col items-center">
-              <Image src={binWet} alt="wet" width={180} height={180} />
-              <div className="mt-2 font-bold text-blue-600">Wet Waste</div>
+              <Image src={binWet} alt="wet" width={210} height={210} />
+              <div 
+              style={{
+                marginTop: '-12px'
+              }}
+              className="font-bold text-blue-600">Wet Waste</div>
             </div>
             <div ref={replayDryRef} className="flex flex-col items-center">
-              <Image src={binDry} alt="dry" width={180} height={180} />
-              <div className="mt-2 font-bold text-blue-600">Dry Waste</div>
+              <Image src={binDry} alt="dry" width={210} height={210} />
+              <div 
+              style={{
+                marginTop: '-12px'
+              }}
+              className="font-bold text-blue-600">Dry Waste</div>
             </div>
           </div>
         </div>
