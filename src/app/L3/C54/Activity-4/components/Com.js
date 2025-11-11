@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import s1 from "../assets/s1.png";
 
 const defaultCompanies = [
 	{ name: "TechCo", ticker: "TCH", price: 100, prevPrice: 100 },
@@ -126,12 +128,14 @@ export default function Com() {
 					<p className="text-lg text-gray-800 mb-6">
 						Let&apos;s see how the Interday transactions work.
 					</p>
-					<button
-						className="bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-teal-700 transition"
-						onClick={() => setShowIntro(false)}
-					>
-						Next
-					</button>
+					<div className="flex items-center justify-center gap-4">
+						<button
+							className="bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-teal-700 transition flex items-center"
+							onClick={() => setShowIntro(false)}
+						>
+							Next
+						</button>
+					</div>
 				</div>
 			</div>
 		);
@@ -139,10 +143,15 @@ export default function Com() {
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-[#181f36] via-[#1a223a] to-[#181f36] text-gray-100 font-sans">
-			<header className="py-8 text-center">
-				<h1 className="text-3xl md:text-4xl font-bold mb-2">
-					Owl Mind Stock Exchange
-				</h1>
+			<header className="py-4 text-center">
+				<div className="flex items-center justify-center gap-3">
+					<div style={{ marginRight: "-10px" }}>
+						<Image src={s1} alt="s1" width={90} height={90} />
+					</div>
+					<h1 className="text-3xl md:text-4xl font-bold mb-2">
+						OwlMinds Stock Exchange
+					</h1>
+				</div>
 			</header>
 
 			<div className="max-w-7xl mx-auto px-4 pb-12">
