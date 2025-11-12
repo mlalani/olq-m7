@@ -690,7 +690,7 @@ export default function Com() {
           <div className="max-w-5xl text-center">
 
             <div className="text-xl md:text-2xl font-semibold mb-6">
-              Based on your training here are some objects that AI grouped as 'wet' waste. How did the AI do?
+Based on your training here are some objects that AI grouped as {'wet'} waste. How did the AI do?
             </div>
 
             <div className="w-full mt-4">
