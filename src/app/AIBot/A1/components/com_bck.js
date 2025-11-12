@@ -26,27 +26,45 @@ import item17 from '../assets/i17.png';
 import item18 from '../assets/i18.png';
 
 const initialItems = [
-  { id: 1, src: item1, label: 'Container' },
-  { id: 2, src: item2, label: 'Apple Core' },
-  { id: 3, src: item3, label: 'Banana Peel' },
-  { id: 4, src: item4, label: 'Glass Jar' },
-  { id: 5, src: item5, label: 'Metal Can' },
-  { id: 6, src: item6, label: 'Chocolate Wrapper' },
-  { id: 7, src: item7, label: 'Fruits Seeds' },
-  { id: 8, src: item8, label: 'Lemon' },
-  { id: 9, src: item9, label: 'Peel' },
-  { id: 10, src: item10, label: 'Rotten Vegetable' },
-  { id: 11, src: item11, label: 'Rotten Vegetable' },
-  { id: 12, src: item12, label: 'Sponge' },
-  { id: 13, src: item13, label: 'Plastic Spoon' },
-  { id: 14, src: item14, label: 'Tea Bag' },
-  { id: 15, src: item15, label: 'Egg Shell' },
-  { id: 16, src: item16, label: 'Fish Bone' },
-  { id: 17, src: item17, label: 'Plastic Fork' },
-  { id: 18, src: item18, label: 'Tyre' },
+  { id: 1, src: item1, label: 'Container', answer: 'dry' },
+  { id: 2, src: item2, label: 'Apple Core', answer: 'wet' },
+  { id: 3, src: item3, label: 'Banana Peel', answer: 'wet' },
+  { id: 4, src: item4, label: 'Glass Jar', answer: 'dry' },
+  { id: 5, src: item5, label: 'Metal Can', answer: 'dry' },
+  { id: 6, src: item6, label: 'Chocolate Wrapper', answer: 'dry' },
+  { id: 7, src: item7, label: 'Fruits Seeds', answer: 'wet' },
+  { id: 8, src: item8, label: 'Lemon', answer: 'wet' },
+  { id: 9, src: item9, label: 'Peel', answer: 'wet' },
+  { id: 10, src: item10, label: 'Rotten Vegetable', answer: 'wet' },
+  { id: 11, src: item11, label: 'Rotten Vegetable', answer: 'wet' },
+  { id: 12, src: item12, label: 'Sponge', answer: 'dry' },
+  { id: 13, src: item13, label: 'Plastic Spoon', answer: 'dry' },
+  { id: 14, src: item14, label: 'Tea Bag', answer: 'wet' },
+  { id: 15, src: item15, label: 'Egg Shell', answer: 'wet' },
+  { id: 16, src: item16, label: 'Fish Bone', answer: 'wet' },
+  { id: 17, src: item17, label: 'Plastic Fork', answer: 'dry' },
+  { id: 18, src: item18, label: 'Tyre', answer: 'dry' },
 ];
 
 export default function Com() {
+  // motivational/help messages to show in the halfway popup
+  const popupMessages = [
+  "Wet waste is anything that can rot, like fruit peels, leftover food, or leaves.",
+  "Dry waste is things that don’t rot, like paper, plastic, or metal cans.",
+  "Worms love to eat wet waste, they turn it into healthy soil called compost.",
+  "When we separate waste, we help the Earth stay clean and happy.",
+  "A banana peel can take just a few weeks to disappear, but a plastic bottle can take hundreds of years!",
+  "Old paper can be recycled to make new notebooks or tissue paper.",
+  "Wet waste can help plants grow if we turn it into compost.",
+  "Some dry waste, like old toys or clothes, can be donated instead of thrown away.",
+  "Sorting waste is like being a superhero for the planet.",
+  "Clean hands are happy hands, always wash your hands after touching garbage."
+];
+
+
+  const [showHalfwayPopup, setShowHalfwayPopup] = useState(false);
+  const [popupText, setPopupText] = useState('');
+  const [halfwayShown, setHalfwayShown] = useState(false);
   const [screen, setScreen] = useState(0);
   const [started, setStarted] = useState(false); // Unused, but kept for context
 
@@ -105,6 +123,7 @@ export default function Com() {
     if (screen === 5) {
       // Build queue according to initialItems order but include only those that were sorted
       const sortedMap = new Map();
+      debugger
       wetBin.forEach(i => sortedMap.set(i.id, 'wet'));
       dryBin.forEach(i => sortedMap.set(i.id, 'dry'));
       const queue = initialItems.filter(it => sortedMap.has(it.id)).map(it => ({ ...it, target: sortedMap.get(it.id) }));
@@ -125,6 +144,18 @@ export default function Com() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screen, replayQueue]);
 
+  // Auto-advance from Screen 5 to Screen 6 when replay finishes
+  useEffect(() => {
+    if (screen !== 5) return;
+    if (replayAnimating) return;
+    // If we are on screen 5 and replay is not animating and queue was non-empty, move to screen 6
+    if (replayQueue && replayQueue.length > 0 && !replayAnimating) {
+      // small delay to let final animation clear
+      const t = setTimeout(() => setScreen(6), 400);
+      return () => clearTimeout(t);
+    }
+  }, [screen, replayAnimating, replayQueue]);
+
   // core replay animator: moves itemIndex through conveyor and to bin
   const runReplayItem = (index) => {
     if (index >= replayQueue.length) {
@@ -137,8 +168,16 @@ export default function Com() {
     const animSize = 100;
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-    const startX = Math.floor(vw * 0.15); // center-left (~15% from left)
-    const startY = Math.floor(vh / 2 - animSize / 2); // vertically centered
+    // Default start (center-left)
+    let startX = Math.floor(vw * 0.15); // center-left (~15% from left)
+    let startY = Math.floor(vh / 2 - animSize / 2); // vertically centered
+    // If robot is present, start items from the top-left area right after the robot image
+    const robotRectNow = robotRef.current?.getBoundingClientRect();
+    if (robotRectNow) {
+      // Start just to the right of the robot and near its top (top-left after robot ends)
+      startX = Math.floor(robotRectNow.right + 8);
+      startY = Math.floor(robotRectNow.top + 8);
+    }
 
     // compute stop position (point below robot) - will re-evaluate later
     const targetBinEl = item.target === 'wet' ? replayWetRef.current : replayDryRef.current;
@@ -151,10 +190,11 @@ export default function Com() {
     setTimeout(() => {
       const robotRect = robotRef.current?.getBoundingClientRect();
       const binRect = targetBinEl?.getBoundingClientRect();
-      const stopX = robotRect ? robotRect.left + robotRect.width / 2 - animSize / 2 : 100;
-      const stopY = robotRect ? robotRect.bottom + 20 : 150;
+      // compute a point in front of the robot (to its right, vertically centered)
+      const frontX = robotRect ? Math.floor(robotRect.right + 12) : stopX;
+      const frontY = robotRect ? Math.floor(robotRect.top + robotRect.height / 2 - animSize / 2) : stopY;
 
-      // place at center-left and slide vertically to stopY
+      // place at start and animate to the front-of-robot point
       setAnimStyle({
         position: 'fixed',
         left: startX + 'px',
@@ -162,55 +202,53 @@ export default function Com() {
         width: animSize + 'px',
         height: animSize + 'px',
         transform: 'translate(0,0)',
-        transition: 'transform 0.9s cubic-bezier(0.2,0.8,0.2,1)',
+        transition: 'transform 0.6s cubic-bezier(0.2,0.8,0.2,1)',
         opacity: 1,
         zIndex: 9999,
       });
 
-      const dy = stopY - startY;
+      const dxToFront = frontX - startX;
+      const dyToFront = frontY - startY;
 
-      // animate vertical movement first
+      // animate to front point
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          setAnimStyle(prev => ({ ...prev, transform: `translate(0px, ${dy}px)` }));
+          setAnimStyle(prev => ({ ...prev, transform: `translate(${dxToFront}px, ${dyToFront}px)` }));
         });
       });
 
-      // after vertical arrives, slide horizontally to align under robot, then pause 2s
-      const verticalDuration = 900;
-      const horizontalDuration = 400;
+      // after arriving in front of robot, pause 1s then move to bin
+      const arriveDuration = 600;
+      // final leg duration (move + fade) - restored to 1000ms
+      const toBinDuration = 1000;
       setTimeout(() => {
-        const dxToRobot = stopX - startX;
-        // slide horizontally to robot center (keep Y offset)
-        setAnimStyle(prev => ({ ...prev, transition: `transform ${horizontalDuration}ms ease-in-out`, transform: `translate(${dxToRobot}px, ${dy}px)` }));
-
+        // Add a border to indicate the item is being processed by the robot
+        // Green if the replayed classification matches the true answer, otherwise red
+        const isCorrect = item.target === item.answer;
+        const borderColor = isCorrect ? 'rgba(0,200,0,0.95)' : 'rgba(255,0,0,0.9)';
+        setAnimStyle(prev => ({ ...prev, border: `4px solid ${borderColor}`, boxSizing: 'border-box' }));
+        // recompute bin rect just before moving
+        const latestBinRect = targetBinEl?.getBoundingClientRect();
+        if (!latestBinRect) {
+          setAnimatingItem(null);
+          setReplayIndex(idx => idx + 1);
+          runReplayItem(index + 1);
+          return;
+        }
+        const animCenterX = frontX + animSize / 2;
+        const animCenterY = frontY + animSize / 2;
+        const binCenterX = latestBinRect.left + latestBinRect.width / 2;
+        const binCenterY = latestBinRect.top + latestBinRect.height / 2;
+        const dx2 = binCenterX - animCenterX;
+        const dy2 = binCenterY - animCenterY;
+        // animate to bin (from front point)
+        setAnimStyle(prev => ({ ...prev, transition: `transform ${toBinDuration}ms ease-in-out, opacity ${toBinDuration}ms`, transform: `translate(${dxToFront + dx2}px, ${dyToFront + dy2}px)`, opacity: 0 }));
         setTimeout(() => {
-          // now pause for 2s under robot
-          setTimeout(() => {
-            // recompute bin rect just before moving
-            const latestBinRect = targetBinEl?.getBoundingClientRect();
-            if (!latestBinRect) {
-              setAnimatingItem(null);
-              setReplayIndex(idx => idx + 1);
-              runReplayItem(index + 1);
-              return;
-            }
-            const animCenterX = stopX + animSize / 2;
-            const animCenterY = stopY + animSize / 2;
-            const binCenterX = latestBinRect.left + latestBinRect.width / 2;
-            const binCenterY = latestBinRect.top + latestBinRect.height / 2;
-            const dx2 = binCenterX - animCenterX;
-            const dy2 = binCenterY - animCenterY;
-            // animate to bin (add dx2/dy2 to current transform)
-            setAnimStyle(prev => ({ ...prev, transition: 'transform 0.7s ease-in-out, opacity 0.7s', transform: `translate(${dxToRobot + dx2}px, ${dy + dy2}px)`, opacity: 0 }));
-            setTimeout(() => {
-              setAnimatingItem(null);
-              setReplayIndex(idx => idx + 1);
-              runReplayItem(index + 1);
-            }, 750);
-          }, 2000);
-        }, horizontalDuration + 50);
-      }, verticalDuration + 50);
+          setAnimatingItem(null);
+          setReplayIndex(idx => idx + 1);
+          runReplayItem(index + 1);
+        }, toBinDuration + 50);
+      }, arriveDuration + 1000); // arriveDuration + 1s pause
     }, 30);
   };
 
@@ -231,8 +269,8 @@ export default function Com() {
       setTimeout(() => {
         if (binType === 'wet') setWetBin(prev => [...prev, itemToSort]);
         else setDryBin(prev => [...prev, itemToSort]);
-        // Remove first and shuffle remaining to present a new random first item
-        setItems(prev => shuffle(prev.slice(1)));
+  // Remove first; do not reshuffle so order of remaining items is preserved
+  setItems(prev => prev.slice(1));
         setAnimatingItem(null);
         setAnimationTarget(null);
         setAnimStyle(null);
@@ -263,7 +301,7 @@ export default function Com() {
       width: animSize + 'px',
       height: animSize + 'px',
       transform: 'translate(0px, 0px)',
-      transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out',
+      transition: 'transform 0.4s ease-in-out, opacity 0.9s ease-in-out',
       opacity: 1,
       zIndex: 9999,
     });
@@ -281,11 +319,19 @@ export default function Com() {
       else setDryBin(prev => [...prev, itemToSort]);
       // Slide the list smoothly by resetting the offset then removing the item.
       setListOffset(0);
-      // Use a short timeout to allow CSS transition to complete before mutating the array.
-      setTimeout(() => setItems(prev => shuffle(prev.slice(1))), 0);
+  // Use a short timeout to allow CSS transition to complete before mutating the array.
+  setTimeout(() => setItems(prev => prev.slice(1)), 0);
       setAnimatingItem(null);
       setAnimationTarget(null);
       setAnimStyle(null);
+      // Check if we've reached 50% sorted (half of initialItems length)
+      const totalSorted = wetBin.length + dryBin.length + 1; // +1 for the item we just added
+      if (!showHalfwayPopup && !halfwayShown && totalSorted >= Math.ceil(initialItems.length / 2)) {
+        const msg = popupMessages[Math.floor(Math.random() * popupMessages.length)];
+        setPopupText(msg);
+        setShowHalfwayPopup(true);
+        setHalfwayShown(true);
+      }
     }, 350);
   };
 
@@ -295,13 +341,13 @@ export default function Com() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-white relative">
         {/* Top content (image + text) */}
         <div className="flex flex-row items-center justify-center w-full max-w-6xl p-8">
-          <Image src={robotImg} alt="robotImg" width={250} />
+          <Image src={robotImg} alt="robotImg" width={250} className="rounded-lg shadow-lg" />
 
           <div
             className="ml-12 bg-white px-12 py-12 flex items-center justify-center"
             style={{ minWidth: 400, maxWidth: 600 }}
           >
-            <span className="text-xl md:text-xl text-center font-bold leading-relaxed text-gray-800">
+            <span className="text-2xl md:text-2xl text-center font-bold leading-relaxed text-gray-800">
               <span className="block mb-6">
                 Mixing all garbage together makes the soil and water dirty.
               </span>
@@ -332,17 +378,15 @@ export default function Com() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white relative">
         <div className="flex flex-col items-center w-full">
-          <div className="text-2xl md:text-2xl text-center mb-8 max-w-2xl">
+          <div className="text-2xl md:text-2xl font-bold text-center mb-8 max-w-2xl">
             AI does not know whether an object is wet or dry waste, but it can process images and identify patterns.
           </div>
           <div className="flex flex-row gap-16 items-end justify-center mb-8">
             <div className="flex flex-col items-center">
               <Image src={binWet} alt="Wet Waste Example" width={200} height={160} className="" />
-              <div className="mt-2 text-md font-semibold text-center">Wet Waste Example</div>
             </div>
             <div className="flex flex-col items-center">
               <Image src={binDry} alt="Dry Waste Example" width={200} height={160} className="" />
-              <div className="mt-2 text-md font-semibold text-center">Dry Waste Example</div>
             </div>
           </div>
         </div>
@@ -363,20 +407,18 @@ export default function Com() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white relative">
         <div className="flex flex-col items-center w-full max-w-3xl">
-          <div className="text-2xl md:text-3xl font-bold text-center mb-6">
+          <div className="text-2xl md:text-2xl font-bold text-center mb-6">
             To program A.I, check each image and select the correct bin - “Wet” or “Dry”.
           </div>
           <div className="flex flex-row gap-8 justify-center items-center mb-8">
             <div className="flex flex-col items-center">
               <Image src={binWet} alt="Wet Bin" width={200} height={160} className="" />
-              <div className="mt-2 text-lg font-bold">Wet Bin</div>
             </div>
             <div className="flex flex-col items-center">
               <Image src={binDry} alt="Dry Bin" width={200} height={160} className="" />
-              <div className="mt-2 text-lg font-bold">Dry Bin</div>
             </div>
           </div>
-          <div className="text-xl md:text-xl text-center mb-8">
+          <div className="text-2xl md:text-2xl font-bold text-center mb-8">
             The training you provide will teach A.I. to recognize patterns on its own.
           </div>
           <button
@@ -510,13 +552,12 @@ export default function Com() {
               onClick={() => handleSort('wet')}
             >
               <Image
-                src={binWet}
-                alt="Wet Waste Bin"
+                src={binDry}
+                alt="Dry Waste Bin"
                 width={180}
                 height={180}
                 className=""
               />
-              <div className="mt-2 font-bold text-blue-600">Wet Waste</div>
               <div className="text-sm text-gray-500">({wetBin.length} items)</div>
             </div>
 
@@ -526,19 +567,33 @@ export default function Com() {
               onClick={() => handleSort('dry')}
             >
               <Image
-                src={binDry}
-                alt="Dry Waste Bin"
+                src={binWet}
+                alt="Wet Waste Bin"
                 width={180}
                 height={180}
                 className=""
               />
-              <div className="mt-2 font-bold text-blue-600">Dry Waste</div>
               <div className="text-sm text-gray-500">({dryBin.length} items)</div>
             </div>
           </div>
         </div>
 
         {/* No Next button on this screen; flow continues automatically when sorting is done */}
+
+        {/* Halfway popup modal */}
+        {showHalfwayPopup && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black opacity-40" />
+            <div className="relative bg-white rounded-lg shadow-2xl p-6 max-w-lg mx-4 z-10">
+              {/* top-right X close button */}
+              <button aria-label="close" onClick={() => setShowHalfwayPopup(false)} className="absolute right-3 top-3 w-8 h-8 flex items-center justify-center rounded-full cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <div className="text-xl font-semibold mb-3">Fun Fact</div>
+              <div className="mb-4 text-lg">{popupText}</div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -547,7 +602,12 @@ export default function Com() {
   if (screen === 4) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <div className="text-3xl md:text-4xl font-semibold text-center mb-8">Now let’s see how well our AI Bot has been trained.</div>
+        <div className="text-2xl md:text-2xl font-bold text-center mb-8">
+          Let’s see if AI know what is ‘dry’ and ‘wet’ waste.
+          <br />
+          <br />
+          AI will analyse random set of objects and group them based on your training
+        </div>
         <br />
         <div className="w-full flex justify-center">
           <button
@@ -565,9 +625,10 @@ export default function Com() {
   if (screen === 5) {
     return (
       <div className="min-h-screen flex flex-col items-center bg-white">
-        <div className="w-full flex justify-center pt-2">
-          <div ref={robotRef}>
-            <Image src={robotImg} alt="robot" width={170} />
+        {/* Robot at left */}
+        <div className="w-full flex justify-start pt-2 pl-8">
+          <div ref={robotRef} className="">
+            <Image className='rounded-lg shadow-xl' src={robotImg} alt="robot" width={170} />
           </div>
         </div>
         {/* Animated item (conveyor) */}
@@ -592,25 +653,136 @@ export default function Com() {
         )}
 
         <div className="flex-1 flex items-end justify-center pb-6 w-full">
-          <div className="flex gap-12 items-end">
+          <div className="flex gap-22 items-end">
             <div ref={replayWetRef} className="flex flex-col items-center">
-              <Image src={binWet} alt="wet" width={210} height={210} />
-              <div 
-              style={{
-                marginTop: '-12px'
-              }}
-              className="font-bold text-blue-600">Wet Waste</div>
+              <Image src={binDry} alt="dry" width={210} height={210} />
             </div>
             <div ref={replayDryRef} className="flex flex-col items-center">
-              <Image src={binDry} alt="dry" width={210} height={210} />
-              <div 
-              style={{
-                marginTop: '-12px'
-              }}
-              className="font-bold text-blue-600">Dry Waste</div>
+              <Image src={binWet} alt="wet" width={210} height={210} />
             </div>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  // --- Screen 6: Results ---
+  if (screen === 6) {
+    // Build list of items that AI grouped as 'wet' (based on wetBin)
+    const aiWetItems = wetBin || [];
+    return (
+      <>
+        <div className='p-2 absolute right-0 z-10'>
+          <button
+            className="flex items-center justify-center w-12 h-12 rounded-[10%] bg-green-500 hover:bg-green-600 text-white shadow-lg cursor-pointer"
+            onClick={() => {
+              setScreen(7);
+            }}
+            aria-label="confirm"
+          >
+            {/* simple checkmark using SVG */}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </button>
+        </div>
+        <div className="min-h-screen flex flex-col items-center justify-between bg-white relative pt-12 pb-6">
+          <div className="max-w-5xl text-center">
+
+            <div className="text-xl md:text-2xl font-semibold mb-6">
+              Based on your training here are some objects that AI grouped as 'wet' waste. How did the AI do?
+            </div>
+
+            <div className="w-full mt-4">
+              {/* render items in rows of 7; center the final partial row explicitly */}
+              {(() => {
+                const rows = [];
+                for (let i = 0; i < aiWetItems.length; i += 7) {
+                  rows.push(aiWetItems.slice(i, i + 7));
+                }
+                return rows.map((row, rowIndex) => {
+                  const isLast = rowIndex === rows.length - 1;
+                  if (isLast && row.length < 7) {
+                    // center the last partial row
+                    return (
+                      <div key={`row-${rowIndex}`} className="w-full flex justify-center gap-6 mb-4">
+                        {row.map(it => (
+                          <div key={`aiwet-${it.id}`} className="flex flex-col items-center">
+                            <div style={{ width: 120, height: 120, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                              <Image src={it.src} alt={it.label} width={120} height={120} />
+                            </div>
+                            <div className="mt-2 text-sm text-center">{it.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  }
+                  // full row (7 items)
+                  return (
+                    <div key={`row-${rowIndex}`} className="w-full flex justify-center gap-6 mb-4">
+                      {row.map(it => (
+                        <div key={`aiwet-${it.id}`} className="flex flex-col items-center">
+                          <div style={{ width: 120, height: 120, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <Image src={it.src} alt={it.label} width={120} height={120} />
+                          </div>
+                          <div className="mt-2 text-sm text-center">{it.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                });
+              })()}
+            </div>
+
+          </div>
+
+          {/* Bottom controls: Train more (left), Robot (center), Continue (right) */}
+          <div className="w-full items-end bottom-6 left-0 px-8 flex justify-between">
+            <div>
+              <button className="cursor-pointer px-6 py-3 bg-gray-200 rounded-lg" onClick={() => {
+                // Full game restart: reset items and all related state, then go to screen 3
+                setItems(shuffle(initialItems));
+                setWetBin([]);
+                setDryBin([]);
+                setAnimatingItem(null);
+                setAnimationTarget(null);
+                setAnimStyle(null);
+                setListOffset(0);
+                setReplayQueue([]);
+                setReplayIndex(0);
+                setReplayAnimating(false);
+                setHalfwayShown(false);
+                setScreen(3);
+              }}>Train more</button>
+            </div>
+
+            <div>
+              <Image className='rounded-lg shadow-xl' src={robotImg} alt="robot" width={140} />
+            </div>
+
+            <div style={{
+              visibility: 'hidden',
+            }}>
+              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg" onClick={() => {
+                // Continue: for now go back to screen 0 or implement next flow
+                setScreen(0);
+              }}>Continue</button>
+            </div>
+          </div>
+        </div>
+      </>
+
+    );
+  }
+
+  // --- Screen 7: Completion ---
+  if (screen === 7) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white p-8">
+        <div className="max-w-3xl text-center">
+          <h2 className="text-2xl md:text-2xl font-bold mb-6">Good job!</h2>
+          <p className="text-2xl font-bold">You have successfully trained the AI Bot to find differences between wet and dry waste.</p>
+        </div>      
       </div>
     );
   }
