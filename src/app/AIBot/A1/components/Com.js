@@ -123,7 +123,6 @@ export default function Com() {
     if (screen === 5) {
       // Build queue according to initialItems order but include only those that were sorted
       const sortedMap = new Map();
-      debugger
       wetBin.forEach(i => sortedMap.set(i.id, 'wet'));
       dryBin.forEach(i => sortedMap.set(i.id, 'dry'));
       const queue = initialItems.filter(it => sortedMap.has(it.id)).map(it => ({ ...it, target: sortedMap.get(it.id) }));
@@ -344,8 +343,8 @@ export default function Com() {
           <Image src={robotImg} alt="robotImg" width={250} className="rounded-lg shadow-lg" />
 
           <div
-            className="ml-12 bg-white px-12 py-12 flex items-center justify-center"
-            style={{ minWidth: 400, maxWidth: 600 }}
+            className="ml-12 bg-white px-2 py-2 flex items-center justify-center shadow-lg rounded-lg"
+            style={{ minWidth: 400, maxWidth: 800 }}
           >
             <span className="text-2xl md:text-2xl text-center font-bold leading-relaxed text-gray-800">
               <span className="block mb-6">
@@ -606,7 +605,7 @@ export default function Com() {
           Let’s see if AI know what is ‘dry’ and ‘wet’ waste.
           <br />
           <br />
-          AI will analyse random set of objects and group them based on your training
+          AI will analyse random set of objects and group them based on your training.
         </div>
         <br />
         <div className="w-full flex justify-center">
@@ -626,7 +625,10 @@ export default function Com() {
     return (
       <div className="min-h-screen flex flex-col items-center bg-white">
         {/* Robot at left */}
-        <div className="w-full flex justify-start pt-2 pl-8">
+        <div className="w-full flex justify-start pt-2 pl-8" style={{
+          marginLeft: '360px',
+          marginTop: '60px'
+        }}>
           <div ref={robotRef} className="">
             <Image className='rounded-lg shadow-xl' src={robotImg} alt="robot" width={170} />
           </div>
