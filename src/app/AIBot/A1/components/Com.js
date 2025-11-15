@@ -49,17 +49,17 @@ const initialItems = [
 export default function Com() {
   // motivational/help messages to show in the halfway popup
   const popupMessages = [
-  "Wet waste is anything that can rot, like fruit peels, leftover food, or leaves.",
-  "Dry waste is things that don’t rot, like paper, plastic, or metal cans.",
-  "Worms love to eat wet waste, they turn it into healthy soil called compost.",
-  "When we separate waste, we help the Earth stay clean and happy.",
-  "A banana peel can take just a few weeks to disappear, but a plastic bottle can take hundreds of years!",
-  "Old paper can be recycled to make new notebooks or tissue paper.",
-  "Wet waste can help plants grow if we turn it into compost.",
-  "Some dry waste, like old toys or clothes, can be donated instead of thrown away.",
-  "Sorting waste is like being a superhero for the planet.",
-  "Clean hands are happy hands, always wash your hands after touching garbage."
-];
+    "Wet waste is anything that can rot, like fruit peels, leftover food, or leaves.",
+    "Dry waste is things that don’t rot, like paper, plastic, or metal cans.",
+    "Worms love to eat wet waste, they turn it into healthy soil called compost.",
+    "When we separate waste, we help the Earth stay clean and happy.",
+    "A banana peel can take just a few weeks to disappear, but a plastic bottle can take hundreds of years!",
+    "Old paper can be recycled to make new notebooks or tissue paper.",
+    "Wet waste can help plants grow if we turn it into compost.",
+    "Some dry waste, like old toys or clothes, can be donated instead of thrown away.",
+    "Sorting waste is like being a superhero for the planet.",
+    "Clean hands are happy hands, always wash your hands after touching garbage."
+  ];
 
 
   const [showHalfwayPopup, setShowHalfwayPopup] = useState(false);
@@ -209,17 +209,17 @@ export default function Com() {
       const dxToFront = frontX - startX;
       const dyToFront = frontY - startY;
 
-      // animate to front point
+      // animate to front point (slower for clearer conveyor motion)
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          setAnimStyle(prev => ({ ...prev, transform: `translate(${dxToFront}px, ${dyToFront}px)` }));
+          setAnimStyle(prev => ({ ...prev, transform: `translate(${dxToFront}px, ${dyToFront}px)`, transition: 'transform 1200ms cubic-bezier(0.2,0.8,0.2,1)' }));
         });
       });
 
-      // after arriving in front of robot, pause 1s then move to bin
-      const arriveDuration = 600;
-      // final leg duration (move + fade) - restored to 1000ms
-      const toBinDuration = 1000;
+      // after arriving in front of robot, pause longer then move to bin
+      const arriveDuration = 1200; // was 600
+      // final leg duration (move + fade) - increased for slower, smoother motion
+      const toBinDuration = 1800; // was 1000
       setTimeout(() => {
         // Add a border to indicate the item is being processed by the robot
         // Green if the replayed classification matches the true answer, otherwise red
@@ -268,8 +268,8 @@ export default function Com() {
       setTimeout(() => {
         if (binType === 'wet') setWetBin(prev => [...prev, itemToSort]);
         else setDryBin(prev => [...prev, itemToSort]);
-  // Remove first; do not reshuffle so order of remaining items is preserved
-  setItems(prev => prev.slice(1));
+        // Remove first; do not reshuffle so order of remaining items is preserved
+        setItems(prev => prev.slice(1));
         setAnimatingItem(null);
         setAnimationTarget(null);
         setAnimStyle(null);
@@ -318,8 +318,8 @@ export default function Com() {
       else setDryBin(prev => [...prev, itemToSort]);
       // Slide the list smoothly by resetting the offset then removing the item.
       setListOffset(0);
-  // Use a short timeout to allow CSS transition to complete before mutating the array.
-  setTimeout(() => setItems(prev => prev.slice(1)), 0);
+      // Use a short timeout to allow CSS transition to complete before mutating the array.
+      setTimeout(() => setItems(prev => prev.slice(1)), 0);
       setAnimatingItem(null);
       setAnimationTarget(null);
       setAnimStyle(null);
@@ -586,7 +586,7 @@ export default function Com() {
             <div className="relative bg-white rounded-lg shadow-2xl p-6 max-w-lg mx-4 z-10">
               {/* top-right X close button */}
               <button aria-label="close" onClick={() => setShowHalfwayPopup(false)} className="absolute right-3 top-3 w-8 h-8 flex items-center justify-center rounded-full cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
               </button>
               <div className="text-xl font-semibold mb-3">Fun Fact</div>
               <div className="mb-4 text-lg">{popupText}</div>
@@ -692,7 +692,7 @@ export default function Com() {
           <div className="max-w-5xl text-center">
 
             <div className="text-xl md:text-2xl font-semibold mb-6">
-Based on your training here are some objects that AI grouped as {'wet'} waste. How did the AI do?
+              Based on your training here are some objects that AI grouped as {'wet'} waste. How did the AI do?
             </div>
 
             <div className="w-full mt-4">
@@ -784,7 +784,7 @@ Based on your training here are some objects that AI grouped as {'wet'} waste. H
         <div className="max-w-3xl text-center">
           <h2 className="text-2xl md:text-2xl font-bold mb-6">Good job!</h2>
           <p className="text-2xl font-bold">You have successfully trained the AI Bot to find differences between wet and dry waste.</p>
-        </div>      
+        </div>
       </div>
     );
   }
